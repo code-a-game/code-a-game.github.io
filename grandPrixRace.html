@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Prix Race Opgave</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <style>
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: #0275d8;
+            font-weight: 500;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Opgave 2 - Grand Prix Race</h1>
+        </header>
+        <div class="toc">
+            <h2>Indholdsfortegnelse</h2>
+            <ul>
+                <li><a href="#introduktion">Introduktion</a></li>
+                <li><a href="#start-her">Start her</a></li>
+                <li><a href="#delopgave-1">Delopgave 1: Hero's bevægelse</a></li>
+                <li><a href="#delopgave-2">Delopgave 2: Vis position</a></li>
+                <li><a href="#delopgave-3">Delopgave 3: Vinderbetingelse</a></li>
+                <li><a href="#delopgave-4">Delopgave 4: Kollision</a></li>
+                <li><a href="#delopgave-5">Delopgave 5: Liv</a></li>
+                <li><a href="#delopgave-6">Delopgave 6: Hegn</a></li>
+                <li><a href="#delopgave-7">Delopgave 7: Manglende hegn (venstre)</a></li>
+                <li><a href="#delopgave-8">Delopgave 8: Pit stop</a></li>
+                <li><a href="#delopgave-9">Delopgave 9: Kør i pit</a></li>
+                <li><a href="#delopgave-10">Delopgave 10: Konsekvens af ikke at pitte</a></li>
+                <li><a href="#delopgave-11">Delopgave 11: Manglende hegn (højre)</a></li>
+                <li><a href="#delopgave-12">Delopgave 12: Flagmand</a></li>
+                <li><a href="#delopgave-13">Delopgave 13: Brændstof</a></li>
+                <li><a href="#delopgave-14">Delopgave 14: Konsekvens af manglende brændstof</a></li>
+                <li><a href="#delopgave-15">Delopgave 15: Øget sværhedsgrad</a></li>
+                <li><a href="#delopgave-16">Delopgave 16: Genstart</a></li>
+                <li><a href="#delopgave-17">Delopgave 17: Startbesked</a></li>
+                <li><a href="#delopgave-18">Delopgave 18: Startsekvens</a></li>
+                <li><a href="#delopgave-19">Delopgave 19: Lyd</a></li>
+                <li><a href="#faerdig-loesning">Færdig løsning</a></li>
+            </ul>
+        </div>
+        <main>
+            <section id="introduktion">
+                <details open>
+                    <summary>
+                        <h2>Introduktion</h2>
+                    </summary>
+                    <p>Vi skal lave følgende spil der hedder Grand Prix Race:</p>
+                    <p>Prøv spillet her: <a href="https://editor.p5js.org/JensValdez/full/wzU6IbK3X" target="_blank">https://editor.p5js.org/JensValdez/full/wzU6IbK3X</a></p>
+                    <img src="images/grandPrixRace/grandPrixRace-image1.png" alt="Grand Prix Race Screenshot" class="content-img">
+                    <p>Du kan prøve det af ovenfor så du kender funktionaliteten. Se om du kan vinde løbet.</p>
+                    <p>Når du skal lave en større opgave er det nemmest at dele den op i mindre delopgaver som du godt kan løse. For at hjælpe har jeg oprettet en masse delopgaver. Hvis du går i stå må du gerne se på løsningenseksemplet for delopgaven. Herefter skal du selv prøve at løse den. Det er fint hvis du finder dine egne løsninger til delopgaverne. Det er dog en god ide altid at se løsningseksemplet for hver delopgave igennem og forstå det efter at du har løst en delopgave.</p>
+                    <p>Det er en lidt avanceret opgave som har fokus på følgende:</p>
+                    <ul>
+                        <li>Hvordan man kan lave et bibliotek af funktioner der gør det nemt at vise grafikken i spillet.</li>
+                        <li>Hvordan en opgave kan deles ind i mindre delopgaver som er godt at løse.</li>
+                        <li>Hvordan man kan strukturere koden med en styringsfunktion og mindre hjælpe funktioner så koden er til at overskue.</li>
+                        <li>Hvordan man kan håndtere de forskellige tilstande som spillet kan være i og styre dialogen med brugeren.</li>
+                        <li>Hvordan funktionalitet kan deles op så hjælpefunktionerne kun gør en ting.</li>
+                        <li>Hvor man kan gøre brug af tilfældighed til at gøre hver spiloplevelse unique.</li>
+                        <li>Hvordan man kan starte med at lave den mest simple version af et spil men som stadig kan spilles hvorefter man gradvist tilføjer flere og flere lækre detaljer.</li>
+                    </ul>
+                </details>
+            </section>
+            <section id="start-her">
+                <details open>
+                    <summary>
+                        <h2>Start her</h2>
+                    </summary>
+                    <p>Start med at forstå og afprøve biblioteks funktionerne der håndterer grafikken i spillet. Dette kan findes her:</p>
+                    <p><a href="https://editor.p5js.org/JensValdez/sketches/WZp_UCt6K" target="_blank">https://editor.p5js.org/JensValdez/sketches/WZp_UCt6K</a></p>
+                    <p>Grand Prix spillet har følgende index.html fil. Som det ses nedenfor refereres både til library.js og sketch.js. Vi har lige afprøvet at funktionerne (til at vise spillets grafik) og en timer (der kan tælle ned fra et antal milisekunder) i library.js virker. Vi skal derfor udelukkende fokusere på spil logikken når vi laver spillet. Herudover gør det koden nemmere at læse når vi har gemt implementeringsdetaljerne for at vise grafik elementer ned i library.js filen.</p>
+                    <img src="images/grandPrixRace/grandPrixRace-image2.png" alt="index.html screenshot" class="content-img">
+                    <p>Forstå og afprøv herefter start kode skabelonen til spillet.</p>
+                    <pre><code class="language-javascript">// GrandPrixInitialCode - Add so that hero can also move right
+let cars = [];
+
+let gameState;
+let gameAction;
+let gameStepTimer;
+let rowCounter;
+let heroLanePosition;
+
+function setup() {
+  createCanvas(600, 444);
+
+  initializeGameState();
+}
+
+function initializeGameState() {
+  setInitialValues();
+  setImageObjectPositions();
+  generateCarStream();
+
+  gameState = "GAME-IN-PROGRESS";
+}
+
+function draw() {
+  switch (gameState) {
+    case "GAME-IN-PROGRESS":
+      handeGameAction();
+      showGameState();
+      updateGameState();
+      break;
+  }
+}
+
+function keyPressed() {
+  if (gameState == "GAME-IN-PROGRESS") {
+    if (keyCode === LEFT_ARROW) {
+      gameAction = "MOVE-LEFT";
+    }
+  }
+}
+
+function handeGameAction() {
+  switch (gameAction) {
+    case "MOVE-LEFT":
+      moveLeft();
+      gameAction = "";
+      break;
+    default:
+      break;
+  }
+}
+
+function moveLeft() {
+  if (
+    heroLanePosition > 0
+  ) {
+    heroLanePosition--;
+  }
+}
+
+function setInitialValues() {
+  textSize(32);
+  fill(0);
+  gameAction = "";
+  rowCounter = 1;
+  heroLanePosition = 1;
+  gameStepTimer = new CoolDownTimer();
+  gameStepTimer.setCoolDownInterval(900);
+  gameStepTimer.startCoolDownTimer();
+}
+
+function generateCarStream() {
+  let numberOfCars;
+  for (let row = 1; row < 106; row++) {
+    cars[row] = [];
+    numberOfCars = 0;
+    for (let column = 0; column < 3; column++) {
+      if (
+        random(1) < 0.5 &&
+        numberOfCars < 2 &&
+        row > 5 
+      ) {
+        cars[row][column] = "CAR";
+        numberOfCars++;
+      } else {
+        cars[row][column] = "EMPTY";
+      }
+    }
+  }
+}
+
+function showGameState() {
+  displayBackground();
+
+  showCars();
+}
+
+function showCars() {
+  
+  for (let row = 1; row < 6; row++) {
+    for (let column = 0; column < 3; column++) {
+      if (cars[rowCounter + row][column] == "CAR") {
+        displayCar(row, column);
+      }
+    }
+  }
+  if (heroLanePosition >= 0 && heroLanePosition <= 2) {
+    displayCar(0, heroLanePosition);
+  }
+}
+
+function updateGameState() {
+  if (gameStepTimer.coolDownTimeLeft() > 0) {
+    return;
+  }
+
+  rowCounter++;
+  gameStepTimer.startCoolDownTimer();
+}
+</code></pre>
+                    <p>Tag udgangspunkt i ovenstående kode ved at gå ind på koden (linket nedenfor) og vælge File → Duplicate</p>
+                    <p><a href="https://editor.p5js.org/JensValdez/sketches/V0TYx9s7U" target="_blank">https://editor.p5js.org/JensValdez/sketches/V0TYx9s7U</a></p>
+                    <p>Giv spillet et navn og husk at gemme løbende. Lad os kalde bilen man styre for “Hero”.</p>
+                </details>
+            </section>
+            <section id="delopgave-1">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 1: Hero kan flytte til højre</h2>
+                    </summary>
+                    <p>Tilret så Hero også kan flytte sig til højre.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/TJLYcmq_b" target="_blank">https://editor.p5js.org/JensValdez/full/TJLYcmq_b</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task1.html" target="_blank">Løsningseksempel - Delopgave 1</a></p>
+                </details>
+            </section>
+            <section id="delopgave-2">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 2: Vis Hero's position</h2> 
+                    </summary>
+                    <p>Tilret så Hero’s position vises øverst til venstre.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/-5KREsGfN" target="_blank">https://editor.p5js.org/JensValdez/full/-5KREsGfN</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task2.html" target="_blank">Løsningseksempel - Delopgave 2</a></p>
+                </details>
+            </section>
+            <section id="delopgave-3">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 3: Vind løbet</h2>
+                    </summary>
+                    <p>Tilret så man kan vinde løbet</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/d5Tl7twp9" target="_blank">https://editor.p5js.org/JensValdez/full/d5Tl7twp9</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task3.html" target="_blank">Løsningseksempel - Delopgave 3</a></p>
+                </details>
+            </section>
+            <section id="delopgave-4">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 4: Tab spillet ved kollision</h2>
+                    </summary>
+                    <p>Tilret så man taber spillet hvis man støder ind i de andre biler (dvs. hvis man ikke når at overhale)</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/lHz7x1Fv_" target="_blank">https://editor.p5js.org/JensValdez/full/lHz7x1Fv_</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task4.html" target="_blank">Løsningseksempel - Delopgave 4</a></p>
+                </details>
+            </section>
+            <section id="delopgave-5">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 5: Tre liv</h2>
+                    </summary>
+                    <p>Tilret så man har tre liv.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/cRVp-RBhm" target="_blank">https://editor.p5js.org/JensValdez/full/cRVp-RBhm</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task5.html" target="_blank">Løsningseksempel - Delopgave 5</a></p>
+                </details>
+            </section>
+            <section id="delopgave-6">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 6: Hegn på begge sider</h2>
+                    </summary>
+                    <p>Sæt hegn op på begge sider af vejbanerne</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/6XbEWsO2F" target="_blank">https://editor.p5js.org/JensValdez/full/6XbEWsO2F</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task6.html" target="_blank">Løsningseksempel - Delopgave 6</a></p>
+                </details>
+            </section>
+            <section id="delopgave-7">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 7: Manglende hegn til venstre</h2>
+                    </summary>
+                    <p>Tilret så hegnet til venstre nogle gange mangler</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/gcu4bP543" target="_blank">https://editor.p5js.org/JensValdez/full/gcu4bP543</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task7.html" target="_blank">Løsningseksempel - Delopgave 7</a></p>
+                </details>
+            </section>
+            <section id="delopgave-8">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 8: Vis Pit stop</h2>
+                    </summary>
+                    <p>Tilret så Pit stop vises hvis der ikke er et hegn i venstre side af vejbanerne.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/jCpschEd3" target="_blank">https://editor.p5js.org/JensValdez/full/jCpschEd3</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task8.html" target="_blank">Løsningseksempel - Delopgave 8</a></p>
+                </details>
+            </section>
+            <section id="delopgave-9">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 9: Flyt Hero i Pit</h2>
+                    </summary>
+                    <p>Tilret så man kan flytte Hero i Pit</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/AtykqcbJG" target="_blank">https://editor.p5js.org/JensValdez/full/AtykqcbJG</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task9.html" target="_blank">Løsningseksempel - Delopgave 9</a></p>
+                </details>
+            </section>
+            <section id="delopgave-10">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 10: Mist et liv ved ikke at pitte</h2>
+                    </summary>
+                    <p>Tilret så man mister et liv hvis man ikke kører i Pit</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/gehmhGxNR" target="_blank">https://editor.p5js.org/JensValdez/full/gehmhGxNR</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task10.html" target="_blank">Løsningseksempel - Delopgave 10</a></p>
+                </details>
+            </section>
+            <section id="delopgave-11">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 11: Manglende hegn til højre</h2>
+                    </summary>
+                    <p>Tilret så hegnet til højre nogle gange mangler</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/uY9JVSx1s" target="_blank">https://editor.p5js.org/JensValdez/full/uY9JVSx1s</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task11.html" target="_blank">Løsningseksempel - Delopgave 11</a></p>
+                </details>
+            </section>
+            <section id="delopgave-12">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 12: Mand med flag</h2>
+                    </summary>
+                    <p>Tilret så der vises en mand med et flag i stedet for det næst nederste højre hegn (hvis det mangler)</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/r4R1EEw0Q" target="_blank">https://editor.p5js.org/JensValdez/full/r4R1EEw0Q</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task12.html" target="_blank">Løsningseksempel - Delopgave 12</a></p>
+                </details>
+            </section>
+            <section id="delopgave-13">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 13: Få brændstof</h2>
+                    </summary>
+                    <p>Tilret så man kan flytte Hero ud til højre for at få brændstof (hvis der står en mand med et flag)</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/zivAgdun8" target="_blank">https://editor.p5js.org/JensValdez/full/zivAgdun8</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task13.html" target="_blank">Løsningseksempel - Delopgave 13</a></p>
+                </details>
+            </section>
+            <section id="delopgave-14">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 14: Mist et liv ved ikke at få brændstof</h2>
+                    </summary>
+                    <p>Tilret så man mister et liv hvis man ikke får brændstof</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/Aq5UrpSrc" target="_blank">https://editor.p5js.org/JensValdez/full/Aq5UrpSrc</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task14.html" target="_blank">Løsningseksempel - Delopgave 14</a></p>
+                </details>
+            </section>
+            <section id="delopgave-15">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 15: Spillet bliver hurtigere</h2>
+                    </summary>
+                    <p>Tilret så spillet løbende (i intervaller) bliver hurtigere og hurtigere.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/_rMV0-3ww" target="_blank">https://editor.p5js.org/JensValdez/full/_rMV0-3ww</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task15.html" target="_blank">Løsningseksempel - Delopgave 15</a></p>
+                </details>
+            </section>
+            <section id="delopgave-16">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 16: Genstart spillet</h2>
+                    </summary>
+                    <p>Tilret så man kan genstarte spillet ved at klikke med musen</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/kukWymbCB" target="_blank">https://editor.p5js.org/JensValdez/full/kukWymbCB</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task16.html" target="_blank">Løsningseksempel - Delopgave 16</a></p>
+                </details>
+            </section>
+            <section id="delopgave-17">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 17: Start besked</h2>
+                    </summary>
+                    <p>Tilret så der kommer en start besked.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/_ogK8TGct" target="_blank">https://editor.p5js.org/JensValdez/full/_ogK8TGct</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task17.html" target="_blank">Løsningseksempel - Delopgave 17</a></p>
+                </details>
+            </section>
+            <section id="delopgave-18">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 18: Billedsekvens ved start</h2>
+                    </summary>
+                    <p>Tilret så der kommer en lille billede sekvens når man klikker med musen efter man har fået vist start beskeden.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/hmUaUU2-o" target="_blank">https://editor.p5js.org/JensValdez/full/hmUaUU2-o</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task18.html" target="_blank">Løsningseksempel - Delopgave 18</a></p>
+                </details>
+            </section>
+            <section id="delopgave-19">
+                <details open>
+                    <summary>
+                        <h2>Delopgave 19: Lyd-actions</h2>
+                    </summary>
+                    <p>Tilret så der kommer lyd når man laver de forskellige actions.</p>
+                    <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/wzU6IbK3X" target="_blank">https://editor.p5js.org/JensValdez/full/wzU6IbK3X</a></p>
+                    <p><a href="grandPrix/grandPrix-solution-task19.html" target="_blank">Løsningseksempel - Delopgave 19</a></p>
+                </details>
+            </section>
+            <section id="faerdig-loesning">
+                <details open>
+                    <summary>
+                        <h2>Færdig løsning:</h2>
+                    </summary>
+                    <p><a href="https://editor.p5js.org/JensValdez/sketches/wzU6IbK3X" target="_blank">https://editor.p5js.org/JensValdez/sketches/wzU6IbK3X</a></p>
+                </details>
+            </section>
+        </main>
+    </div>
+    <script src="modal.js"></script>
+</body>
+</html>

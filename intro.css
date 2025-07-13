@@ -1,0 +1,40 @@
+main section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2b6cb0;
+}
+
+main ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+main li {
+    margin-bottom: 0.5rem;
+}
+
+main a {
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}

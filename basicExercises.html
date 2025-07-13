@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opgaver i grundlæggende p5js</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="modal.css">
+    <style>
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #0275d8;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Opgaver i grundlæggende p5js</h1>
+            <p><a href="focusItems.html">Fokus punkter man kan overveje for hver opgave</a></p>
+            <p><a href="https://editor.p5js.org" target="_blank">https://editor.p5js.org</a></p>
+            <p><a href="https://p5js.org/reference/" target="_blank">https://p5js.org/reference/</a></p>
+        </header>
+        <main>
+            <div class="toc">
+                <h2>Indholdsfortegnelse</h2>
+                <ul>
+                    <li><a href="#g1">G1: Interaktion med musen</a></li>
+                    <li><a href="#g2">G2: Rækkefølgens betydning</a></li>
+                    <li><a href="#g3">G3: Forståelseopgave</a></li>
+                    <li><a href="#g4">G4: if/else 1</a></li>
+                    <li><a href="#g5">G5: if/else 2</a></li>
+                    <li><a href="#g6">G6: && operatoren</a></li>
+                    <li><a href="#g7">G7: mouseIsPressed</a></li>
+                    <li><a href="#g8">G8: keyIsDown (piletaster)</a></li>
+                    <li><a href="#g9">G9: keyIsDown (bogstaver)</a></li>
+                    <li><a href="#g10">G10: mousePressed</a></li>
+                    <li><a href="#g11">G11: Koordinatsystemet</a></li>
+                    <li><a href="#g12">G12: Søgning i reference</a></li>
+                    <li><a href="#g13">G13: for loop</a></li>
+                    <li><a href="#g14">G14: Kode rækkefølge</a></li>
+                    <li><a href="#g15">G15: Objekt bevægelse</a></li>
+                    <li><a href="#g16">G16: Objekt retningsskift 1</a></li>
+                    <li><a href="#g17">G17: Objekt retningsskift 2</a></li>
+                    <li><a href="#g18">G18: Objekt retningsskift 3</a></li>
+                    <li><a href="#g19">G19: random()</a></li>
+                    <li><a href="#g20">G20: Opret objekt 1</a></li>
+                    <li><a href="#g21">G21: Flyt objekt 1</a></li>
+                    <li><a href="#g22">G22: Flyt objekt 2</a></li>
+                    <li><a href="#g23">G23: Objekt referencer</a></li>
+                    <li><a href="#g24">G24: Arrays</a></li>
+                    <li><a href="#g25">G25: Objekter i arrays</a></li>
+                    <li><a href="#g26">G26: Startværdier 1</a></li>
+                    <li><a href="#g27">G27: Startværdier 2</a></li>
+                    <li><a href="#g28">G28: Opret objekt 2</a></li>
+                    <li><a href="#g29">G29: On/off knap</a></li>
+                    <li><a href="#g30">G30: Fjern objekt fra skærm</a></li>
+                    <li><a href="#g31">G31: Fjern objekt fra array</a></li>
+                    <li><a href="#g32">G32: Objekt kommunikation 1</a></li>
+                    <li><a href="#g33">G33: Følg cursor</a></li>
+                    <li><a href="#g34">G34: Objekt kommunikation 2</a></li>
+                    <li><a href="#g35">G35: map() funktionen</a></li>
+                    <li><a href="#g36">G36: Peg mod punkt</a></li>
+                    <li><a href="#g37">G37: Skyd med objekt</a></li>
+                    <li><a href="#g38">G38: Stjernehimmel</a></li>
+                </ul>
+            </div>
+            <section id="g1">
+                <details open>
+                    <summary>
+                        <h2>Opgave G1 - Interaktion med musen</h2>
+                    </summary>
+                    <p>Lav et program så en hvid firkant med kraftig rød ramme følger musen. Baggrunden skal være grå.
+                        Herudover skal du skrive “mouseX:” samt værdien af mouseX ud til Console.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/XE7hQNMRp"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/XE7hQNMRp</a></p>
+                    <img src="images/basicExercises/basicExercises-g1.png" alt="Screenshot 2023-08-20 at 06.08.05.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på stroke, rect, strokeWeight, background og mouseX i reference f.eks. <a
+                                href="https://p5js.org/reference/#/p5/stroke"
+                                target="_blank">https://p5js.org/reference/#/p5/stroke</a></p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Hvis man tegner flere ting på skærmen, så bliver de tegnet i samme rækkefølge som de står i
+                            koden.</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Man kan skrive til console således: console.log("mouseX: " + mouseX)</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/XE7hQNMRp"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/XE7hQNMRp</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g2">
+                <details open>
+                    <summary>
+                        <h2>Opgave G2 - Rækkefølgens betydning for kodelinierne</h2>
+                    </summary>
+                    <p>Lav et program så en gul firkant uden ramme følger musen. Musens cursor skal være i midten af
+                        kassen. Baggrunden skal være lilla. Der skal også være blå ellipse og en fire sidet rød polygon.
+                        Den gule firkant skal bevæge sig ind over den blå ellipse men bag ved den røde polygon.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/LWKm_2eTG"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/LWKm_2eTG</a></p>
+                    <img src="images/basicExercises/basicExercises-g2.png" alt="Screenshot 2023-08-20 at 06.10.32.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Se farve koder her: <a href="https://www.w3schools.com/colors/colors_picker.asp"
+                                target="_blank">https://www.w3schools.com/colors/colors_picker.asp</a></p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg efter ellipse, noStroke og fill i reference</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Slå op i reference (under “2D Primitives” (Shapes)) og find ud af hvad en polygon er og
+                            hvordan man tegner den.</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/LWKm_2eTG"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/LWKm_2eTG</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g3">
+                <details open>
+                    <summary>
+                        <h2>Opgave G3 - Forståelseopgave</h2>
+                    </summary>
+                    <p>Lav et program så der er tre bolde som bevæger sig forskelligt afhængig af hvor langt til hhv.
+                        højre og venstre man har sin muse cursor. En blå bold skal have en fast y koordinat men følge
+                        muse cursoren i x koordinaten. En grøn bold skal have en fast y koordinat man x koordinaten skal
+                        kun være det halve af musens x koordinat. Den røde bold skal bevæge sig op og ned når man
+                        bevæger muse curoren til højre og venstre.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/Z27mhTg_n"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/Z27mhTg_n</a></p>
+                    <img src="images/basicExercises/basicExercises-g3.png" alt="Screenshot 2023-08-20 at 06.11.59.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Z27mhTg_n"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/Z27mhTg_n</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g4">
+                <details open>
+                    <summary>
+                        <h2>Opgave G4 - “if” og “else” 1</h2>
+                    </summary>
+                    <p>Lav et program hvor canvas er delt i to lige store dele. Når muse cursoren er over den venstre
+                        halvdel, så skal den venstre halvdel farves sort og når muse cursoren er over den højre halvdel,
+                        så skal den højre halvdel være sort (som vist nedenfor)</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/YhWEoypjP"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/YhWEoypjP</a></p>
+                    <img src="images/basicExercises/basicExercises-g4.png" alt="Screenshot 2023-08-20 at 06.12.44.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg efter <strong>if-else</strong> i reference</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Når musen er i højre side, så tegn en sort kasse til højre, og når musen er i venstre side,
+                            så tegn en sort kasse til venstre.</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/YhWEoypjP"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/YhWEoypjP</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g5">
+                <details open>
+                    <summary>
+                        <h2>Opgave G5 - “if” og “else” 2</h2>
+                    </summary>
+                    <p>Løs samme opgave som Opgave G4 men hvor canvas er delt i tre lige store dele.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4vyCamh3i"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4vyCamh3i</a></p>
+                    <img src="images/basicExercises/basicExercises-g5.png" alt="Screenshot 2023-08-20 at 06.13.34.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Man kan skrive:</p>
+                        <pre><code>if (mouseX < 100) {
+…
+
+} else if (mouseX < 200) {
+…
+
+}
+else {
+…
+
+}</code></pre>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4vyCamh3i"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4vyCamh3i</a></p>
+                </details>
+            </section>
+            <section id="g6">
+                <details open>
+                    <summary>
+                        <h2>Opgave G6 - “&&” (og) operatoren</h2>
+                    </summary>
+                    <p>Tegn et canvas som vist her. Hvis muse cursoren er over firkanten i midten, så skal den farves
+                        hvid.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/EBgr-HhtzW"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/EBgr-HhtzW</a></p>
+                    <img src="images/basicExercises/basicExercises-g6.png" alt="Screenshot 2023-08-20 at 06.14.25.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Hvis flere betingelser skal være opfyldt i en if statement kan man skrive:</p>
+                        <pre><code>if ((mouseX > 100) && (mouseY > 100)){</code></pre>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/EBgr-HhtzW"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/EBgr-HhtzW</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g7">
+                <details open>
+                    <summary>
+                        <h2>Opgave G7 - mouseIsPressed</h2>
+                    </summary>
+                    <p>Tegn et canvas som vist her. Hvis muse cursoren er over firkanten i midten og man samtidig holder
+                        muse knappen nede, så skal firkanten farves hvid</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/Sb_M_w-Fq"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/Sb_M_w-Fq</a></p>
+                    <img src="images/basicExercises/basicExercises-g7.png" alt="Screenshot 2023-08-20 at 06.15.16.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på mouseIsPressed</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Sb_M_w-Fq"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/Sb_M_w-Fq</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g8">
+                <details open>
+                    <summary>
+                        <h2>Opgave G8 - keyIsDown (piletasterne)</h2>
+                    </summary>
+                    <p>Tegn et canvas som vist her. Hvis man holder venstre pilen på tastaturet nede, så skal firkanten
+                        bevæge sig til venstre (Husk at man skal klikke på canvas med musen før det bliver aktivt)</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/tB3LbyDVt"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/tB3LbyDVt</a></p>
+                    <img src="images/basicExercises/basicExercises-g8.png" alt="Screenshot 2023-05-06 at 05.43.27.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på keyIsDown</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Lav en variabel ved navn x som holder styr på x-koordinaten. Dette gøres ved på aller første
+                            linie at skrive “let x = 25”</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/tB3LbyDVt"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/tB3LbyDVt</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g9">
+                <details open>
+                    <summary>
+                        <h2>Opgave G9 - keyIsDown (bogstaver)</h2>
+                    </summary>
+                    <p>Tegn et canvas som vist her. Hvis man holder ‘s’ nede, så skal firkanten blive større og hvis man
+                        holder ‘m’ nede, så skal den blive mindre (Husk at man skal klikke på canvas med musen før det
+                        bliver aktivt)</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/D1CYgx4Z8"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/D1CYgx4Z8</a></p>
+                    <img src="images/basicExercises/basicExercises-g9.png" alt="Screenshot 2023-05-06 at 05.43.59.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på keyIsDown</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p><a href="https://www.toptal.com/developers/keycode"
+                                target="_blank">https://www.toptal.com/developers/keycode</a></p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Lave en variabel s som holder styr på størrelsen</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/D1CYgx4Z8"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/D1CYgx4Z8</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g10">
+                <details open>
+                    <summary>
+                        <h2>Opgave G10 - mousePressed</h2>
+                    </summary>
+                    <p>Tegn et canvas med sort baggrund. Hver gang man klikker med musen skal baggrunden blive lidt mere
+                        grå/hvid. Den skal ikke blive hurtig hvid bare fordi man holder muse knappen nede (Husk at man
+                        skal klikke på canvas med musen før det bliver aktivt).</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/o0ZSTNvl3"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/o0ZSTNvl3</a></p>
+                    <img src="images/basicExercises/basicExercises-g10.png" alt="Screenshot 2023-05-06 at 05.44.20.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på mousePressed</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/o0ZSTNvl3"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/o0ZSTNvl3</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g11">
+                <details open>
+                    <summary>
+                        <h2>Opgave G11 - Forståelse af koordinat systemet</h2>
+                    </summary>
+                    <p>Tegn en trekant der fylder en fjerdedel af canvasa</p>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/-KfaVIM-E"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/-KfaVIM-E</a></p>
+                    <p>Note: Husk at tegne koordinatsystemet op først.</p>
+                </details>
+            </section>
+            <section id="g12">
+                <details open>
+                    <summary>
+                        <h2>Opgave G12 - Søgning i reference</h2>
+                    </summary>
+                    <p>Tegn tre cirkler ved siden af hinanden som bliver mere og mere gennemsigtige</p>
+                    <img src="images/basicExercises/basicExercises-g12.png" alt="Screenshot 2023-08-20 at 06.16.13.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>I reference står følgende syntaks for fill: fill(v1, v2, v3, [alpha]) hvilket betyder at den
+                            fjerde parameter (alpha) er valgfri. Den skal i spil her.</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/EfwBXMShM"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/EfwBXMShM</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g13">
+                <details open>
+                    <summary>
+                        <h2>Opgave G13 - for loop</h2>
+                    </summary>
+                    <p>Byg videre på opgave G12. Tegn 5 cirker ved siden af hinanden som bliver mere og mere
+                        gennemsigtige ved brug af et for loop. Se <a href="https://p5js.org/reference/#/p5/for"
+                            target="_blank">https://p5js.org/reference/#/p5/for</a> i reference for syntaksen.</p>
+                    <img src="images/basicExercises/basicExercises-g13.png" alt="Screenshot 2023-08-20 at 06.17.16.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/f4bPmZLeu"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/f4bPmZLeu</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g14">
+                <details open>
+                    <summary>
+                        <h2>Opgave G14 - Kode rækkefølgens betydning</h2>
+                    </summary>
+                    <p>Tegn en rød bold med kraftig grå ramme, to grønne bolde uden ramme og en stor tekst uden ramme
+                        hvor der står “Hello” med hvid skrift.</p>
+                    <img src="images/basicExercises/basicExercises-g14.png" alt="Screenshot 2023-08-20 at 06.17.56.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på strokeWeight, textSize og text</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/YP9C6LjGp"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/YP9C6LjGp</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g15">
+                <details open>
+                    <summary>
+                        <h2>Opgave G15 - Hvordan får man en bold til selv at bevæge sig</h2>
+                    </summary>
+                    <p>Tegn en blå bold der langsomt men sikkert af sig selv bevæger sig mod højre</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/xyr39IqsA"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/xyr39IqsA</a></p>
+                    <img src="images/basicExercises/basicExercises-g15.png" alt="Screenshot 2023-05-06 at 05.44.47.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg efter width</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Lav en variabel x og udfør “x = x + 1” i draw funktionen</p>
+                    </details>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>x += 1” er det samme som “x = x + 1” </p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/xyr39IqsA"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/xyr39IqsA</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g16">
+                <details open>
+                    <summary>
+                        <h2>Opgave G16 - Hvordan får man en bold til at vende rundt</h2>
+                    </summary>
+                    <p>Tilret løsningen fra Opgave G15, så bolden vender rundt og bevæger sig den anden vej når den når
+                        til højre side af canvas</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/Wx6ZGCq0I"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/Wx6ZGCq0I</a></p>
+                    <img src="images/basicExercises/basicExercises-g16.png" alt="Screenshot 2023-05-06 at 05.45.10.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>lav en variabel ved navn retning som starter med at være 1. Hvis bolden når ud over højre
+                            side, så skal retning ganges med minus en. Når vi lægger 1 (eller f.eks. 5) til x så ganger
+                            vi bare med retning således at fortegnet på det vi lægger til x skifter, dvs. at vi lægger
+                            et negativt tal til x når bolden bevæger sig med venstre</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Wx6ZGCq0I"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/Wx6ZGCq0I</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g17">
+                <details open>
+                    <summary>
+                        <h2>Opgave G17 - Hvordan får man en bold til at vende rundt 2</h2>
+                    </summary>
+                    <p>Tilret løsningen fra Opgave G16, så bolden også vender rundt og bevæger sig den anden vej når den
+                        når til venstre side af canvas</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/GSJEvLL87"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/GSJEvLL87</a></p>
+                    <img src="images/basicExercises/basicExercises-g17.png" alt="Screenshot 2023-08-20 at 06.19.53.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Opperatoren "||" betyder eller</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/GSJEvLL87"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/GSJEvLL87</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g18">
+                <details open>
+                    <summary>
+                        <h2>Opgave G18 - Hvordan får man en bold til at vende rundt 3</h2>
+                    </summary>
+                    <p>Tilret løsningen fra Opgave G17, så bolden også vender rundt og bevæger sig den anden vej når den
+                        når til toppen og bunden af canvas</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g18.png" alt="Screenshot 2023-08-20 at 06.20.32.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g19">
+                <details open>
+                    <summary>
+                        <h2>Opgave G19 - Brug af random (tilfældighedsgenerator)</h2>
+                    </summary>
+                    <p>Tegn en masse cirkler med tilfældig farve, størrelse og placering</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g19.png" alt="Screenshot 2023-08-20 at 06.21.10.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Søg på random</p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g20">
+                <details open>
+                    <summary>
+                        <h2>Opgave G20 - Hvordan laver man et objekt 1</h2>
+                    </summary>
+                    <p>Tegn en rød bold med en sort ramme. Bolden skal tegnes som et objekt.</p>
+                    <img src="images/basicExercises/basicExercises-g20.png" alt="Screenshot 2023-08-20 at 06.21.48.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Se <a href="https://p5js.org/examples/objects-objects.html"
+                                target="_blank">https://p5js.org/examples/objects-objects.html</a></p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g21">
+                <details open>
+                    <summary>
+                        <h2>Opgave G21 - Hvordan får man et objekt til at flytte sig 1</h2>
+                    </summary>
+                    <p>Tilret løsningen fra Opgave G20 så bolden bevæger sig mod højre</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g21.png" alt="Screenshot 2023-08-20 at 06.22.24.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g22">
+                <details open>
+                    <summary>
+                        <h2>Opgave G22 - Hvordan får man et objekt til at flytte sig 2</h2>
+                    </summary>
+                    <p>Tilret løsningen fra Opgave G21 så bolden bevæger sig frem og tilbage</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g22.png" alt="Screenshot 2023-08-20 at 06.23.00.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g23">
+                <details open>
+                    <summary>
+                        <h2>Opgave G23 - Hvordan virker det når en funktion modtager en reference til et
+                            objekt og manipulerer det.</h2>
+                    </summary>
+                    <p>Tegn en rød bold med en sort ramme. Bolden skal tegnes som et objekt. Lav en funktion der hedder
+                        moveBall som tager et bold objekt som parameter og flytter det.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g23.png" alt="Screenshot 2023-08-20 at 06.23.34.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g24">
+                <details open>
+                    <summary>
+                        <h2>Opgave G24 - Hvordan virker et Array (tabel)</h2>
+                    </summary>
+                    <p>Tegn 5 cirkler ved siden af hinanden som bliver mere og mere gennemsigtige ved brug af et for loop
+                        og et array. Se <a href="https://p5js.org/reference/#/p5/Array"
+                            target="_blank">https://p5js.org/reference/#/p5/Array</a> i reference for syntaksen.</p>
+                    <img src="images/basicExercises/basicExercises-g24.png" alt="Screenshot 2023-08-20 at 06.24.11.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g25">
+                <details open>
+                    <summary>
+                        <h2>Opgave G25 - Hvordan putter man objekter i et Array</h2>
+                    </summary>
+                    <p>Tegn 5 bolde ved siden af hinanden. Boldene skal tegnes som objekter og puttes i et array.</p>
+                    <img src="images/basicExercises/basicExercises-g25.png" alt="Screenshot 2023-08-20 at 06.24.45.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g26">
+                <details open>
+                    <summary>
+                        <h2>Opgave G26 - Hvordan giver man start værdier når et objekt oprettes 1</h2>
+                    </summary>
+                    <p>Tegn 5 bolde ved siden af hinanden. Boldene skal tegnes som objekter og puttes i et array. Boldene
+                        skal have forskellig farve.</p>
+                    <img src="images/basicExercises/basicExercises-g26.png" alt="Screenshot 2023-08-20 at 06.25.20.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Se <a href="https://p5js.org/examples/objects-constructor.html"
+                                target="_blank">https://p5js.org/examples/objects-constructor.html</a></p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g27">
+                <details open>
+                    <summary>
+                        <h2>Opgave G27 - Hvordan giver man start værdier når et objekt oprettes 2</h2>
+                    </summary>
+                    <p>Tegn 5 bolde ved siden af hinanden. Boldene skal tegnes som objekter og puttes i et array. Boldene
+                        skal have forskellig farve og størrelse.</p>
+                    <img src="images/basicExercises/basicExercises-g27.png" alt="Screenshot 2023-08-20 at 06.25.54.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g28">
+                <details open>
+                    <summary>
+                        <h2>Opgave G28 - Hvordan laver man et objekt 2</h2>
+                    </summary>
+                    <p>Tegn en rød bold med en sort ramme. Bolden skal tegnes som et objekt. Bolden skal have en metode
+                        der hedder move som flytter bolden.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g28.png" alt="Screenshot 2023-08-20 at 06.26.28.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g29">
+                <details open>
+                    <summary>
+                        <h2>Opgave G29 - Hvordan laver man en on/off knap</h2>
+                    </summary>
+                    <p>Tegn en rød bold med en sort ramme. Bolden skal tegnes som et objekt. Bolden skal have en metode
+                        der hedder move som flytter bolden. Lav en knap der kan starte og stoppe bolden.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g29.png" alt="Screenshot 2023-08-20 at 06.27.02.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g30">
+                <details open>
+                    <summary>
+                        <h2>Opgave G30 - Hvordan fjerner man et objekt fra skærmen</h2>
+                    </summary>
+                    <p>Tegn en rød bold med en sort ramme. Bolden skal tegnes som et objekt. Bolden skal have en metode
+                        der hedder move som flytter bolden. Lav en knap der kan fjerne bolden fra skærmen.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g30.png" alt="Screenshot 2023-08-20 at 06.27.36.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g31">
+                <details open>
+                    <summary>
+                        <h2>Opgave G31 - Hvordan fjerner man et objekt fra et Array</h2>
+                    </summary>
+                    <p>Tegn 5 bolde ved siden af hinanden. Boldene skal tegnes som objekter og puttes i et array. Boldene
+                        skal have forskellig farve og størrelse. Lav en knap der kan fjerne den midterste bold fra
+                        arrayet.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g32.png" alt="Screenshot 2023-08-20 at 06.28.10.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Se <a href="https://p5js.org/reference/#/p5.Array/splice"
+                                target="_blank">https://p5js.org/reference/#/p5.Array/splice</a></p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g32">
+                <details open>
+                    <summary>
+                        <h2>Opgave G32 - Hvordan kommunikerer to objekter med hinanden</h2>
+                    </summary>
+                    <p>Tegn to bolde. Den ene bold skal følge efter den anden bold.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g33.png" alt="Screenshot 2023-08-20 at 06.28.44.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g33">
+                <details open>
+                    <summary>
+                        <h2>Opgave G33 - Lav et objekt der langsomt følger efter muse cursoren</h2>
+                    </summary>
+                    <p>Tegn en bold der langsomt følger efter muse cursoren.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g34.png" alt="Screenshot 2023-08-20 at 06.29.18.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g34">
+                <details open>
+                    <summary>
+                        <h2>Opgave G34 - Hvordan kommunikerer mange objekter med hinanden</h2>
+                    </summary>
+                    <p>Tegn 5 bolde. Den første bold skal følge efter muse cursoren. Den anden bold skal følge efter den
+                        første bold. Den tredje bold skal følge efter den anden bold osv.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g35.png" alt="Screenshot 2023-08-20 at 06.29.52.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g35">
+                <details open>
+                    <summary>
+                        <h2>Opgave G35 - map funktionen</h2>
+                    </summary>
+                    <p>Tegn en bold der bevæger sig fra venstre mod højre. Bolden skal starte med at være lille og rød og
+                        ende med at være stor og blå.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g36.png" alt="Screenshot 2023-08-20 at 06.30.26.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Se <a href="https://p5js.org/reference/#/p5/map"
+                                target="_blank">https://p5js.org/reference/#/p5/map</a></p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g36">
+                <details open>
+                    <summary>
+                        <h2>Opgave G36 - Pej et objekt mod et punkt</h2>
+                    </summary>
+                    <p>Tegn en pil der peger mod muse cursoren.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g37.png" alt="Screenshot 2023-08-20 at 06.31.00.png"
+                        class="content-img">
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Se <a href="https://p5js.org/reference/#/p5/atan2"
+                                target="_blank">https://p5js.org/reference/#/p5/atan2</a></p>
+                    </details>
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g37">
+                <details open>
+                    <summary>
+                        <h2>Opgave G37 - Hvordan får man et objekt til at skyde en lille bold afsted</h2>
+                    </summary>
+                    <p>Tegn en pil der peger mod muse cursoren. Når man klikker med musen skal der blive skudt en lille
+                        bold afsted i den retning pilen peger.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g38.png" alt="Screenshot 2023-08-20 at 06.31.34.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+            <section id="g38">
+                <details open>
+                    <summary>
+                        <h2>Opgave G38 - Lav en stjernehimmel</h2>
+                    </summary>
+                    <p>Tegn en stjernehimmel med 100 stjerner. Stjernerne skal have tilfældig størrelse og placering.
+                        Stjernerne skal blinke.</p>
+                    <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/full/4m_f_Yg41</a></p>
+                    <img src="images/basicExercises/basicExercises-g38.png" alt="Screenshot 2023-08-20 at 06.32.08.png"
+                        class="content-img">
+                    <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41"
+                            target="_blank">https://editor.p5js.org/JensValdez/sketches/4m_f_Yg41</a></p>
+                    <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i
+                        bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst til
+                        indtil i starter på næste opgave.</p>
+                </details>
+            </section>
+        </main>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script src="modal.js"></script>
+</body>
+
+</html>

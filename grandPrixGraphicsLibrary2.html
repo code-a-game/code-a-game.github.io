@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hvordan laver man grafik bibliotektet til Grand Prix spillet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body> 
+    <div class="container">
+        <header>
+            <h1>Hvordan laver man grafik bibliotektet til Grand Prix spillet (samt coolDownTimeren)</h1>
+        </header>
+        <main> 
+            <section>
+                <p>Spillet tager udgangspunkt i følgende bib-bib spil fra 1980'erne.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image1.png" alt="Bib-bib spil fra 1980'erne" class="content-img">
+                
+                <p>Grafikken er lavet ved at tage billeder af bib-bib spillet med en mobil telefon</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image2.png" alt="Billede taget med mobil telefon" class="content-img">
+                
+                <p>Man markerer den bil man gerne vil gemme.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image3.png" alt="Markering af bil" class="content-img">
+                
+                <p>Og vælger "New from Clipboard".</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image4.png" alt="New from Clipboard" class="content-img">
+                
+                <p>Man kan nu med den lille tryllestav vælge bilen</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image5.png" alt="Vælg bil med tryllestav" class="content-img">
+                
+                <p>når man trykker delete (backspace) så slettes baggrunden, så den bliver transparent.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image6.png" alt="Transparent baggrund" class="content-img">
+                
+                <p>Note: Man kan også slette baggrunden ved brug af Losso Selection.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image7.png" alt="Losso Selection" class="content-img">
+                
+                <p>Bilerne i spillet er pladseret i en tabel</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image8.png" alt="Biler i tabel" class="content-img">
+                
+                <p>Vi navngiver derfor bilen vi gemte carR2C2 (det står for Row 2, Column 2)</p>
+                
+                <p>Det er vigtigt at vi gemmer bilen i et nyt billede hvor siderne er lige lange. Dette gør at vi nemmere kan ændre størrelsen af billedet i spillet. Det er nemmest hvis man gør dette når man vælger bilen man gerne vil gemme. Man kan dog også gøre det bagefter ved at gøre følgende:</p>
+                
+                <p>Dette gøres ved at markere billedet og trykke Control-C (copy)</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image9.png" alt="Copy billede" class="content-img">
+                
+                <p>Vælge Tools og Adjust Size:</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image10.png" alt="Tools Adjust Size" class="content-img">
+                
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image11.png" alt="Adjust Size dialog" class="content-img">
+                
+                <p>Slå låsen fra og tilrette Width og Height til at være den største værdi af de to værdier</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image12.png" alt="Justér bredde og højde" class="content-img">
+                
+                <p>Herefter kan man markere indholdet</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image13.png" alt="Markér indhold" class="content-img">
+                
+                <p>Slette indholdet og paste bilen som vi kopierede ind.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image14.png" alt="Paste bil" class="content-img">
+                
+                <p>Vi skal også bruge et baggrundsbillede uden biler. Vi skal derfor fjerne bilerne fra baggrundsbilledet. Vælg først "Show Markup Toolbar"</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image15.png" alt="Show Markup Toolbar" class="content-img">
+                
+                <p>og herefter Lasso Selection</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image16.png" alt="Lasso Selection" class="content-img">
+                
+                <p>Vi markerer et område ved siden af bilen som vi gerne vil fjerne:</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image17.png" alt="Markér område" class="content-img">
+                
+                <p>Og trykker Control-C og Control-V. Herefter kan vi flytte området over den bil som vi vil fjerne</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image18.png" alt="Flyt område over bil" class="content-img">
+                
+                <p>Hvorefter bilen er forsvundet</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image19.png" alt="Bil forsvundet" class="content-img">
+                
+                <h2>Lydklip</h2>
+                <p>Vi skal også gemme små lydklip:</p>
+                <p>Lydene til spillet kan klippes fra følgende video: <a href="https://youtu.be/HNGhO1ZJgUE" target="_blank">https://youtu.be/HNGhO1ZJgUE</a></p>
+                
+                <p>Dette gøres ved at oprette en ny Movie i iMovie</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image20.png" alt="Ny Movie i iMovie" class="content-img">
+                
+                <p>og importere videoen</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image21.png" alt="Importer video" class="content-img">
+                
+                <p>Hvorefter man skal trække videoen ned</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image22.png" alt="Træk video ned" class="content-img">
+                
+                <p>Man kan zoome på den her slider vist øverst til højre på billedet nedenfor og finde det lydklip som man gerne vil lave til en mp3 fil med.</p>
+                <p>Man kan nu vælge Split Clip på begge sider af lydklippet</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image23.png" alt="Split Clip" class="content-img">
+                
+                <p>Og slette højre og venstre side, så der kun er det lille lydklip tilbage.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image24.png" alt="Slet sider" class="content-img">
+                
+                <p>Man kan nu vælge File → Share → File</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image25.png" alt="File Share File" class="content-img">
+                
+                <p>Og gemme det som Audio only + MP3 format</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image26.png" alt="Audio only MP3" class="content-img">
+                
+                <h2>Placering af billeder</h2>
+                <p>Vi skal også pladsere bilerne på baggrundsbilledet. Vi starter med at oprette en mappe ved navn images</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image27.png" alt="Opret images mappe" class="content-img">
+                
+                <p>Her vælger vi Upload file</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image28.png" alt="Upload file" class="content-img">
+                
+                <p>Og trækker alle billederne ind (man kan vælge alle billederne og trække dem alle ind samtidig)</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image29.png" alt="Træk billeder ind" class="content-img">
+                
+                <p>Vi starter med at lave en ny fil ved navn library.js</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image30.png" alt="Ny library.js fil" class="content-img">
+                
+                <p>Vi skal huske at referere til den i index.html filen (den skal stå før sketch.js)</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image31.png" alt="Reference i index.html" class="content-img">
+                
+                <p>I library.js skal vi importere alle grafik elementerne. Dette gøres i preload funktionen som bliver kørt inden setup funktionen (så billerne er loadet ind og klar til brug når programmet starter med at afvikle)</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image32.png" alt="Preload funktion" class="content-img">
+                
+                <p>I Grand Prix spillet er bilerne arrangeret i en tabel</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image33.png" alt="Biler i tabel arrangement" class="content-img">
+                
+                <p>For at overskue koordinaterne til bilerne samt deres størrelse bedst mulig kan man oprette hver bil som et imageObject og lægge dem ind i en tabel. Her betyder carPos[0][0] række 0 og kolonne 0. carPos[0][1] betyder række 0 og kolonne 1 osv. Og have en funktion til at vise hver bil i tabellen (displayCar).</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image34.png" alt="ImageObject og displayCar" class="content-img">
+                
+                <p>De objekter der ikke er i en tabel (f.eks. manden med flaget) kan vi bare vise uden først at putte dem ind i et image objekt.</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image35.png" alt="Objekter uden tabel" class="content-img">
+                
+                <p>I sketch.js skal vi bare vise alle objekterne</p>
+                <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image36.png" alt="Vis objekter i sketch.js" class="content-img">
+                
+                <p>Når vi har lavet setup'et i library.js og sketch.js, så er det bare et spørgsmål om tid og fokus for at få pladseret alle grafik elementerne korrekt.</p>
+                
+                <h2>CoolDown Timer</h2>
+                <p>Vi har også behov for at have en timer der tæller ned fra et antal millisekunder. Her kan man sætte et coolDownInterval f.eks. 1000 ms (dvs 1 sekund). Man kan starte, så this.cookDownTimer sættes til værdien af millis(). Når man kalder funktionen coolDownTimeLeft, så returneres coolDownInterval (f.eks. 1000) minus forskellen mellem den nye værdi af millis() og den værdi som millis() havde da vi startede timeren, dvs. at timeren tæller ned fra 1000 millisekunder.</p>
+            </section>
+        </main>
+    </div>
+    <script src="modal.js"></script>
+</body>
+</html>
+                <p>Forstå og afprøv herefter start kode skabelonen til spillet.</p>
+                <pre><code class="language-javascript">// GrandPrixInitialCode - Add so that hero can also move right
+let cars = [];
+
+let gameState;
+let gameAction;
+let gameStepTimer;
+let rowCounter;
+let heroLanePosition;
+
+function setup() {
+  createCanvas(600, 444);
+
+  initializeGameState();
+}
+
+function initializeGameState() {
+  setInitialValues();
+  setImageObjectPositions();
+  generateCarStream();
+
+  gameState = "GAME-IN-PROGRESS";
+}
+
+function draw() {
+  switch (gameState) {
+    case "GAME-IN-PROGRESS":
+      handeGameAction();
+      showGameState();
+      updateGameState();
+      break;
+  }
+}
+
+function keyPressed() {
+  if (gameState == "GAME-IN-PROGRESS") {
+    if (keyCode === LEFT_ARROW) {
+      gameAction = "MOVE-LEFT";
+    }
+  }
+}
+
+function handeGameAction() {
+  switch (gameAction) {
+    case "MOVE-LEFT":
+      moveLeft();
+      gameAction = "";
+      break;
+    default:
+      break;
+  }
+}
+
+function moveLeft() {
+  if (
+    heroLanePosition > 0
+  ) {
+    heroLanePosition--;
+  }
+}
+
+function setInitialValues() {
+  textSize(32);
+  fill(0);
+  gameAction = "";
+  rowCounter = 1;
+  heroLanePosition = 1;
+  gameStepTimer = new CoolDownTimer();
+  gameStepTimer.setCoolDownInterval(900);
+  gameStepTimer.startCoolDownTimer();
+}
+
+function generateCarStream() {
+  let numberOfCars;
+  for (let row = 1; row < 106; row++) {
+    cars[row] = [];
+    numberOfCars = 0;
+    for (let column = 0; column < 3; column++) {
+      if (
+        random(1) < 0.5 &&
+        numberOfCars < 2 &&
+        row > 5 
+      ) {
+        cars[row][column] = "CAR";
+        numberOfCars++;
+      } else {
+        cars[row][column] = "EMPTY";
+      }
+    }
+  }
+}
+
+function showGameState() {
+  displayBackground();
+
+  showCars();
+}
+
+function showCars() {
+  
+  for (let row = 1; row < 6; row++) {
+    for (let column = 0; column < 3; column++) {
+      if (cars[rowCounter + row][column] == "CAR") {
+        displayCar(row, column);
+      }
+    }
+  }
+  if (heroLanePosition >= 0 && heroLanePosition <= 2) {
+    displayCar(0, heroLanePosition);
+  }
+}
+
+function updateGameState() {
+  if (gameStepTimer.coolDownTimeLeft() > 0) {
+    return;
+  }
+
+  rowCounter++;
+  gameStepTimer.startCoolDownTimer();
+}
+</code></pre>
+                <p>Tag udgangspunkt i ovenstående kode ved at gå ind på koden (linket nedenfor) og vælge File → Duplicate</p>
+                <p><a href="https://editor.p5js.org/JensValdez/sketches/V0TYx9s7U" target="_blank">https://editor.p5js.org/JensValdez/sketches/V0TYx9s7U</a></p>
+                <p>Giv spillet et navn og husk at gemme løbende. Lad os kalde bilen man styre for “Hero”.</p>
+            </section>
+            <section>
+                <h2>Delopgave 1:</h2>
+                <p>Tilret så Hero også kan flytte sig til højre.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/TJLYcmq_b" target="_blank">https://editor.p5js.org/JensValdez/full/TJLYcmq_b</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-1-64fbec5fa6b24eb7a3d3fe633b940807?pvs=21" target="_blank">Løsningseksempel - Delopgave 1</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 2:</h2>
+                <p>Tilret så Hero’s position vises øverst til venstre.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/-5KREsGfN" target="_blank">https://editor.p5js.org/JensValdez/full/-5KREsGfN</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-2-0952d7a310954e87b5d6307d8b526752?pvs=21" target="_blank">Løsningseksempel - Delopgave 2</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 3:</h2>
+                <p>Tilret så man kan vinde løbet</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/d5Tl7twp9" target="_blank">https://editor.p5js.org/JensValdez/full/d5Tl7twp9</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-3-54790cb8fbbb49ed825e4c6b0582e8b4?pvs=21" target="_blank">Løsningseksempel - Delopgave 3</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 4:</h2>
+                <p>Tilret så man taber spillet hvis man støder ind i de andre biler (dvs. hvis man ikke når at overhale)</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/lHz7x1Fv_" target="_blank">https://editor.p5js.org/JensValdez/full/lHz7x1Fv_</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-4-ccdbeb2134c044c1a04e536938d041f2?pvs=21" target="_blank">Løsningseksempel - Delopgave 4</a></p>
+            </section> 
+            <section>
+                <h2>Delopgave 5:</h2>
+                <p>Tilret så man har tre liv.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/cRVp-RBhm" target="_blank">https://editor.p5js.org/JensValdez/full/cRVp-RBhm</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-5-3a4de11b6f3b4135a545adf552b1a431?pvs=21" target="_blank">Løsningseksempel - Delopgave 5</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 6:</h2>
+                <p>Sæt hegn op på begge sider af vejbanerne</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/6XbEWsO2F" target="_blank">https://editor.p5js.org/JensValdez/full/6XbEWsO2F</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-6-1397f98bf15f4a138f12279c970f127a?pvs=21" target="_blank">Løsningseksempel - Delopgave 6</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 7:</h2>
+                <p>Tilret så hegnet til venstre nogle gange mangler</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/gcu4bP543" target="_blank">https://editor.p5js.org/JensValdez/full/gcu4bP543</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-7-0c3bb8d420954040b0e5a968103e2ae0?pvs=21" target="_blank">Løsningseksempel - Delopgave 7</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 8:</h2>
+                <p>Tilret så Pit stop vises hvis der ikke er et hegn i venstre side af vejbanerne.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/jCpschEd3" target="_blank">https://editor.p5js.org/JensValdez/full/jCpschEd3</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-8-78636dbe36434f6f987b91a37348ede2?pvs=21" target="_blank">Løsningseksempel - Delopgave 8</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 9:</h2>
+                <p>Tilret så man kan flytte Hero i Pit</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/AtykqcbJG" target="_blank">https://editor.p5js.org/JensValdez/full/AtykqcbJG</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-9-da2bf8e1914847a08bd33cd2343817ad?pvs=21" target="_blank">Løsningseksempel - Delopgave 9</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 10:</h2>
+                <p>Tilret så man mister et liv hvis man ikke kører i Pit</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/gehmhGxNR" target="_blank">https://editor.p5js.org/JensValdez/full/gehmhGxNR</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-10-23f703d7268a4eb5a04bffa740dc536d?pvs=21" target="_blank">Løsningseksempel - Delopgave 10</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 11:</h2>
+                <p>Tilret så hegnet til højre nogle gange mangler</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/uY9JVSx1s" target="_blank">https://editor.p5js.org/JensValdez/full/uY9JVSx1s</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-11-e608d37afe374d698d23ad890a92cbeb?pvs=21" target="_blank">Løsningseksempel - Delopgave 11</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 12:</h2>
+                <p>Tilret så der vises en mand med et flag i stedet for det næst nederste højre hegn (hvis det mangler)</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/r4R1EEw0Q" target="_blank">https://editor.p5js.org/JensValdez/full/r4R1EEw0Q</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-12-15025c2c9d3048a0bb1b6d06174308cb?pvs=21" target="_blank">Løsningseksempel - Delopgave 12</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 13:</h2>
+                <p>Tilret så man kan flytte Hero ud til højre for at få brændstof (hvis der står en mand med et flag)</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/zivAgdun8" target="_blank">https://editor.p5js.org/JensValdez/full/zivAgdun8</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-13-499ad2c48bde4f0da1ccf20eda73523c?pvs=21" target="_blank">Løsningseksempel - Delopgave 13</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 14:</h2>
+                <p>Tilret så man mister et liv hvis man ikke får brændstof</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/Aq5UrpSrc" target="_blank">https://editor.p5js.org/JensValdez/full/Aq5UrpSrc</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-14-4ea9a732019b405da4e63012f1a19db8?pvs=21" target="_blank">Løsningseksempel - Delopgave 14</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 15:</h2>
+                <p>Tilret så spillet løbende (i intervaller) bliver hurtigere og hurtigere.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/_rMV0-3ww" target="_blank">https://editor.p5js.org/JensValdez/full/_rMV0-3ww</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-15-569f40c2b38648d28e15a579c287ac2e?pvs=21" target="_blank">Løsningseksempel - Delopgave 15</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 16:</h2>
+                <p>Tilret så man kan genstarte spillet ved at klikke med musen</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/kukWymbCB" target="_blank">https://editor.p5js.org/JensValdez/full/kukWymbCB</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-16-ba27b0c439244d739db44a2f3ce6a4a6?pvs=21" target="_blank">Løsningseksempel - Delopgave 16</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 17:</h2>
+                <p>Tilret så der kommer en start besked.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/_ogK8TGct" target="_blank">https://editor.p5js.org/JensValdez/full/_ogK8TGct</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-17-c74bedd55c2a4572aff433e8a2a450d6?pvs=21" target="_blank">Løsningseksempel - Delopgave 17</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 18:</h2>
+                <p>Tilret så der kommer en lille billede sekvens når man klikker med musen efter man har fået vist start beskeden.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/hmUaUU2-o" target="_blank">https://editor.p5js.org/JensValdez/full/hmUaUU2-o</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-18-c9ac3eef32684fe69332c66ea313548c?pvs=21" target="_blank">Løsningseksempel - Delopgave 18</a></p>
+            </section>
+            <section>
+                <h2>Delopgave 19:</h2>
+                <p>Tilret så der kommer lyd når man laver de forskellige actions.</p>
+                <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/wzU6IbK3X" target="_blank">https://editor.p5js.org/JensValdez/full/wzU6IbK3X</a></p>
+                <p><a href="https://www.notion.so/L-sningseksempel-Delopgave-19-bbc0c96d567346d99069d14ef2b7abee?pvs=21" target="_blank">Løsningseksempel - Delopgave 19</a></p>
+            </section>
+            <section>
+                <h2>Færdig løsning:</h2>
+                <p><a href="https://editor.p5js.org/JensValdez/sketches/wzU6IbK3X" target="_blank">https://editor.p5js.org/JensValdez/sketches/wzU6IbK3X</a></p>
+            </section>
+        </main>
+    </div>
+    <script src="modal.js"></script>
+</body>
+</html>

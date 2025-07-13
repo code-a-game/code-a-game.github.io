@@ -1,0 +1,26 @@
+Type of game and the technology to be used
+Please make up the rules for a space Stratego game (like the board game) and then implement it in p5js. It must be a multiplayer game where two teams are playing against each other and it must use the p5party library for handing multiplayer functionality. Please make the code object oriented. Each Stratego character must e.g. be implemented as a class called Spacecraft. 
+
+The code for connecting must be:
+  partyConnect("wss://p5js-spaceman-server-29f6636dfb6c.herokuapp.com", "jkv-characterSelectionPocV1);
+
+  shared = partyLoadShared("shared", {
+  gameState: “GAME-SETUP”,
+  });
+  me = partyLoadMyShared({
+    playerName: "observer",
+  });
+  guests = partyLoadGuestShareds();
+
+Important: Only the client that is assigned to be the HOST must update the shared variable and the only shared variable must be the gameState. All other data must be include in the me variable or in local variables.
+
+The game area
+The screen width must be 2000 and the screen height 1200. The game area where the players can move around must have the upper left coordinate at 600x50 and it must have the size 1200x700. 
+
+The character list
+Outside the game area on the left hand side of the screen the Stratego characters for the team are displayed. The players on the blue team can see the characters for the blue team and the players for the green team can see the players for the green team. A character is represented by a circle with the name of the rank inside. There will therefore be 40 characters listed.  
+
+Game states
+GAME-SETUP: The player must enter a name. To start with no buttons will show. When the name has been entered, then a light blue and light green button will show. When the player has chosen a team by pushing the button, then the leading text for the text field, the text field and the buttons must be removed and the character list for the team will be displayed. The player must now choose a character. To start with only the flag can be chosen and the other characters are disabled. When the flag has been chosen, then the other characters are enabled. The list of characters on the left will therefore be populated with names of players on that team. When a character has been chosen by a player, then it is disabled for all the players. When a player on each team has chosen the Flag as a character, the client acting as a HOST will have a button with the text “Start game”. When clicking this the game state must change to IN-GAME state for all players. Players that have chosen a character in the GAME-SETUP state will have the character to move around in the game area. Players that have not chosen a character can choose one after the game has started.
+IN-GAME: A Stratego character is represented by a circle to move around in the game area. The circle will not show the ranking before the first battle. The players on the blue team have blue circles and the players on the red team have red circles. The players can move freely aground on the game area including the flag. They cannot occupy the same space not even players on the same team. If two players on different teams touch each other, then there is a battle. The players that are in battle cannot move and their Stratego rank is revealed. After three second, the looser of the battle is removed from the game area and from the character list. If they have the same rank, then they are both removed and if the two flags battle, then the game has finished with a draw. The winner will continue but now with a revealed rank. When loosing a battle it is possible to choose a new character from the character list. If a player that is not the flag touches the flag from the other team, then the first team has won the game and the game state changes to GAME-FINISHED.
+GAME-FINISHED: When a game has finished, then it is displayed to all players which team has won the game and it is possible for the HOST to start a new game.

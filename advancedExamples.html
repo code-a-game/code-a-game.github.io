@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus opgaver til at teste forståelse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="modal.css">
+    <style>
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #0275d8;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Avancerede eksempler</h1>
+        </header>
+        <main>
+            <div class="toc">
+                <h2>Indholdsfortegnelse</h2>
+                <ul>
+                    <li><a href="#star-system">Stjernesystem</a></li>
+                    <li><a href="#multiplayer-game">Multiplayer spil</a></li>
+                    <li><a href="#multiplayer-canon-towers">Multiplayer med kanontårne</a>
+                    </li>
+                    <li><a href="#images-effects">Billeder og effekter</a></li>
+                    <li><a href="#playable-multiplayer-game">Spilbart multiplayer spil</a></li>
+                </ul>
+            </div>
+            <p>Her kan du se eksempler på nogle mere avancerede programmer man kan lave. To af eksemplerne er lavet både med
+            brug af objekt orienteret programmering og uden brug af objekt orienteret programmering. Det er for at vise
+            hvordan man kan strukturere sin kode på forskellige måder. Hvis man laver kompleks kode kan det være en
+            fordel at bruge objekt orienteret programmering. Prøv at se om du kan forstå begge varianter af koden.</p>
+
+            <section id="star-system">
+                <details open>
+                    <summary>
+                        <h2>Star system:</h2>
+                    </summary>
+                    <br>
+                    <a href="https://code-a-game.github.io/StarSystemPocOOP/">- With use of object oriented programming
+                    </a>
+                    (<a href="https://github.com/code-a-game/StarSystemPocOOP/blob/main/main1.js">code</a>)
+                    <br>
+                    <a href="https://code-a-game.github.io/StarSystemPoc/">- Without use of object oriented programming
+                    </a>
+                    (<a href="https://github.com/code-a-game/StarSystemPoc/blob/main/main1.js">code</a>)
+                    <br><br>
+                </details>
+            </section>
+            <section id="multiplayer-game">
+                <details open>
+                    <summary>
+                        <h2>Multiplayer game:</h2>
+                    </summary>
+                    <br>
+                    <a href="https://code-a-game.github.io/MultiPlayerPocOOP/">- With use of object oriented programming
+                    </a>
+                    (<a href="https://github.com/code-a-game/MultiPlayerPocOOP">code</a>)
+                    <br>
+                    <a href="https://code-a-game.github.io/MultiPlayerPoc/">- Without use of object oriented programming
+                    </a>
+                    (<a href="https://github.com/code-a-game/MultiPlayerPoc">code</a>)
+                    <br><br>
+                    Note: Move using the keys TFGH and shoot by clicking the mouse. The different browser tabs must not be
+                    attached to the same browser window
+                </details>
+            </section>
+            <section id="multiplayer-canon-towers">
+                <details open>
+                    <summary>
+                        <h2>Multiplayer game with canon towers using shared data:</h2>
+                    </summary>
+                    <br>
+                    <a href="https://code-a-game.github.io/MultiPlayerWithCanonTowersPoc/">Multiplayer game with
+                    shooting
+                    canon towers - POC</a>
+                    (<a href="https://github.com/code-a-game/MultiPlayerWithCanonTowersPoc">code</a>)
+                    <br><br>
+                    Note: Move using the keys TFGH and shoot by clicking the mouse. The different browser tabs must not be
+                    attached to the same browser window
+                </details>
+            </section>
+            <section id="images-effects">
+                <details open>
+                    <summary>
+                        <h2>Brug af billeder og effekter</h2>
+                    </summary>
+                    <br>
+                    <a href="https://friday-fun.github.io/">Start side til et spil</a>
+                    (<a href="https://github.com/friday-fun/friday-fun.github.io">code</a>)
+                    <br><br>
+                    Note: Prøv at hover billederne og se om de er interaktive. Prøv at klikke på billederne og se hvad
+                    der sker.
+                </details>
+            </section>
+            <section id="playable-multiplayer-game">
+                <details open>
+                    <summary>
+                        <h2>Spilbart multiplayer spil med grafik</h2>
+                    </summary>
+                    <br>
+                    <a href="https://friday-fun.github.io/SpaceStrategoV10/">Start side til et spil</a>
+                    (<a href="https://github.com/friday-fun/SpaceStrategoV10">code</a>)
+                    <br><br>
+                    Note: Skriv dit navn, vælg et hold og læse reglerne. Man kan godt prøve spillet af ved at åbne det
+                    i flere browser vinduer. Disse browser vinduer må ikke være tabs i det samme browser vindue.
+                </details>
+            </section>
+        </main>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script src="modal.js"></script>
+</body>
+
+</html>
