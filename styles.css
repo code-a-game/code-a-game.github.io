@@ -77,3 +77,130 @@ header h1 {
         font-size: 1rem;
     }
 }
+
+
+
+
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #0275d8;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .header-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .language-switch {
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            border-radius: 3px;
+            transition: transform 0.2s ease;
+        }
+ 
+        .language-switch:hover {
+            transform: scale(1.1);
+        }
+
+        .main-content {
+            margin-top: 80px;
+            /* Provides space for the fixed header */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+
+
+
+        main section {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2b6cb0;
+}
+
+main ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+main li {
+    margin-bottom: 0.5rem;
+}
+
+main a {
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}

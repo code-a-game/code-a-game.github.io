@@ -1,25 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fokus punkter</title>
+    <title>Betingelser for brug</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="modal.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Betingelser for brug af denne side og de tilhørende ressourcer</h1>
-        </header>
-        <main>
-            <p>© 2025 Jens Valdez. Nogle rettigheder forbeholdes.</p>
-            <p>Du må frit bruge, dele og ændre opgaverne og ressourcerne til personlig brug, undervisning og ikke-kommercielle projekter.</p>
-            <p>Det er dog ikke tilladt at bruge indholdet på siden og de tilhørende ressourcer - helt eller delvist - i udviklingen af konkurrerende læringsmaterialer såsom onlinekurser, kommercielle hjemmesider eller platforme, der tilbyder lignende undervisning.</p>
-        </main>
+    <nav class="header-nav">
+        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='index.html'">
+        <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch"
+            onclick="switchLanguage()">
+    </nav>
+    <div class="main-content">
+        <div id="danish-content">
+            <div class="container">
+                <header>
+                    <h1>Betingelser for brug af denne side og de tilhørende ressourcer</h1>
+                </header>
+                <main>
+                    <p>© 2025 Jens Valdez. Nogle rettigheder forbeholdes.</p>
+                    <p>Du må frit bruge, dele og ændre opgaverne og ressourcerne til personlig brug, undervisning og ikke-kommercielle projekter.</p>
+                    <p>Det er dog ikke tilladt at bruge indholdet på siden og de tilhørende ressourcer - helt eller delvist - i udviklingen af konkurrerende læringsmaterialer såsom onlinekurser, kommercielle hjemmesider eller platforme, der tilbyder lignende undervisning.</p>
+                </main>
+            </div>
+        </div>
+        <div id="english-content" class="hidden">
+            <div class="container">
+                <header>
+                    <h1>Terms of use for this site and its associated resources</h1>
+                </header>
+                <main>
+                    <p>© 2025 Jens Valdez. Some rights reserved.</p>
+                    <p>You are free to use, share, and modify the tasks and resources for personal use, teaching, and non-commercial projects.</p>
+                    <p>However, it is not permitted to use the content of the site and the associated resources - in whole or in part - in the development of competing learning materials such as online courses, commercial websites, or platforms that offer similar instruction.</p>
+                </main>
+            </div>
+        </div>
     </div>
+    <script src="modal.js"></script>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
 
 
