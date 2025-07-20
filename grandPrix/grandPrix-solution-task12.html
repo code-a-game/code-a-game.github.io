@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Struktur</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../intro.css">
+    <link rel="stylesheet" href="../modal.css">
+    <style>
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #0275d8;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="header-nav">
+        <img src="../images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
+            onclick="window.location.href='../index.html'">
+        <img id="languageFlag" src="../images/languageIconUK.png" alt="Switch to English" class="language-switch"
+            onclick="switchLanguage()">
+    </nav>
+    <div class="container">
+        <div id="danish-content">
+            <div class="container">
+                <main>
+                    <section id="del1">
+                        <summary>
+                            <h2>GrandPrix - Løsningseksempel - Delopgave 12</h2>
+                        </summary>
+                        <p>Tilret så man ikke kan få mere end tre liv.</p>
+                        <p><a href="https://editor.p5js.org/JensValdez/sketches/O13B3i5ML"
+                                target="_blank">https://editor.p5js.org/JensValdez/sketches/O13B3i5ML</a></p>
+                        <p>Klik på billedet for at gøre det større.</p>
+                        <img src="../images/grandPrixRace/grandPrixRace-task12-image1.png"
+                            alt="GrandPrix - Løsningseksempel - Delopgave 12 - Image 1" class="content-img">
+                        <img src="../images/grandPrixRace/grandPrixRace-task12-image2.png"
+                            alt="GrandPrix - Løsningseksempel - Delopgave 12 - Image 2" class="content-img">
+                        <img src="../images/grandPrixRace/grandPrixRace-task12-image3.png"
+                            alt="GrandPrix - Løsningseksempel - Delopgave 12 - Image 3" class="content-img">
+                    </section>
+                </main>
+            </div>
+        </div>
+        <div id="english-content" class="hidden">
+            <div class="container">
+                <main>
+                    <section id="del1">
+                        <summary>
+                            <h2>GrandPrix - Solution Example - Subtask 12</h2>
+                        </summary>
+                        <p>Modify so that you cannot have more than three lives.</p>
+                        <p><a href="https://editor.p5js.org/JensValdez/sketches/O13B3i5ML"
+                                target="_blank">https://editor.p5js.org/JensValdez/sketches/O13B3i5ML</a></p>
+                        <p>Click on the image to make it larger.</p>
+                        <img src="../images/grandPrixRace/grandPrixRace-task12-image1.png"
+                            alt="GrandPrix - Solution Example - Subtask 12 - Image 1" class="content-img">
+                        <img src="../images/grandPrixRace/grandPrixRace-task12-image2.png"
+                            alt="GrandPrix - Solution Example - Subtask 12 - Image 2" class="content-img">
+                        <img src="../images/grandPrixRace/grandPrixRace-task12-image3.png"
+                            alt="GrandPrix - Solution Example - Subtask 12 - Image 3" class="content-img">
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script src="../modal.js"></script>
+    <script src="../scriptSubPage.js"></script>
+</body>
+
+</html>
