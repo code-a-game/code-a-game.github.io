@@ -1,0 +1,21 @@
+diff --git a/heroMan/heroMan-code-task11.js b/heroMan/heroMan-code-task12.js
+index 1234567..89abcde 100644
+--- a/heroMan/heroMan-code-task11.js
++++ b/heroMan/heroMan-code-task12.js
+@@ -1,5 +1,5 @@
+-// HeroMan subtask 11
++// HeroMan subtask 12
+ // programming = 'Set your imagination free' / Jens Valdez
+ // https://code-a-game.github.io
+ 
+@@ -124,8 +124,8 @@ class GameWonArea {
+ 
+ class GreenAngryMan {
+   constructor() {
+-    this.x = 400;
+-    this.y = 400;
++    this.x = random(200, width - 100);
++    this.y = random(200, height - 100);
+     this.colour = "green";
+     this.radius = 30;
+     this.moveSpeed = 1;

@@ -1,0 +1,45 @@
+        /* Wider container for the diff display */
+        .container {
+            max-width: 100%;
+            width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Make diff display responsive */
+        #diff {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        
+        /* Ensure the body uses the full width */
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Make diff text smaller */
+        .d2h-code-line,
+        .d2h-code-line-ctn,
+        .d2h-code-linenumber,
+        .d2h-code-side-linenumber,
+        .d2h-file-name,
+        .d2h-file-header, 
+        .d2h-file-stats {
+            font-size: 10px !important;
+        }
+        
+        /* Adjust line height for better readability */
+        .d2h-code-line-ctn {
+            line-height: 1.2 !important;
+        }
+        
+        /* Make the diff headers more compact */
+        .d2h-file-header {
+            padding: 5px 10px !important;
+        }
+        
+        /* Adjust spacing in the diff */
+        .d2h-diff-table {
+            margin-bottom: 10px !important;
+        }

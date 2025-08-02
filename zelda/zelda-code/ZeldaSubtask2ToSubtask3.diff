@@ -1,0 +1,73 @@
+diff --git a/zelda/zelda-code/ZeldaSubtask2.js b/zelda/zelda-code/ZeldaSubtask3.js
+index 1234567..89abcde 100644
+--- a/zelda/zelda-code/ZeldaSubtask2.js
++++ b/zelda/zelda-code/ZeldaSubtask3.js
+@@ -1,4 +1,4 @@
+-// ZeldaSubtask2
++// ZeldaSubtask3
+ // programming = 'Set your imagination free' / Jens Valdez
+ // https://code-a-game.github.io
+ 
+@@ -26,15 +26,36 @@ function draw() {
+ }
+ 
+ class GameMap {
+-  constructor() {}
++  constructor() {
++    this.fieldObject = [];
++    this.setInitialFieldObjects();
++  }
++
++  setInitialFieldObjects() {
++    for (let i = 0; i < 7; i++) {
++      this.fieldObject[i] = [];
++      for (let j = 0; j < 7; j++) {
++        this.fieldObject[i][j] = "EMPTY";
++      }
++    }
++    this.fieldObject[6][0] = "WALL";
++    this.fieldObject[6][6] = "WALL";
++  }
+ 
+   show() {
+-    noFill();
+     let x = 0;
+     let y = 27;
+ 
+     for (let i = 0; i < 7; i++) {
+       for (let j = 0; j < 7; j++) {
+-        rect(x, y, 37, 37);
++        //        rect(x, y, 37, 37);
+         y += 37;
+       }
+       y = 27;
+@@ -50,25 +71,25 @@ class Hero {
+   }
+ 
+   moveLeft() {
+-    if (this.x > 0) {
++    if (this.x > 0 && gameMap.fieldObject[this.x - 1][this.y] === "EMPTY") {
+       this.x--;
+     }
+   }
+ 
+   moveRight() {
+-    if (this.x < 6) {
++    if (this.x < 6 && gameMap.fieldObject[this.x + 1][this.y] === "EMPTY") {
+       this.x++;
+     }
+   }
+ 
+   moveUp() {
+-    if (this.y > 0) {
++    if (this.y > 0 && gameMap.fieldObject[this.x][this.y - 1] === "EMPTY") {
+       this.y--;
+     }
+   }
+ 
+   moveDown() {
+-    if (this.y < 6) {
++    if (this.y < 6 && gameMap.fieldObject[this.x][this.y + 1] === "EMPTY") {
+       this.y++;
+     }
+   }

@@ -2,11 +2,13 @@
 <html lang="da">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Struktur</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../modal.css">
+    <link rel="stylesheet" href="../compare.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
 </head>
 
 <body>
@@ -26,8 +28,28 @@
                         <p>Tilret så der vises et baggrundsbillede og felter hvor Zelda skal kunne bevæge sig på</p>
                         <p><a href="https://editor.p5js.org/JensValdez/sketches/IBpQFulsv"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/IBpQFulsv</a></p>
-                        <p>Klik på billedet for at gøre det større.</p>
-                        <img src="../images/zelda/zelda-task1-image1.png" alt="Zelda - Løsningseksempel - Delopgave 1" class="content-img">
+                        <p>Nedenfor kan du se ændringerne fra den initielle kode til løsningen af delopgave 1:</p>
+                        <div id="diff"></div>
+                        <script>
+                            fetch('zelda-code/ZeldaInitialToSubtask1.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
                     </section>
                 </main>
             </div>
@@ -42,22 +64,33 @@
                         <p>Set up so that a background image is displayed and fields where Zelda can move</p>
                         <p><a href="https://editor.p5js.org/JensValdez/sketches/IBpQFulsv"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/IBpQFulsv</a></p>
-                        <p>Click on the image to make it larger.</p>
-                        <img src="../images/zelda/zelda-task1-image1.png" alt="Zelda - Solution Example - Subtask 1" class="content-img">
+                        <p>Below you can see the changes from the initial code to the solution for subtask 1:</p>
+                        <div id="diff-en"></div>
+                        <script>
+                            fetch('zelda-code/ZeldaInitialToSubtask1.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff-en');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
                     </section>
                 </main>
             </div>
         </div>
     </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
-
-    <script src="../modal.js"></script>
     <script src="../scriptSubPage.js"></script>
 </body>
 

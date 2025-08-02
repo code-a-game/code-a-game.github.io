@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../intro.css">
     <link rel="stylesheet" href="../modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
+
     <style>
         .toc {
             background-color: #f8f9fa;
@@ -41,6 +44,52 @@
         .toc a:hover {
             text-decoration: underline;
         }
+
+        /* Wider container for the diff display */
+        .container {
+            max-width: 90%;
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Make diff display responsive */
+        #diff {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        /* Ensure the body uses the full width */
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Make diff text smaller */
+        .d2h-code-line,
+        .d2h-code-line-ctn,
+        .d2h-code-linenumber,
+        .d2h-code-side-linenumber,
+        .d2h-file-name,
+        .d2h-file-header,
+        .d2h-file-stats {
+            font-size: 10px !important;
+        }
+
+        /* Adjust line height for better readability */
+        .d2h-code-line-ctn {
+            line-height: 1.2 !important;
+        }
+
+        /* Make the diff headers more compact */
+        .d2h-file-header {
+            padding: 5px 10px !important;
+        }
+
+        /* Adjust spacing in the diff */
+        .d2h-diff-table {
+            margin-bottom: 10px !important;
+        }
     </style>
 </head>
 
@@ -62,9 +111,32 @@
                         <p>Tilret så der vises en You Win skærm, når man vinder.</p>
                         <p><a href="https://editor.p5js.org/JensValdez/sketches/2_8PqgS3I"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/2_8PqgS3I</a></p>
-                        <p>Klik på billedet for at gøre det større.</p>
-                        <img src="../images/heroMan/heroMan-task12-image1.png"
+                        <div id="diff"></div>
+                        <script>
+                            fetch('changes.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
+                        <!--
+                                <p>Klik på billedet for at gøre det større.</p>
+                        <img src="../images/heroMan2/heroMan-task12-image1.png"
                             alt="Hero Man - Løsningseksempel - Delopgave 12 - Image 1" class="content-img">
+                            -->
                     </section>
                 </main>
             </div>
