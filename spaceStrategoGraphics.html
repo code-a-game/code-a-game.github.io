@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Stratego - Grafik</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+    <nav class="header-nav">
+        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
+            onclick="window.location.href='index.html'">
+        <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch"
+            onclick="switchLanguage()">
+    </nav>
+    <div class="main-content">
+        <div id="danish-content">
+            <div class="container">
+                <header>
+                    <h1>Space Stratego - Grafikken</h1>
+                </header>
+                
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h2>Indholdsfortegnelse</h2>
+                    <ul>
+                        <li><a href="#graphics-creation">Sådan lavede jeg grafikken</a></li>
+                        <li><a href="#image-resolution">Hvordan forbedre man opløsningen af billeder</a></li>
+                        <li><a href="#animations">Hvordan kan man lave animationer</a></li>
+                    </ul>
+                </div>
+                
+                <main>
+                    <section id="graphics-creation">
+                        <details open>
+                            <summary>
+                                <h2>Sådan lavede jeg grafikken</h2>
+                                <p>Alt grafikken til spillet blev genereret med ChatGPT med undtagelse af de her Space Stratego
+                                    rumskibe som jeg fandt på en side med gratis billeder. Her er to sider med gratis grafik som
+                                    man godt må bruge:</p>
+                                <p>https://www.freepik.com</p>
+                                <p>https://www.pngegg.com </p>
+                                <p>Note: Der findes mange lignende sider.</p>
+                                <p>Da jeg havde fundet nogle seje rumskibe, så kunne jeg bruge ChatGPT til at manipulere dem, så
+                                    de fik flere detaljer og var i høj opløsning.</p>
+        
+                            </summary>
+                            Til at lave warp gates, så skrev jeg bare at ChatGPT skulle generere en masse warp gates. Her er et
+                            eksempel:
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image1.png"
+                                alt="Screenshot 2023-08-20 at 06.37.22.png" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image2.png"
+                                alt="Screenshot 2023-08-20 at 06.37.22.png" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image3.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image4.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image5.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image6.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image7.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image8.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image9.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image10.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image11.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image12.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image13.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image14.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image15.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image16.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image17.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image18.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                        </details>
+                    </section>
+                    <section id="image-resolution">
+                        <details open>
+                            <summary>
+                                <h2>Hvordan forbedre man opløsningen af billeder</h2>
+                            </summary>
+                            <p>For større billeder kan man bruge <a
+                                    href="https://imgupscaler.com"
+                                    target="_blank">https://imgupscaler.com</a></p>
+        
+                            <p>For mindre billeder kan man bruge ChatGPT</p>
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-scale-image1.png"
+                                alt="Space Stratego warp gate" class="content-img">
+        
+                        </details>
+                    </section>
+                    <section id="animations">
+                        <details open>
+                            <summary> 
+                                <h2>Hvordan kan man lave animationer</h2>
+                            </summary>
+                            <h3>Eksempel 1:</h3>
+                            <p>Hvis man skal lave en animation der kører i loop f.eks. vand der glitre, så kan man gøre følgende:</p>
+                            <ol>
+                                <li>Klip billedet med vand ud at et større baggrundsbillede.</li>
+                                <li>Træk det ind i Photo appen og væger Clean up.</li>
+                                <li>Fjern nu små lysglimt fra vandet fra forskellige steder på billedet og gem en kopi.</li>
+                                <li>Gentag dette 10 gange men hver gang fjernes lysglimt fra nye steder i vandet.</li>
+                                <li>Vis billederne i rækkefølge som en lille animation der looper således at det ser ud som om at vandet glitre.</li>
+                            </ol>
+                            <p>Hint: Når man klipper billedet med vand ud af baggrundsbilledet, så kan man notere koordinaterne til billedets øverste venstre hjørne same hvor stort det klippede billet er. Når man viser billerne til animationen kan man bruge de samme koordinater.</p>
+        
+                            <h3>Eksempel 2:</h3>
+                            <p>Hvis man skal skal indsætte et mindre billede i et større billede f.eks. en warp gate på en planet, så kan man gøre følgende:</p>
+                            <ol>
+                                <li>Sæt det lille billede ind i det store billedet ved brug af Preview appen.</li>
+                                <li>Træk det ind i Photo appen og væger Clean up.</li>
+                                <li>Slet kanten af det lille billede, så det ser ud som om at de er en del at det samme billede</li>
+                            </ol>
+        
+                            <h3>Eksempel 3:</h3>
+                            <p>Hvis man skal lave en animation der pulserer f.eks. en warp gate der står og skifter farve, så kan man gøre følgende:</p>
+                            <ol>
+                                <li>Træk billedet af warp gaten ind i Photo appen. Vælg den dominante farve i billedet f.eks. grøn og sæt Hue til minus 50 og gem en kopi af billedet.</li>
+                                <li>Gentag dette 10 gange, men hver gang lægges 10 til Hue værdien.</li>
+                                <li>Vis billederne fra index 0 til 8, og vis dem herefter fra index 9 til 1, således at det vises som en pulserende effekt.</li>
+                            </ol>
+                        </details>
+                    </section>
+                </main>
+            </div>
+        </div>
+        <div id="english-content" class="hidden">
+            <div class="container">
+                <header>
+                    <h1>Space Stratego - The Graphics</h1>
+                </header>
+                
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h2>Table of Contents</h2>
+                    <ul>
+                        <li><a href="#en-graphics-creation">How I created the graphics</a></li>
+                        <li><a href="#en-image-resolution">How to improve the resolution of images</a></li>
+                        <li><a href="#en-animations">How to create animations</a></li>
+                    </ul>
+                </div>
+                
+                <main>
+                    <section id="en-graphics-creation">
+                        <details open>
+                            <summary>
+                                <h2>How I created the graphics</h2>
+                                <p>All the graphics for the game were generated with ChatGPT with the exception of these Space Stratego
+                                    spaceships which I found on a site with free images. Here are two sites with free graphics that
+                                    you are allowed to use:</p>
+                                <p>https://www.freepik.com</p>
+                                <p>https://www.pngegg.com </p>
+                                <p>Note: There are many similar sites.</p>
+                                <p>Once I had found some cool spaceships, I could use ChatGPT to manipulate them so
+                                    they got more details and were in high resolution.</p>
+        
+                            </summary>
+                            To make warp gates, I just wrote that ChatGPT should generate a lot of warp gates. Here is an
+                            example:
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image1.png"
+                                alt="Screenshot 2023-08-20 at 06.37.22.png" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image2.png"
+                                alt="Screenshot 2023-08-20 at 06.37.22.png" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image3.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image4.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image5.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image6.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image7.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image8.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image9.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image10.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image11.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image12.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image13.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image14.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image15.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image16.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image17.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-image18.png"
+                                alt="Space Stratego warp gate" class="content-img">
+                        </details>
+                    </section>
+                    <section id="en-image-resolution">
+                        <details open>
+                            <summary>
+                                <h2>How to improve the resolution of images</h2>
+                            </summary>
+                            <p>For larger images you can use <a
+                                    href="https://imgupscaler.com"
+                                    target="_blank">https://imgupscaler.com</a></p>
+        
+                            <p>For smaller images you can use ChatGPT</p>
+                            <img src="images/spaceStrategoGraphics/spaceStrategoGraphics-scale-image1.png"
+                                alt="Space Stratego warp gate" class="content-img">
+        
+                        </details>
+                    </section>
+                    <section id="en-animations">
+                        <details open>
+                            <summary> 
+                                <h2>How to create animations</h2>
+                            </summary>
+                            <h3>Example 1:</h3>
+                            <p>If you need to create an animation that runs in a loop, e.g. glittering water, you can do the following:</p>
+                            <ol>
+                                <li>Cut the image with water out of a larger background image.</li>
+                                <li>Drag it into the Photo app and select Clean up.</li>
+                                <li>Now remove small glints of light from the water from different places on the image and save a copy.</li>
+                                <li>Repeat this 10 times but each time remove glints of light from new places in the water.</li>
+                                <li>Show the images in sequence as a small animation that loops so that it looks like the water is glittering.</li>
+                            </ol>
+                            <p>Hint: When you cut the image with water out of the background image, you can note the coordinates of the top left corner of the image and how large the cut image is. When you show the images for the animation you can use the same coordinates.</p>
+        
+                            <h3>Example 2:</h3>
+                            <p>If you need to insert a smaller image into a larger image, e.g. a warp gate on a planet, you can do the following:</p>
+                            <ol>
+                                <li>Insert the small image into the large image using the Preview app.</li>
+                                <li>Drag it into the Photo app and select Clean up.</li>
+                                <li>Delete the edge of the small image so that it looks like they are part of the same image</li>
+                            </ol>
+        
+                            <h3>Example 3:</h3>
+                            <p>If you need to create an animation that pulsates, e.g. a warp gate that changes color, you can do the following:</p>
+                            <ol>
+                                <li>Drag the image of the warp gate into the Photo app. Select the dominant color in the image, e.g. green and set Hue to minus 50 and save a copy of the image.</li>
+                                <li>Repeat this 10 times, but each time add 10 to the Hue value.</li>
+                                <li>Show the images from index 0 to 8, and then show them from index 9 to 1, so that it is displayed as a pulsating effect.</li>
+                            </ol>
+                        </details>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="modal.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

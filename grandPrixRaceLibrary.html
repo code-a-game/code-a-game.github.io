@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Prix Grafik Bibliotek</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+
+<body>
+    <nav class="header-nav">
+        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='index.html'">
+        <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch"
+            onclick="switchLanguage()">
+    </nav>
+    <div class="main-content">
+        <div id="danish-content">
+            <div class="container">
+                <header>
+                    <h1>Hvordan laver man grafik bibliotektet til Grand Prix spillet (samt coolDownTimeren)</h1>
+                </header>
+                <main>
+                    <section>
+                        <p>Spillet tager udgangspunkt i følgende bib-bib spil fra 1980’erne.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image1.png"
+                            alt="start3.png" class="content-img">
+                        <p>Grafikken er lavet ved at tage billeder af bib-bib spillet med en mobil telefon</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image2.png"
+                            alt="Screenshot 2023-07-16 at 05.13.55.png" class="content-img">
+                        <p>Man markerer den bil man gerne vil gemme.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image3.png"
+                            alt="Screenshot 2023-08-02 at 07.11.16.png" class="content-img">
+                        <p>Og vælger “New from Clipboard”.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image4.png"
+                            alt="Screenshot 2023-08-02 at 07.13.43.png" class="content-img">
+                        <p>Man kan nu med den lille tryllestav vælge bilen</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image5.png"
+                            alt="Screenshot 2023-08-02 at 07.16.18.png" class="content-img">
+                        <p>når man trykker delete (backspace) så slettes baggrunden, så den bliver transparent.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image6.png"
+                            alt="Screenshot 2023-08-02 at 07.17.18.png" class="content-img">
+                        <p>Note: Man kan også slette baggrunden ved brug af Losso Selection.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image7.png"
+                            alt="Screenshot 2023-08-02 at 07.18.46.png" class="content-img">
+                        <p>Bilerne i spillet er pladseret i en tabel</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image8.png"
+                            alt="Screenshot 2023-08-02 at 07.25.33.png" class="content-img">
+                        <p>Vi navngiver derfor bilen vi gemte carR2C2 (det står for Row 2, Column 2)</p>
+                        <p>Det er vigtigt at vi gemmer bilen i et nyt billede hvor siderne er lige lange. Dette gør at vi
+                            nemmere kan ændre størrelsen af billedet i spillet. Det er nemmest hvis man gør dette når man
+                            vælger bilen man gerne vil gemme. Man kan dog også gøre det bagefter ved at gøre følgende:</p>
+                        <p>Dette gøres ved at markere billedet og trykke Control-C (copy)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image9.png"
+                            alt="Screenshot 2023-08-02 at 07.38.59.png" class="content-img">
+                        <p>Vælge Tools og Adjust Size:</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image10.png"
+                            alt="Screenshot 2023-08-02 at 07.39.43.png" class="content-img">
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image11.png"
+                            alt="Screenshot 2023-08-02 at 07.40.43.png" class="content-img">
+                        <p>Slå låsen fra og tilrette Width og Height til at være den største værdi af de to værdier</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image12.png"
+                            alt="Screenshot 2023-08-02 at 07.41.14.png" class="content-img">
+                        <p>Herefter kan man markere indholdet</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image13.png"
+                            alt="Screenshot 2023-08-02 at 07.44.28.png" class="content-img">
+                        <p>Slette indholdet og paste bilen som vi kopierede ind.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image14.png"
+                            alt="Screenshot 2023-08-02 at 07.46.57.png" class="content-img">
+                        <p>Vi skal også bruge et baggrundsbillede uden biler. Vi skal derfor fjerne bilerne fra
+                            baggrundsbilledet. Vælg først “Show Markup Toolbar”</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image15.png"
+                            alt="Screenshot 2023-08-02 at 07.54.18.png" class="content-img">
+                        <p>og herefter Lasso Selection</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image16.png"
+                            alt="Screenshot 2023-08-02 at 07.55.18.png" class="content-img">
+                        <p>Vi markerer et område ved siden af bilen som vi gerne vil fjerne:</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image17.png"
+                            alt="Screenshot 2023-08-02 at 07.56.46.png" class="content-img">
+                        <p>Og trykker Control-C og Control-V. Herefter kan vi flytte området over den bil som vi vil fjerne
+                        </p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image18.png"
+                            alt="Screenshot 2023-08-02 at 07.57.39.png" class="content-img">
+                        <p>Hvorefter bilen er forsvundet</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image19.png"
+                            alt="Screenshot 2023-08-02 at 07.58.47.png" class="content-img">
+                        <p>Vi skal også gemme små lydklip:</p>
+                        <p>Lydene til spillet kan klippes fra følgende video: <a href="https://youtu.be/HNGhO1ZJgUE"
+                                target="_blank">https://youtu.be/HNGhO1ZJgUE</a></p>
+                        <p>Dette gøres ved at oprette en ny Movie i iMovie</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image20.png"
+                            alt="Screenshot 2023-08-02 at 08.13.09.png" class="content-img">
+                        <p>og importere videoen</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image21.png"
+                            alt="Screenshot 2023-08-02 at 08.14.20.png" class="content-img">
+                        <p>Hvorefter man skal trække videoen ned</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image22.png"
+                            alt="Screenshot 2023-08-02 at 08.15.20.png" class="content-img">
+                        <p>Man kan zoome på den her slider vist øverst til højre på billedet nedenfor og finde det lydklip
+                            som man gerne vil lave til en mp3 fil med.</p>
+                        <p>Man kan nu vælge Split Clip på begge sider af lydklippet</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image23.png"
+                            alt="Screenshot 2023-08-03 at 09.32.40.png" class="content-img">
+                        <p>Og slette højre og venstre side, så der kun er det lille lydklip tilbage.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image24.png"
+                            alt="Screenshot 2023-08-03 at 09.33.56.png" class="content-img">
+                        <p>Man kan nu vælge File → Share → File</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image25.png"
+                            alt="Screenshot 2023-08-03 at 09.35.13.png" class="content-img">
+                        <p>Og gemme det som Audio only + MP3 format</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image26.png"
+                            alt="Screenshot 2023-08-03 at 09.36.04.png" class="content-img">
+                        <p>Vi skal også pladsere bilerne på baggrundsbilledet. Vi starter med at oprette en mappe ved navn
+                            images</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image27.png"
+                            alt="Screenshot 2023-08-03 at 09.49.19.png" class="content-img">
+                        <p>Her vælger vi Upload file</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image28.png"
+                            alt="Screenshot 2023-08-03 at 09.49.53.png" class="content-img">
+                        <p>Og trækker alle billederne ind (man kan vælge alle billederne og trække dem alle ind samtidig)
+                        </p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image29.png"
+                            alt="Screenshot 2023-08-03 at 09.50.31.png" class="content-img">
+                        <p>Vi starter med at lave en ny fil ved navn library.js</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image30.png"
+                            alt="Screenshot 2023-08-03 at 10.15.12.png" class="content-img">
+                        <p>Vi skal huske at referere til den i index.html filen (den skal stå før sketch.js)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image31.png"
+                            alt="Screenshot 2023-08-03 at 10.14.22.png" class="content-img">
+                        <p>I library.js skal vi importere alle grafik elementerne. Dette gøres i preload funktionen som
+                            bliver kørt inden setup funktionen (så billerne er loadet ind og klar til brug når programmet
+                            starter med at afvikle)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image32.png"
+                            alt="Screenshot 2023-08-03 at 09.50.55.png" class="content-img">
+                        <p>I Grand Prix spillet er bilerne arrangeret i en tabel</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image33.png"
+                            alt="Screenshot 2023-08-03 at 09.53.12.png" class="content-img">
+                        <p>For at overskue koordinaterne til bilerne samt deres størrelse bedst mulig kan man oprette hver
+                            bil som et imageObject og lægge dem ind i en tabel. Her betyder carPos[0][0] række 0 og kolonne
+                            0. carPos[0][1] betyder række 0 og kolonne 1 osv. Og have en funktion til at vise hver bil i
+                            tabellen (displayCar).</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image34.png"
+                            alt="Screenshot 2023-08-03 at 09.58.00.png" class="content-img">
+                        <p>De objekter der ikke er i en tabel (f.eks. manden med flaget) kan vi bare vise uden først at
+                            putte dem ind i et image objekt.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image35.png"
+                            alt="Screenshot 2023-08-03 at 09.59.23.png" class="content-img">
+                        <p>I sketch.js skal vi bare vise alle objekterne</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image36.png"
+                            alt="Screenshot 2023-08-03 at 10.09.56.png" class="content-img">
+                        <p>Når vi har lavet setup’et i library.js og sketch.js, så er det bare et spørgsmål om tid og fokus
+                            for at få pladseret alle grafik elementerne korrekt.</p>
+                        <p>Vi har også behov for at have en timer der tæller ned fra et antal millisekunder. Her kan man
+                            sætte et coolDownInterval f.eks. 1000 ms (dvs 1 sekund). Man kan starte, så this.cookDownTimer
+                            sættes til værdien af millis(). Når man kalder funktionen coolDownTimeLeft, så returneres
+                            coolDownInterval (f.eks. 1000) minus forskellen mellem den nye værdi af millis() og den værdi
+                            som millis() havde da vi startede timeren, dvs. at timeren tæller ned fra 1000 millisekunder.
+                        </p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image37.png"
+                            alt="Screenshot 2023-08-03 at 10.09.56.png" class="content-img">
+                    </section>
+                </main>
+            </div>
+        </div>
+        <div id="english-content" class="hidden">
+            <div class="container">
+                <header>
+                    <h1>How to create the graphics library for the Grand Prix game (and the coolDownTimer)</h1>
+                </header>
+                <main>
+                    <section>
+                        <p>The game is based on the following bib-bib game from the 1980s.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image1.png"
+                            alt="start3.png" class="content-img">
+                        <p>The graphics are made by taking pictures of the bib-bib game with a mobile phone</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image2.png"
+                            alt="Screenshot 2023-07-16 at 05.13.55.png" class="content-img">
+                        <p>You select the car you want to save.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image3.png"
+                            alt="Screenshot 2023-08-02 at 07.11.16.png" class="content-img">
+                        <p>And choose “New from Clipboard”.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image4.png"
+                            alt="Screenshot 2023-08-02 at 07.13.43.png" class="content-img">
+                        <p>You can now select the car with the magic wand</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image5.png"
+                            alt="Screenshot 2023-08-02 at 07.16.18.png" class="content-img">
+                        <p>when you press delete (backspace) the background is deleted, so it becomes transparent.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image6.png"
+                            alt="Screenshot 2023-08-02 at 07.17.18.png" class="content-img">
+                        <p>Note: You can also delete the background using the Lasso Selection.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image7.png"
+                            alt="Screenshot 2023-08-02 at 07.18.46.png" class="content-img">
+                        <p>The cars in the game are placed in a table</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image8.png"
+                            alt="Screenshot 2023-08-02 at 07.25.33.png" class="content-img">
+                        <p>We therefore name the car we saved carR2C2 (it stands for Row 2, Column 2)</p>
+                        <p>It is important that we save the car in a new image where the sides are of equal length. This
+                            makes it easier for us to change the size of the image in the game. It is easiest if you do
+                            this when you select the car you want to save. However, you can also do it afterwards by doing
+                            the following:</p>
+                        <p>This is done by selecting the image and pressing Control-C (copy)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image9.png"
+                            alt="Screenshot 2023-08-02 at 07.38.59.png" class="content-img">
+                        <p>Choose Tools and Adjust Size:</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image10.png"
+                            alt="Screenshot 2023-08-02 at 07.39.43.png" class="content-img">
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image11.png"
+                            alt="Screenshot 2023-08-02 at 07.40.43.png" class="content-img">
+                        <p>Unlock the lock and adjust Width and Height to be the largest value of the two values</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image12.png"
+                            alt="Screenshot 2023-08-02 at 07.41.14.png" class="content-img">
+                        <p>Then you can select the content</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image13.png"
+                            alt="Screenshot 2023-08-02 at 07.44.28.png" class="content-img">
+                        <p>Delete the content and paste the car we copied in.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image14.png"
+                            alt="Screenshot 2023-08-02 at 07.46.57.png" class="content-img">
+                        <p>We also need a background image without cars. We therefore need to remove the cars from the
+                            background image. First select “Show Markup Toolbar”</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image15.png"
+                            alt="Screenshot 2023-08-02 at 07.54.18.png" class="content-img">
+                        <p>and then Lasso Selection</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image16.png"
+                            alt="Screenshot 2023-08-02 at 07.55.18.png" class="content-img">
+                        <p>We select an area next to the car we want to remove:</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image17.png"
+                            alt="Screenshot 2023-08-02 at 07.56.46.png" class="content-img">
+                        <p>And press Control-C and Control-V. Then we can move the area over the car we want to remove</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image18.png"
+                            alt="Screenshot 2023-08-02 at 07.57.39.png" class="content-img">
+                        <p>After which the car has disappeared</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image19.png"
+                            alt="Screenshot 2023-08-02 at 07.58.47.png" class="content-img">
+                        <p>We also need to save small sound clips:</p>
+                        <p>The sounds for the game can be cut from the following video: <a
+                                href="https://youtu.be/HNGhO1ZJgUE"
+                                target="_blank">https://youtu.be/HNGhO1ZJgUE</a></p>
+                        <p>This is done by creating a new Movie in iMovie</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image20.png"
+                            alt="Screenshot 2023-08-02 at 08.13.09.png" class="content-img">
+                        <p>and import the video</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image21.png"
+                            alt="Screenshot 2023-08-02 at 08.14.20.png" class="content-img">
+                        <p>Then you have to drag the video down</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image22.png"
+                            alt="Screenshot 2023-08-02 at 08.15.20.png" class="content-img">
+                        <p>You can zoom on this slider shown at the top right of the image below and find the sound clip
+                            you want to make into an mp3 file.</p>
+                        <p>You can now select Split Clip on both sides of the sound clip</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image23.png"
+                            alt="Screenshot 2023-08-03 at 09.32.40.png" class="content-img">
+                        <p>And delete the right and left side, so that only the small sound clip remains.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image24.png"
+                            alt="Screenshot 2023-08-03 at 09.33.56.png" class="content-img">
+                        <p>You can now choose File → Share → File</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image25.png"
+                            alt="Screenshot 2023-08-03 at 09.35.13.png" class="content-img">
+                        <p>And save it as Audio only + MP3 format</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image26.png"
+                            alt="Screenshot 2023-08-03 at 09.36.04.png" class="content-img">
+                        <p>We also need to place the cars on the background image. We start by creating a folder named
+                            images</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image27.png"
+                            alt="Screenshot 2023-08-03 at 09.49.19.png" class="content-img">
+                        <p>Here we choose Upload file</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image28.png"
+                            alt="Screenshot 2023-08-03 at 09.49.53.png" class="content-img">
+                        <p>And drag all the images in (you can select all the images and drag them all in at the same
+                            time)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image29.png"
+                            alt="Screenshot 2023-08-03 at 09.50.31.png" class="content-img">
+                        <p>We start by creating a new file named library.js</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image30.png"
+                            alt="Screenshot 2023-08-03 at 10.15.12.png" class="content-img">
+                        <p>We must remember to refer to it in the index.html file (it must be before sketch.js)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image31.png"
+                            alt="Screenshot 2023-08-03 at 10.14.22.png" class="content-img">
+                        <p>In library.js we need to import all the graphic elements. This is done in the preload function
+                            which is run before the setup function (so the images are loaded and ready for use when the
+                            program starts to execute)</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image32.png"
+                            alt="Screenshot 2023-08-03 at 09.50.55.png" class="content-img">
+                        <p>In the Grand Prix game, the cars are arranged in a table</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image33.png"
+                            alt="Screenshot 2023-08-03 at 09.53.12.png" class="content-img">
+                        <p>To best manage the coordinates for the cars and their size, you can create each car as an
+                            imageObject and put them in a table. Here carPos[0][0] means row 0 and column 0. carPos[0][1]
+                            means row 0 and column 1, etc. And have a function to display each car in the table
+                            (displayCar).</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image34.png"
+                            alt="Screenshot 2023-08-03 at 09.58.00.png" class="content-img">
+                        <p>The objects that are not in a table (e.g. the man with the flag) we can just display without
+                            first putting them into an image object.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image35.png"
+                            alt="Screenshot 2023-08-03 at 09.59.23.png" class="content-img">
+                        <p>In sketch.js we just need to display all the objects</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image36.png"
+                            alt="Screenshot 2023-08-03 at 10.09.56.png" class="content-img">
+                        <p>Once we have made the setup in library.js and sketch.js, it is just a matter of time and focus
+                            to get all the graphic elements placed correctly.</p>
+                        <p>We also need to have a timer that counts down from a number of milliseconds. Here you can set a
+                            coolDownInterval e.g. 1000 ms (ie 1 second). You can start, so this.cookDownTimer is set to
+                            the value of millis(). When you call the function coolDownTimeLeft, it returns
+                            coolDownInterval (e.g. 1000) minus the difference between the new value of millis() and the
+                            value that millis() had when we started the timer, ie. the timer counts down from 1000
+                            milliseconds.</p>
+                        <img src="images/grandPrixRaceGraphicsLibrary/grandPrixRaceGraphicsLibrary-image37.png"
+                            alt="Screenshot 2023-08-03 at 10.09.56.png" class="content-img">
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="modal.js"></script>
+    <script src="script.js"></script>    
+</body>
+</html>

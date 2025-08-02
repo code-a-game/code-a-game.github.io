@@ -1,0 +1,100 @@
+Description of the Space Stratego game
+
+Overall description:
+I need to build a Realtime Multiplayer Strategy game called Space Stratego (like the board game) where two teams play against each other. It can be used as a Friday Fun activity in companies where two teams can play against each other while each team has a team call where strategy can be discussed during the game. It can also be played as a fun reward activity after finishing a productive “code-a-game” lesson in a school class or in the Coding Pirate Club. The game must be well balanced, with nice graphics and be competitive and fun to play. The main aim is to show that one can create cool graphical games that can run online, e.g., using a ChromeBook, using basic programming without using large frameworks like Unity.
+
+Technology used:
+It is implemented in p5js (javascript) and uses the p5party library for handling multiplayer functionality.
+The code for connecting is:partyConnect("wss://p5js-spaceman-server-29f6636dfb6c.herokuapp.com", "[your-initials-app-name-version]", room);
+shared = partyLoadShared("shared", {gameState: “GAME-SETUP”,});me = partyLoadMyShared({playerName: "observer",});guests = partyLoadGuestShareds();
+
+Programming style:
+The code must at all times be kept clean and organized and the logic implemented using an object-oriented programming style with the classes BackgroundStarManager, BasicMinimap, BlackHole, Canon, DecorativeStar, Planet, SolarSystem, Spacecraft and YellowStar.
+
+Only the client that is assigned to be the host (by the p5party framework) updates the shared variable. Examples of shared data are: gameState, winningTeam, characterList, win counters, game timers and cannons.
+The screen width is 2400 and the screen height 1200. It is divided into these areas:
+
+Game Background Area:
+The background is a twinkling star background. When the start screen shows, there are furthermore 20 randomly located decorative background stars. They can glow and they can go supernova. When going supernova, it increases very quickly in size and explodes in a bright flash. The animation takes around 2 seconds.
+
+Start Screen Area:
+A ring (radius 400) of 20 small images is shown on the left side of the screen. The small images show graphics from the game play as well as some generated images of what it looks like on the surface of the planets used in the game. In the middle of the ring there is a text describing what to do. Under this text, there is a field for entering the player's username and two buttons for joining each of the teams (Purple or Green). The small images have a size of 120x120. When hovering over a small image, a larger version of that image with size 800x800 is shown next to the circle of smaller images and one of the decorative background stars glows. When clicking on a smaller image, the glowing decorative background star goes supernova. Some of the large images have animations. All this decorative stuff is to create atmosphere and to give the game personality.
+
+Character Selection Area:
+This area is located on the left-hand side of the screen. Here, 40 Space Stratego characters for the team are displayed with their name (space-themed names) and rank in brackets. The players on each team can only see the characters for their own team. When a player has selected a character, the player's username is displayed next to that character.
+
+Here is an overview of the characters in the character list:
+const CHARACTER_DEFINITIONS = [{ rank: -1, name: "Core Commander", id: "C", count: 1, color: 'purple', isCoreCommand: true, canShoot: true },{ rank: 10, name: "Star Commander", id: "10", count: 1, color: 'cyan', isStarCommand: true, canShoot: true },{ rank: 9, name: "Fleet Admiral", id: "9", count: 1, color: 'magenta', canShoot: true },{ rank: 8, name: "Ship Captain", id: "8", count: 2, color: 'lime' },{ rank: 7, name: "Squadron Leader", id: "7", count: 3, color: 'teal', canShoot: true },{ rank: 6, name: "Lt. Commander", id: "6", count: 4, color: 'lavender', canShoot: true },{ rank: 5, name: "Chief P. Officer", id: "5", count: 4, color: 'maroon' },{ rank: 4, name: "Night Sniper", id: "4", count: 4, color: 'olive', canShoot: true, canSnipe: true, can**Cloak**: true },{ rank: 3, name: "Engineer", id: "3", count: 5, color: 'yellow', isEngineer: true },{ rank: 2, name: "Power Glider", id: "2", count: 8, color: 'purple', canMoveFast: true },{ rank: 1, name: "Stealth Squad", id: "S", count: 1, color: 'orange', isStealthSquad: true, can**Cloak**: true },{ rank: 0, name: "Recon Drone", id: "D", count: 6, color: 'brown', isReconDrone: true },];
+
+Host Area:
+This area is located in the upper right corner of the screen. It shows the username for the browser acting as a host. Furthermore, it shows how much time has passed since the host started the game.
+
+Status Area:
+This area is located in the top middle part of the screen. It shows info messages.
+
+Game Area:
+This area is located next to the Character Selection Area and it has the size 1200x700. It shows a cropped part of an image representing a planet. It is cropped because screens are wider than they are high. Here, players move their spacecrafts around within the boundary of this cropped circle.
+
+Minimap Area:
+A player can toggle between the Game Area and the Minimap Area by pressing the space button. It shows the full planets, but as a minimap. Here the characters are represented by small circles. The middle of the circle shows what character a player is, and an outer ring shows the team (purple/green) that the player belongs to. Under this minimap, the star system is shown. It consists of an orbiting star and black hole as the center, and around the center there are 5 orbiting planets of different sizes. The perspective is tilted. When the planets orbit the center, they look smaller when they are far away from the observer. The planets act as minimaps where the player has an overview of where the other players are. The planets are in different locations in their orbits for different players. Sometimes the planets are in front of each other and sometimes they are out of sight, so the players have to inform each other to get the full picture of where the opponents are.
+
+Statistics Area:
+This area is shown next to the Character Selection Area. It is only visible when the game is not in progress. Here the following statistics are displayed:
+* How many times each of the two teams has won, as well as draws.
+* The names of the players on each team as well as clients that have not yet selected a team.
+
+Furthermore, a Button with the text “How to play” is shown. When hovering over this, a description of how to play the game is displayed.
+
+Player Controls Area:
+This area is located at the bottom of the screen. It shows an overview of the planets, their order, and how warp gates and user controls work.
+
+Character Details Area:
+This area is located on the right-hand side of the screen. It shows a list of images of the Space Stratego characters to choose from and their name, rank, battle outcome, and special ability.
+
+Description of the game states:
+
+Game state START-SCREEN:
+Game Background Area, Start Screen Area, and Host Area are shown. This is what is shown when starting the game. A player can enter a username and select a team. If 15 players have joined a team, the button for joining the team is removed.
+
+Game state GAME-SETUP:
+After choosing a username and a team, the Game Background Area, The Character Selection Area, Statistics Area, Status Area, Character Details Area, Player Controls, and the Host Area are shown. To start with, only the Core Commander can be chosen, and the other characters are disabled. A player chooses the Core Commander by clicking on the text representing this Space Stratego character from the character list in the Character Selection Area. Afterwards, the other characters are enabled for the other players to choose. The list therefore gets populated with usernames of players on that team. When a player chooses a character, it is disabled for all players. If no players on a team have selected the Core Commander, then the info text “A player from your team must select a Core Commander” is shown in the Status Area. If a Core Commander has been selected, then the text is “Waiting for the other team to choose a Core Commander”. When a player on each team has chosen the Core Commander, the client acting as a host automatically starts the game, the status message “A new game is starting in 5 seconds” is displayed, and the shared game state changes from GAME-SETUP to IN-GAME. New players join the game by choosing a team no matter what game state the game is in.
+
+Game state IN-GAME:
+Game Background Area, Character Selection Area, Game Area/Minimap Area, Status Area, and Host Area are shown. If the spacecrafts for two players on different teams touch each other, then there is a battle. If a team wins the game, the client acting as a host updates the win counters and changes the game state to GAME-FINISHED. 
+
+Game state GAME-FINISHED:
+Game Background Area, Character Selection Area, Statistics Area, Status area, Character Details Area, Player Controls, and Host Area are shown. It is displayed in big letters in the middle of the screen which team has won the game. The game variables are reset so only Core Commanders can be selected and the game state automatically changes to GAME-SETUP.
+
+Description of the game mechanics:
+
+Spacecraft mechanics: 
+A character is represented by an image of a spacecraft and it has a size represented by a circle. Some of the characters can shoot. A thin life bar displayed under each spacecraft shows the remaining number of lives. When there are no more lives, the spacecraft is removed and the status text “You lost by being hit too many times” is shown. Bullets are removed if they hit a target or if they fly out of the visible area. The Core Commanders spawn in a fixed location next to a warp gate on two different planets. Other characters spawn on the same planet and in the same location as where the Core Commander is located at the time of spawning.
+
+Control mechanics:
+The keys WASD move the spacecraft on the planet in an up, left, down, or right motion. All characters can move. The spacecraft is at all times pointing at the mouse cursor, and one shoots by clicking the mouse button.
+
+Battle mechanics:
+Spacecrafts from different teams are in battle when they touch each other. The character with the highest rank wins, except for the Stealth Squad that wins against the Star Commander, and the Recon Drone draws against everyone except that it loses to the Engineer. If a character loses or draws, then it is removed. The game ends with a draw if the two Core Commanders battle, and the game is won if touching the opponent's Core Commander.
+
+We have the following battle info messages:
+* If a player loses, then the info message is e.g. “You were a Ship Captain(8) and lost a battle vs a Fleet Admiral(9) - Lars” (username of the opponent). The player can now choose a new free character from the Character Selection Area. When a character loses a battle, it is removed for selection in the character list.
+* If it's a draw, then the behaviour is the same as if one loses, except the info message will be something like “You were a Fleet Admiral(9) and had a draw in a battle vs a Fleet Admiral(9) - Lars” (username of the opponent)
+* If a player wins, then the info message is e.g. “You are a Fleet Admiral (9) and just won a battle vs a Ship Captain (8) - Jens (username of the opponent).
+* If the two Core Commanders battle, then the game has finished with a draw and the text displayed is “DRAW as the two Core Commanders were in battle!”.
+* If a player (that is not the Core Commander) touches the Core Commander from the other team, then the game finishes with a win and the text displayed is e.g. “GREEN TEAM WINS! (Core Commander captured by Jens)”
+* A team loses if their Core Commander is hit too many times, and here the text is e.g. “GREEN TEAM WINS! (Core Commander was hit too many times).
+
+Note: If the browser having the Core Commander disconnects, then the game is lost for this team.
+
+Warp gate mechanics:
+Each planet has an up warp gate and a down warp gate. The location of the warp gates are fixed on each planet. When moving into an up warp gate, the player is transferred to the up warp gate on the planet with a higher planet index. The up warp gate on the planet with the highest planet index transfers the player to the up warp gate of the planet with the lowest planet index. Similarly, there is a down warp gate on each planet. Warp gates have a cooldown of 4 seconds before any warp gates can be used by that player. The warp gates have a pulsation or rotation animation. They have no color or movement when they are inactive.
+
+Cannon mechanics:
+The planet with index 0 has three hovering cannons. Each of them shoots bullets at the nearest player. Data for the hovering cannons and their bullets are stored in the shared variable.
+
+Graphics:
+Pushing the "p" key should toggle graphics on/off 
+
+Resources:
+All images are available and ready for use.
+ 

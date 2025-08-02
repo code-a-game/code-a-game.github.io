@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmering</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.0.3/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="header-nav">
+        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='index.html'">
+        <img id="languageFlag" src="images/languageIconDK.png" alt="Switch to Danish" class="language-switch"
+            onclick="switchLanguage()">
+    </nav>
+    <div class="main-content">
+        <div id="danish-content" class="hidden">
+            <div class="container">
+                <header>
+                    <h1>Programmering</h1>
+                </header>
+                <main>
+                    <div class="link-list">
+                        <a href="https://code-a-game.github.io/getStarted.html" class="link-item">
+                            <div class="icon">🎨</div>
+                            <div class="text">Kom i gang med programmering</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/programStructure.html" class="link-item">
+                            <div class="icon">📜</div>
+                            <div class="text">Forklaring af program struktur</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/basicExercises.html" class="link-item">
+                            <div class="icon">🧩</div>
+                            <div class="text">Opgaver i grundlæggende programmering</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/bonusExercises.html" class="link-item">
+                            <div class="icon">🧠</div>
+                            <div class="text">Opgaver til at teste forståelse</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/advancedExamples.html" class="link-item">
+                            <div class="icon">🚀</div>
+                            <div class="text">Avancerede eksempler</div>
+                        </a>
+                        <a href="taskIdeas.html" class="link-item">
+                            <div class="icon">💡</div>
+                            <div class="text">Opgave ideer</div>
+                        </a>
+
+                        <p>
+                            Advancerede opgaver:
+
+                            Det er selvfølgelig sjovest selv at finde på en opgave f.eks. et spil og så lave det. Det kan
+                            dog være en hjælpe hvis man har fået indsigt i hvordan man kan lave forskellige slags spil.
+                            Hvis du har lidt svært ved at få startet på din egen opgave, så prøve at løse disse
+                            avancerede opgaver. Her kan man se løsningen til delopgaverne hvis man går i stå
+                        </p>
+                        <a href="https://code-a-game.github.io/zelda.html" class="link-item">
+                            <div class="icon">⚔️</div>
+                            <div class="text">Old school Zelda spil (easy)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/heroMan.html" class="link-item">
+                            <div class="icon">🦸</div>
+                            <div class="text">HeroMan (medium)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/quiz.html" class="link-item">
+                            <div class="icon">❓</div>
+                            <div class="text">Quiz time (advanced)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/grandPrixRace.html" class="link-item">
+                            <div class="icon">🏎️</div>
+                            <div class="text">Old school bibib spil - Grand Prix Race (hard)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/grandPrixRaceLibrary.html" class="link-item">
+                            <div class="icon">🏎️</div>
+                            <div class="text">Grafik bibliotek til Grand Prix Race (hard)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/spaceStratego.html" class="link-item">
+                            <div class="icon">🪐</div>
+                            <div class="text">Space Stratego (beast mode)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/spaceStrategoGraphics.html" class="link-item">
+                            <div class="icon">✨</div>
+                            <div class="text">Space Stratego - Grafikken</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/references.html" class="link-item">
+                            <div class="icon">📚</div>
+                            <div class="text">Links and referencer</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/conditions.html" class="link-item">
+                            <div class="icon">📄</div>
+                            <div class="text">Betingelser for brug af denne side og de tilhørende ressourcer</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/contact.html" class="link-item">
+                            <div class="icon">✉️</div>
+                            <div class="text">Kontakt</div>
+                        </a>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div id="english-content"> 
+            <div class="container">
+                <header>
+                    <h1>Programming</h1>
+                </header>
+                <main>
+                    <div class="link-list">
+                        <a href="https://code-a-game.github.io/getStarted.html" class="link-item">
+                            <div class="icon">🎨</div>
+                            <div class="text">Get started with programming</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/programStructure.html" class="link-item">
+                            <div class="icon">📜</div>
+                            <div class="text">Explanation of program structure</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/basicExercises.html" class="link-item">
+                            <div class="icon">🧩</div>
+                            <div class="text">Tasks in basic programming</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/bonusExercises.html" class="link-item">
+                            <div class="icon">🧠</div>
+                            <div class="text">Tasks to test understanding</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/advancedExamples.html" class="link-item">
+                            <div class="icon">🚀</div>
+                            <div class="text">Advanced examples</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/taskIdeas.html" class="link-item">
+                            <div class="icon">💡</div>
+                            <div class="text">Task ideas</div>
+                        </a>
+
+                        <p>
+                            Advanced tasks:
+                            Of course, it's most fun to come up with a task yourself, e.g. a game, and then make it.
+                            However, it can be a help if you have gained insight into how to make different kinds of
+                            games. If you have a little trouble getting started on your own task, try to solve these
+                            advanced tasks. Here you can see the solution to the sub-tasks if you get stuck
+                        </p>
+                        <a href="https://code-a-game.github.io/zelda.html" class="link-item">
+                            <div class="icon">⚔️</div>
+                            <div class="text">Old school Zelda game (easy)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/heroMan.html" class="link-item">
+                            <div class="icon">🦸</div>
+                            <div class="text">HeroMan (medium)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/quiz.html" class="link-item">
+                            <div class="icon">❓</div>
+                            <div class="text">Quiz time (advanced)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/grandPrixRace.html" class="link-item">
+                            <div class="icon">🏎️</div>
+                            <div class="text">Old school racing game - Grand Prix Race (hard)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/grandPrixRaceLibrary.html" class="link-item">
+                            <div class="icon">🏎️</div>
+                            <div class="text">Graphics library for Grand Prix Race (hard)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/spaceStratego.html" class="link-item">
+                            <div class="icon">🪐</div>
+                            <div class="text">Space Stratego (beast mode)</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/spaceStrategoGraphics.html" class="link-item">
+                            <div class="icon">✨</div>
+                            <div class="text">Space Stratego - The graphics</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/references.html" class="link-item">
+                            <div class="icon">📚</div>
+                            <div class="text">Links and references</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/conditions.html" class="link-item">
+                            <div class="icon">📄</div>
+                            <div class="text">Terms of use for this site and its associated resources</div>
+                        </a>
+                        <a href="https://code-a-game.github.io/contact.html" class="link-item">
+                            <div class="icon">✉️</div>
+                            <div class="text">Contact</div>
+                        </a>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <div id="p5-canvas-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

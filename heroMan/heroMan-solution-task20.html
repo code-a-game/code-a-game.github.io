@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Struktur</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../intro.css">
+    <link rel="stylesheet" href="../modal.css">
+    <style>
+        .toc {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #0275d8;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="header-nav">
+        <img src="../images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
+            onclick="window.location.href='../index.html'">
+        <img id="languageFlag" src="../images/languageIconUK.png" alt="Switch to English" class="language-switch"
+            onclick="switchLanguage()">
+    </nav>
+    <div class="container">
+        <div id="danish-content">
+            <div class="container">
+                <main>
+                    <section id="del20">
+                        <summary>
+                            <h2>HeroMan - Løsningseksempel - Delopgave 20</h2>
+                        </summary>
+                        <p>Tilret så der også kommer sure røde mænd. De skal stå stille og langsomt blive større.</p>
+                        <p><a href="https://editor.p5js.org/JensValdez/sketches/4T_UDdM3f"
+                                target="_blank">https://editor.p5js.org/JensValdez/sketches/4T_UDdM3f</a></p>
+                        <p>Klik på billederne for at gøre dem større.</p>
+                        <img src="../images/heroMan/heroMan-task20-image1.png"
+                            alt="HeroMan - Løsningseksempel - Delopgave 20 - Image 1" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image2.png"
+                            alt="HeroMan - Løsningseksempel - Delopgave 20 - Image 2" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image3.png"
+                            alt="HeroMan - Løsningseksempel - Delopgave 20 - Image 3" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image4.png"
+                            alt="HeroMan - Løsningseksempel - Delopgave 20 - Image 4" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image5.png"
+                            alt="HeroMan - Løsningseksempel - Delopgave 20 - Image 5" class="content-img">
+                    </section>
+                </main>
+            </div>
+        </div>
+        <div id="english-content" class="hidden">
+            <div class="container">
+                <main>
+                    <section id="del20">
+                        <summary>
+                            <h2>HeroMan - Solution Example - Subtask 20</h2>
+                        </summary>
+                        <p>Modify so that angry red men also appear. They must stand still and slowly grow larger.</p>
+                        <p><a href="https://editor.p5js.org/JensValdez/sketches/4T_UDdM3f"
+                                target="_blank">https://editor.p5js.org/JensValdez/sketches/4T_UDdM3f</a></p>
+                        <p>Click on the images to make them larger.</p>
+                        <img src="../images/heroMan/heroMan-task20-image1.png"
+                            alt="HeroMan - Solution Example - Subtask 20 - Image 1" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image2.png"
+                            alt="HeroMan - Solution Example - Subtask 20 - Image 2" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image3.png"
+                            alt="HeroMan - Solution Example - Subtask 20 - Image 3" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image4.png"
+                            alt="HeroMan - Solution Example - Subtask 20 - Image 4" class="content-img">
+                        <img src="../images/heroMan/heroMan-task20-image5.png"
+                            alt="HeroMan - Solution Example - Subtask 20 - Image 5" class="content-img">
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script src="../modal.js"></script>
+    <script src="../scriptSubPage.js"></script>
+</body>
+
+</html>
