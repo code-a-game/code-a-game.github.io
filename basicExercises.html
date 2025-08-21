@@ -6,51 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opgaver i grundlæggende p5js</title>
     <link rel="stylesheet" href="styles.css">
-    <!--    <link rel="stylesheet" href="modal.css">-->
-    <script>
-        // Function to update table of contents links to match the current language
-        function updateTableOfContentsLinks() {
-            const isDanish = !document.getElementById('danish-content').classList.contains('hidden');
-            const tocLinks = document.querySelectorAll('.toc a');
-
-            tocLinks.forEach(link => {
-                const sectionId = link.getAttribute('href').substring(1); // Remove the # character
-                const sectionElement = document.querySelector(`section[id="${sectionId}"]`);
-
-                if (sectionElement) {
-                    // Scroll to the section when clicking on the link
-                    link.onclick = function (e) {
-                        e.preventDefault();
-                        sectionElement.scrollIntoView({ behavior: 'smooth' });
-                        window.history.pushState(null, null, `#${sectionId}`);
-                    };
-                }
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize when the page loads
-            updateTableOfContentsLinks();
-
-            // Update when language is switched
-            const languageFlag = document.getElementById('languageFlag');
-            if (languageFlag) {
-                const originalSwitchLanguage = window.switchLanguage;
-                window.switchLanguage = function () {
-                    originalSwitchLanguage();
-                    setTimeout(updateTableOfContentsLinks, 100);
-                };
-            }
-        });
-    </script>
 </head>
 
 <body>
     <nav class="header-nav">
-        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
-            onclick="window.location.href='index.html'">
-        <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch"
-            onclick="switchLanguage()">
+        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='index.html'">
+        <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch" onclick="switchLanguage()">
     </nav>
     <div class="main-content">
         <div id="danish-content">
@@ -110,24 +71,19 @@
                             <summary>
                                 <h2>Opgave G1 - Interaktion med musen</h2>
                             </summary>
-                            <p>Lav et program så en hvid firkant med kraftig rød ramme følger musen. Baggrunden skal
-                                være grå.
-                                Herudover skal du skrive “mouseX:” samt værdien af mouseX ud til Console.</p>
+                            <p>Lav et program så en hvid firkant med kraftig rød ramme følger musen. Baggrunden skal være grå. Herudover skal du skrive
+                                “mouseX:” samt værdien af mouseX ud til Console.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/XE7hQNMRp"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/XE7hQNMRp</a></p>
-                            <img src="images/basicExercises/basicExercises-g1.png"
-                                alt="Screenshot 2023-08-20 at 06.08.05.png">
+                            <img src="images/basicExercises/basicExercises-g1.png" alt="Screenshot 2023-08-20 at 06.08.05.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>Søg på stroke, rect, strokeWeight, background og mouseX i reference f.eks. <a
-                                        href="https://p5js.org/reference/#/p5/stroke"
+                                <p>Søg på stroke, rect, strokeWeight, background og mouseX i reference f.eks. <a href="https://p5js.org/reference/#/p5/stroke"
                                         target="_blank">https://p5js.org/reference/#/p5/stroke</a></p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Hvis man tegner flere ting på skærmen, så bliver de tegnet i samme rækkefølge som de
-                                    står i
-                                    koden.</p>
+                                <p>Hvis man tegner flere ting på skærmen, så bliver de tegnet i samme rækkefølge som de står i koden.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -135,11 +91,8 @@
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/XE7hQNMRp"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/XE7hQNMRp</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g2">
@@ -147,16 +100,12 @@
                             <summary>
                                 <h2>Opgave G2 - Rækkefølgens betydning for kodelinierne</h2>
                             </summary>
-                            <p>Lav et program så en gul firkant uden ramme følger musen. Musens cursor skal være i
-                                midten af
-                                kassen. Baggrunden skal være lilla. Der skal også være blå ellipse og en firesidet rød
-                                polygon.
-                                Den gule firkant skal bevæge sig ind over den blå ellipse men bag ved den røde polygon.
-                            </p>
+                            <p>Lav et program så en gul firkant uden ramme følger musen. Musens cursor skal være i midten af kassen. Baggrunden skal være lilla.
+                                Der skal også være blå ellipse og en firesidet rød polygon. Den gule firkant skal bevæge sig ind over den blå ellipse men bag
+                                ved den røde polygon.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/LWKm_2eTG"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/LWKm_2eTG</a></p>
-                            <img src="images/basicExercises/basicExercises-g2.png"
-                                alt="Screenshot 2023-08-20 at 06.10.32.png">
+                            <img src="images/basicExercises/basicExercises-g2.png" alt="Screenshot 2023-08-20 at 06.10.32.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Se farve koder her: <a href="https://www.w3schools.com/colors/colors_picker.asp"
@@ -168,17 +117,12 @@
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Slå op i reference (under “2D Primitives” (Shapes)) og find ud af hvad en polygon er
-                                    og
-                                    hvordan man tegner den.</p>
+                                <p>Slå op i reference (under “2D Primitives” (Shapes)) og find ud af hvad en polygon er og hvordan man tegner den.</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/LWKm_2eTG"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/LWKm_2eTG</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g3">
@@ -186,26 +130,17 @@
                             <summary>
                                 <h2>Opgave G3 - Forståelseopgave</h2>
                             </summary>
-                            <p>Lav et program så der er tre bolde som bevæger sig forskelligt afhængig af hvor langt til
-                                hhv.
-                                højre og venstre man har sin muse cursor. En blå bold skal have en fast y koordinat men
-                                følge
-                                muse cursoren i x koordinaten. En grøn bold skal have en fast y koordinat man x
-                                koordinaten skal
-                                kun være det halve af musens x koordinat. Den røde bold skal bevæge sig op og ned når
-                                man
+                            <p>Lav et program så der er tre bolde som bevæger sig forskelligt afhængig af hvor langt til hhv. højre og venstre man har sin muse
+                                cursor. En blå bold skal have en fast y koordinat men følge muse cursoren i x koordinaten. En grøn bold skal have en fast y
+                                koordinat man x koordinaten skal kun være det halve af musens x koordinat. Den røde bold skal bevæge sig op og ned når man
                                 bevæger muse curoren til højre og venstre.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/Z27mhTg_n"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/Z27mhTg_n</a></p>
-                            <img src="images/basicExercises/basicExercises-g3.png"
-                                alt="Screenshot 2023-08-20 at 06.11.59.png">
+                            <img src="images/basicExercises/basicExercises-g3.png" alt="Screenshot 2023-08-20 at 06.11.59.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Z27mhTg_n"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/Z27mhTg_n</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g4">
@@ -213,32 +148,24 @@
                             <summary>
                                 <h2>Opgave G4 - “if” og “else”. Part 1</h2>
                             </summary>
-                            <p>Lav et program hvor canvas er delt i to lige store dele. Når muse cursoren er over den
-                                venstre
-                                halvdel, så skal den venstre halvdel farves sort og når muse cursoren er over den højre
-                                halvdel,
-                                så skal den højre halvdel være sort (som vist nedenfor)</p>
+                            <p>Lav et program hvor canvas er delt i to lige store dele. Når muse cursoren er over den venstre halvdel, så skal den venstre
+                                halvdel farves sort og når muse cursoren er over den højre halvdel, så skal den højre halvdel være sort (som vist nedenfor)</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/YhWEoypjP"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/YhWEoypjP</a></p>
-                            <img src="images/basicExercises/basicExercises-g4.png"
-                                alt="Screenshot 2023-08-20 at 06.12.44.png">
+                            <img src="images/basicExercises/basicExercises-g4.png" alt="Screenshot 2023-08-20 at 06.12.44.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg efter <strong>if-else</strong> i reference</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Når musen er i højre side, så tegn en sort kasse til højre, og når musen er i venstre
-                                    side,
-                                    så tegn en sort kasse til venstre.</p>
+                                <p>Når musen er i højre side, så tegn en sort kasse til højre, og når musen er i venstre side, så tegn en sort kasse til
+                                    venstre.</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/YhWEoypjP"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/YhWEoypjP</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g5">
@@ -249,8 +176,7 @@
                             <p>Løs samme opgave som Opgave G4 men hvor canvas er delt i tre lige store dele.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/4vyCamh3i"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/4vyCamh3i</a></p>
-                            <img src="images/basicExercises/basicExercises-g5.png"
-                                alt="Screenshot 2023-08-20 at 06.13.34.png">
+                            <img src="images/basicExercises/basicExercises-g5.png" alt="Screenshot 2023-08-20 at 06.13.34.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Man kan skrive:</p>
@@ -275,13 +201,10 @@ else {
                             <summary>
                                 <h2>Opgave G6 - “&&” (og) operatoren</h2>
                             </summary>
-                            <p>Tegn et canvas som vist her. Hvis muse cursoren er over firkanten i midten, så skal den
-                                farves
-                                hvid.</p>
+                            <p>Tegn et canvas som vist her. Hvis muse cursoren er over firkanten i midten, så skal den farves hvid.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/EBgr-HhtzW"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/EBgr-HhtzW</a></p>
-                            <img src="images/basicExercises/basicExercises-g6.png"
-                                alt="Screenshot 2023-08-20 at 06.14.25.png">
+                            <img src="images/basicExercises/basicExercises-g6.png" alt="Screenshot 2023-08-20 at 06.14.25.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Hvis flere betingelser skal være opfyldt i en if statement kan man skrive:</p>
@@ -289,11 +212,8 @@ else {
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/EBgr-HhtzW"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/EBgr-HhtzW</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g7">
@@ -301,24 +221,19 @@ else {
                             <summary>
                                 <h2>Opgave G7 - mouseIsPressed</h2>
                             </summary>
-                            <p>Tegn et canvas som vist her. Hvis muse cursoren er over firkanten i midten og man
-                                samtidig holder
-                                muse knappen nede, så skal firkanten farves hvid</p>
+                            <p>Tegn et canvas som vist her. Hvis muse cursoren er over firkanten i midten og man samtidig holder muse knappen nede, så skal
+                                firkanten farves hvid</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/Sb_M_w-Fq"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/Sb_M_w-Fq</a></p>
-                            <img src="images/basicExercises/basicExercises-g7.png"
-                                alt="Screenshot 2023-08-20 at 06.15.16.png">
+                            <img src="images/basicExercises/basicExercises-g7.png" alt="Screenshot 2023-08-20 at 06.15.16.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg på mouseIsPressed</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Sb_M_w-Fq"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/Sb_M_w-Fq</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g8">
@@ -326,31 +241,23 @@ else {
                             <summary>
                                 <h2>Opgave G8 - keyIsDown (piletasterne)</h2>
                             </summary>
-                            <p>Tegn et canvas som vist her. Hvis man holder venstre pilen på tastaturet nede, så skal
-                                firkanten
-                                bevæge sig til venstre (Husk at man skal klikke på canvas med musen før det bliver
-                                aktivt)</p>
+                            <p>Tegn et canvas som vist her. Hvis man holder venstre pilen på tastaturet nede, så skal firkanten bevæge sig til venstre (Husk at
+                                man skal klikke på canvas med musen før det bliver aktivt)</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/tB3LbyDVt"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/tB3LbyDVt</a></p>
-                            <img src="images/basicExercises/basicExercises-g8.png"
-                                alt="Screenshot 2023-05-06 at 05.43.27.png">
+                            <img src="images/basicExercises/basicExercises-g8.png" alt="Screenshot 2023-05-06 at 05.43.27.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg på keyIsDown</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Lav en variabel ved navn x som holder styr på x-koordinaten. Dette gøres ved på aller
-                                    første
-                                    linie at skrive “let x = 25”</p>
+                                <p>Lav en variabel ved navn x som holder styr på x-koordinaten. Dette gøres ved på aller første linie at skrive “let x = 25”</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/tB3LbyDVt"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/tB3LbyDVt</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g9">
@@ -365,16 +272,14 @@ else {
                                 bliver aktivt)</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/D1CYgx4Z8"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/D1CYgx4Z8</a></p>
-                            <img src="images/basicExercises/basicExercises-g9.png"
-                                alt="Screenshot 2023-05-06 at 05.43.59.png">
+                            <img src="images/basicExercises/basicExercises-g9.png" alt="Screenshot 2023-05-06 at 05.43.59.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg på key i reference</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p><a href="https://www.toptal.com/developers/keycode"
-                                        target="_blank">https://www.toptal.com/developers/keycode</a></p>
+                                <p><a href="https://www.toptal.com/developers/keycode" target="_blank">https://www.toptal.com/developers/keycode</a></p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -394,26 +299,19 @@ else {
                             <summary>
                                 <h2>Opgave G10 - mousePressed</h2>
                             </summary>
-                            <p>Tegn et canvas med sort baggrund. Hver gang man klikker med musen skal baggrunden blive
-                                lidt mere
-                                grå/hvid. Den skal ikke blive hurtig hvid bare fordi man holder muse knappen nede (Husk
-                                at man
-                                skal klikke på canvas med musen før det bliver aktivt).</p>
+                            <p>Tegn et canvas med sort baggrund. Hver gang man klikker med musen skal baggrunden blive lidt mere grå/hvid. Den skal ikke blive
+                                hurtig hvid bare fordi man holder muse knappen nede (Husk at man skal klikke på canvas med musen før det bliver aktivt).</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/o0ZSTNvl3"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/o0ZSTNvl3</a></p>
-                            <img src="images/basicExercises/basicExercises-g10.png"
-                                alt="Screenshot 2023-05-06 at 05.44.20.png">
+                            <img src="images/basicExercises/basicExercises-g10.png" alt="Screenshot 2023-05-06 at 05.44.20.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg på mousePressed</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/o0ZSTNvl3"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/o0ZSTNvl3</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g11">
@@ -433,21 +331,16 @@ else {
                                 <h2>Opgave G12 - Søgning i reference</h2>
                             </summary>
                             <p>Tegn tre cirkler ved siden af hinanden som bliver mere og mere gennemsigtige</p>
-                            <img src="images/basicExercises/basicExercises-g12.png"
-                                alt="Screenshot 2023-08-20 at 06.16.13.png">
+                            <img src="images/basicExercises/basicExercises-g12.png" alt="Screenshot 2023-08-20 at 06.16.13.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>I reference står følgende syntaks for fill: fill(v1, v2, v3, [alpha]) hvilket betyder
-                                    at den
-                                    fjerde parameter (alpha) er valgfri. Den skal i spil her.</p>
+                                <p>I reference står følgende syntaks for fill: fill(v1, v2, v3, [alpha]) hvilket betyder at den fjerde parameter (alpha) er
+                                    valgfri. Den skal i spil her.</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/EfwBXMShM"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/EfwBXMShM</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g13">
@@ -455,19 +348,14 @@ else {
                             <summary>
                                 <h2>Opgave G13 - for loop</h2>
                             </summary>
-                            <p>Byg videre på opgave G12. Tegn 5 cirker ved siden af hinanden som bliver mere og mere
-                                gennemsigtige ved brug af et for loop. Se <a href="https://p5js.org/reference/p5/for/"
-                                    target="_blank">https://p5js.org/reference/p5/for/</a> i reference for syntaksen.
+                            <p>Byg videre på opgave G12. Tegn 5 cirker ved siden af hinanden som bliver mere og mere gennemsigtige ved brug af et for loop. Se
+                                <a href="https://p5js.org/reference/p5/for/" target="_blank">https://p5js.org/reference/p5/for/</a> i reference for syntaksen.
                             </p>
-                            <img src="images/basicExercises/basicExercises-g13.png"
-                                alt="Screenshot 2023-08-20 at 06.17.16.png">
+                            <img src="images/basicExercises/basicExercises-g13.png" alt="Screenshot 2023-08-20 at 06.17.16.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/f4bPmZLeu"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/f4bPmZLeu</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g14">
@@ -475,22 +363,17 @@ else {
                             <summary>
                                 <h2>Opgave G14 - Kode rækkefølgens betydning</h2>
                             </summary>
-                            <p>Tegn en rød bold med kraftig grå ramme, to grønne bolde uden ramme og en stor tekst uden
-                                ramme
-                                hvor der står “Hello” med hvid skrift.</p>
-                            <img src="images/basicExercises/basicExercises-g14.png"
-                                alt="Screenshot 2023-08-20 at 06.17.56.png">
+                            <p>Tegn en rød bold med kraftig grå ramme, to grønne bolde uden ramme og en stor tekst uden ramme hvor der står “Hello” med hvid
+                                skrift.</p>
+                            <img src="images/basicExercises/basicExercises-g14.png" alt="Screenshot 2023-08-20 at 06.17.56.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg på strokeWeight, textSize og text</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/YP9C6LjGp"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/YP9C6LjGp</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g15">
@@ -501,8 +384,7 @@ else {
                             <p>Tegn en blå bold der langsomt men sikkert af sig selv bevæger sig mod højre</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/xyr39IqsA"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/xyr39IqsA</a></p>
-                            <img src="images/basicExercises/basicExercises-g15.png"
-                                alt="Screenshot 2023-05-06 at 05.44.47.png">
+                            <img src="images/basicExercises/basicExercises-g15.png" alt="Screenshot 2023-05-06 at 05.44.47.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Søg efter width</p>
@@ -517,11 +399,8 @@ else {
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/xyr39IqsA"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/xyr39IqsA</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g16">
@@ -529,30 +408,20 @@ else {
                             <summary>
                                 <h2>Opgave G16 - Hvordan får man en bold til at vende rundt</h2>
                             </summary>
-                            <p>Tilret løsningen fra Opgave G15, så bolden vender rundt og bevæger sig den anden vej når
-                                den når
-                                til højre side af canvas</p>
+                            <p>Tilret løsningen fra Opgave G15, så bolden vender rundt og bevæger sig den anden vej når den når til højre side af canvas</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/Wx6ZGCq0I"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/Wx6ZGCq0I</a></p>
-                            <img src="images/basicExercises/basicExercises-g16.png"
-                                alt="Screenshot 2023-05-06 at 05.45.10.png">
+                            <img src="images/basicExercises/basicExercises-g16.png" alt="Screenshot 2023-05-06 at 05.45.10.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>lav en variabel ved navn retning som starter med at være 1. Hvis bolden når ud over
-                                    højre
-                                    side, så skal retning ganges med minus en. Når vi lægger 1 (eller f.eks. 5) til x så
-                                    ganger
-                                    vi bare med retning således at fortegnet på det vi lægger til x skifter, dvs. at vi
-                                    lægger
-                                    et negativt tal til x når bolden bevæger sig med venstre</p>
+                                <p>lav en variabel ved navn retning som starter med at være 1. Hvis bolden når ud over højre side, så skal retning ganges med
+                                    minus en. Når vi lægger 1 (eller f.eks. 5) til x så ganger vi bare med retning således at fortegnet på det vi lægger til x
+                                    skifter, dvs. at vi lægger et negativt tal til x når bolden bevæger sig med venstre</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Wx6ZGCq0I"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/Wx6ZGCq0I</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g17">
@@ -560,24 +429,19 @@ else {
                             <summary>
                                 <h2>Opgave G17 - Hvordan får man en bold til at vende rundt 2</h2>
                             </summary>
-                            <p>Tilret løsningen fra Opgave G16, så bolden også vender rundt og bevæger sig den anden vej
-                                når den
-                                når til venstre side af canvas</p>
+                            <p>Tilret løsningen fra Opgave G16, så bolden også vender rundt og bevæger sig den anden vej når den når til venstre side af canvas
+                            </p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/GSJEvLL87"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/GSJEvLL87</a></p>
-                            <img src="images/basicExercises/basicExercises-g17.png"
-                                alt="Screenshot 2023-08-20 at 06.19.53.png">
+                            <img src="images/basicExercises/basicExercises-g17.png" alt="Screenshot 2023-08-20 at 06.19.53.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Operatoren "||" betyder eller</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/GSJEvLL87"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/GSJEvLL87</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g18">
@@ -588,15 +452,11 @@ else {
                             <p>Tilret løsningen fra Opgave G17, så bolden bevæger sig rundt som på et billard bord.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/UkgoL13Sa"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/UkgoL13Sa</a></p>
-                            <img src="images/basicExercises/basicExercises-g18.png"
-                                alt="Screenshot 2023-08-20 at 06.20.32.png">
+                            <img src="images/basicExercises/basicExercises-g18.png" alt="Screenshot 2023-08-20 at 06.20.32.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/UkgoL13Sa"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/UkgoL13Sa</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g19">
@@ -604,12 +464,10 @@ else {
                             <summary>
                                 <h2>Opgave G19 - Brug af random (tilfældighedsgenerator)</h2>
                             </summary>
-                            <p>Tilret løsning fra Opgave G17, så bolden skifter til en tilfældig farve når den skifter
-                                retning.</p>
+                            <p>Tilret løsning fra Opgave G17, så bolden skifter til en tilfældig farve når den skifter retning.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/ZrVdS-uBT"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/ZrVdS-uBT</a></p>
-                            <img src="images/basicExercises/basicExercises-g19.png"
-                                alt="Screenshot 2023-08-20 at 06.21.10.png">
+                            <img src="images/basicExercises/basicExercises-g19.png" alt="Screenshot 2023-08-20 at 06.21.10.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>random(0, 255) returnerer et tilfældigt tal mellem 0 og 255</p>
@@ -620,11 +478,8 @@ else {
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/ZrVdS-uBT"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/ZrVdS-uBT</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g20">
@@ -632,13 +487,11 @@ else {
                             <summary>
                                 <h2>Opgave G20 - Hvordan laver man et objekt 1</h2>
                             </summary>
-                            <p>Lav en klasse ved navn Bold. Bold klassen skal have variablerne this.x og this.y
-                                defineret i constructor metoden, se hintet nedenfor. Når man skriver “this.” foran en
-                                variabel betyder det at det er objektets variabel at man refererer til. Den skal også
-                                have en metode ved navn show() som tegner en blå cirkel. Opret (i setup) et objekt ved
-                                navn bold som er af klassen/typen Bold og vis bolden i draw(). </p>
-                            <img src="images/basicExercises/basicExercises-g20.png"
-                                alt="Screenshot 2023-08-20 at 06.21.48.png">
+                            <p>Lav en klasse ved navn Bold. Bold klassen skal have variablerne this.x og this.y defineret i constructor metoden, se hintet
+                                nedenfor. Når man skriver “this.” foran en variabel betyder det at det er objektets variabel at man refererer til. Den skal også
+                                have en metode ved navn show() som tegner en blå cirkel. Opret (i setup) et objekt ved navn bold som er af klassen/typen Bold og
+                                vis bolden i draw(). </p>
+                            <img src="images/basicExercises/basicExercises-g20.png" alt="Screenshot 2023-08-20 at 06.21.48.png">
 
 
                             <details>
@@ -666,18 +519,14 @@ class Ball {
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Du må gerne se i løsningseksemplet for at se syntaksen for hvordan man laver en
-                                    bold</p>
+                                <p>Du må gerne se i løsningseksemplet for at se syntaksen for hvordan man laver en bold</p>
                             </details>
 
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/sAOYYbgpL"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/sAOYYbgpL</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g21">
@@ -685,19 +534,15 @@ class Ball {
                             <summary>
                                 <h2>Opgave G21 - Hvordan får man et objekt til at flytte sig 1</h2>
                             </summary>
-                            <p>Tilret løsningen fra Opgave G20. Lav en metode i Bold ved navn move() som bevæger bolden
-                                mod højre. Kald move() metoden i draw således at bolden bevæger sig mod højre.</p>
+                            <p>Tilret løsningen fra Opgave G20. Lav en metode i Bold ved navn move() som bevæger bolden mod højre. Kald move() metoden i draw
+                                således at bolden bevæger sig mod højre.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/_4Izl2uaF"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/_4Izl2uaF</a></p>
-                            <img src="images/basicExercises/basicExercises-g21.png"
-                                alt="Screenshot 2023-08-20 at 06.22.24.png">
+                            <img src="images/basicExercises/basicExercises-g21.png" alt="Screenshot 2023-08-20 at 06.22.24.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/_4Izl2uaF"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/_4Izl2uaF</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g22">
@@ -705,13 +550,11 @@ class Ball {
                             <summary>
                                 <h2>Opgave G22 - Hvordan får man et objekt til at flytte sig 2</h2>
                             </summary>
-                            <p>Tilret løsningen fra Opgave G21, så move bevæger en bold rundt som en billardkugle.
-                                Tilret så bolden starter på en tilfældig x og y koordinat mellem 50 og 350 samt at det
-                                er tilfældig hvilken retning den starter med at bevæge sig i.</p>
+                            <p>Tilret løsningen fra Opgave G21, så move bevæger en bold rundt som en billardkugle. Tilret så bolden starter på en tilfældig x og
+                                y koordinat mellem 50 og 350 samt at det er tilfældig hvilken retning den starter med at bevæge sig i.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/M3DDYyviB"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/M3DDYyviB</a></p>
-                            <img src="images/basicExercises/basicExercises-g22.png"
-                                alt="Screenshot 2023-08-20 at 06.23.00.png">
+                            <img src="images/basicExercises/basicExercises-g22.png" alt="Screenshot 2023-08-20 at 06.23.00.png">
 
                             <details>
                                 <summary>Hint</summary>
@@ -719,45 +562,36 @@ class Ball {
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Alle variabler der har noget med bolden at gøre skal defineres i constructoren. Husk
-                                    at skrive this foran alle de variabler der hører til objektet.</p>
+                                <p>Alle variabler der har noget med bolden at gøre skal defineres i constructoren. Husk at skrive this foran alle de variabler
+                                    der hører til objektet.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Lave en variabel ved navn xDirection (Dansk: retning i x aksen). Til at starte med
-                                    sættes xDirection til 1. Dette betyder at bolden skal bevæge sig mod højre. Hvis
-                                    bolden når helt ud til højre kan man gange xDirection med minus 1. Hvis man ganger
-                                    xDirection med det tal som bestemmer hvor meget man vil flytte bolden ad gangen, så
-                                    vil bolden bevæge sig i den rigtige retning.</p>
+                                <p>Lave en variabel ved navn xDirection (Dansk: retning i x aksen). Til at starte med sættes xDirection til 1. Dette betyder at
+                                    bolden skal bevæge sig mod højre. Hvis bolden når helt ud til højre kan man gange xDirection med minus 1. Hvis man ganger
+                                    xDirection med det tal som bestemmer hvor meget man vil flytte bolden ad gangen, så vil bolden bevæge sig i den rigtige
+                                    retning.</p>
                             </details>
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/M3DDYyviB"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/M3DDYyviB</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g23">
                         <details open>
                             <summary>
-                                <h2>Opgave G23 - Hvordan virker det når en funktion modtager en reference til et
-                                    objekt og manipulerer det.</h2>
+                                <h2>Opgave G23 - Hvordan virker det når en funktion modtager en reference til et objekt og manipulerer det.</h2>
                             </summary>
                             <p>Se på løsningseksemplet og forstå koden. Forklar koden til en anden.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/rbA8TaLDv"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/rbA8TaLDv</a></p>
-                            <img src="images/basicExercises/basicExercises-g23.png"
-                                alt="Screenshot 2023-08-20 at 06.23.34.png">
+                            <img src="images/basicExercises/basicExercises-g23.png" alt="Screenshot 2023-08-20 at 06.23.34.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/rbA8TaLDv"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/rbA8TaLDv</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g24">
@@ -765,10 +599,8 @@ class Ball {
                             <summary>
                                 <h2>Opgave G24 - Hvordan virker et Array (tabel)</h2>
                             </summary>
-                            <p>Lav et program som putter fire navne ind i et array (tabel) og skriver dem ud i draw ved
-                                brug at et for loop.</p>
-                            <img src="images/basicExercises/basicExercises-g24.png"
-                                alt="Screenshot 2023-08-20 at 06.24.11.png">
+                            <p>Lav et program som putter fire navne ind i et array (tabel) og skriver dem ud i draw ved brug at et for loop.</p>
+                            <img src="images/basicExercises/basicExercises-g24.png" alt="Screenshot 2023-08-20 at 06.24.11.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Det er en ny syntax. Du må gerne se på løsningseksemplet.</p>
@@ -776,11 +608,8 @@ class Ball {
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/Qh15SAR8i"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/Qh15SAR8i</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g25">
@@ -788,12 +617,9 @@ class Ball {
                             <summary>
                                 <h2>Opgave G25 - Hvordan putter man objekter i et Array</h2>
                             </summary>
-                            <p>Tilret løsningen fra Opgave G24 så man putter bolde i arrayet i stedet for tekster. Bold
-                                klassen kan kopieres fra Opgave G23. Vigtigt: Når man bruger en objekt
-                                orienteret programmeringsstil, så er det nemt at genbruge klasser i andre programmer.
-                            </p>
-                            <img src="images/basicExercises/basicExercises-g25.png"
-                                alt="Screenshot 2023-08-20 at 06.24.45.png">
+                            <p>Tilret løsningen fra Opgave G24 så man putter bolde i arrayet i stedet for tekster. Bold klassen kan kopieres fra Opgave G23.
+                                Vigtigt: Når man bruger en objekt orienteret programmeringsstil, så er det nemt at genbruge klasser i andre programmer.</p>
+                            <img src="images/basicExercises/basicExercises-g25.png" alt="Screenshot 2023-08-20 at 06.24.45.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Hvis det er lidt svært må du gerne se på løsningseksemplet.</p>
@@ -801,11 +627,8 @@ class Ball {
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/ZPTVyUO3J"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/ZPTVyUO3J</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g26">
@@ -813,22 +636,17 @@ class Ball {
                             <summary>
                                 <h2>Opgave G26 - Hvordan giver man start værdier når et objekt oprettes 1</h2>
                             </summary>
-                            <p>Tilret løsningen for opgave G20 så der oprettes to bolde. Når en bold oprettes skal man
-                                angive hvor bolden skal pladseres. Den ene bold skal pladseres øverst til venstre og den
-                                anden bold skal pladseres nederst til højre. </p>
-                            <img src="images/basicExercises/basicExercises-g26.png"
-                                alt="Screenshot 2023-08-20 at 06.25.20.png">
+                            <p>Tilret løsningen for opgave G20 så der oprettes to bolde. Når en bold oprettes skal man angive hvor bolden skal pladseres. Den
+                                ene bold skal pladseres øverst til venstre og den anden bold skal pladseres nederst til højre. </p>
+                            <img src="images/basicExercises/basicExercises-g26.png" alt="Screenshot 2023-08-20 at 06.25.20.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Det er en ny syntax. Du må gerne se på løsningseksemplet.</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/FIZ9H54on"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/FIZ9H54on</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g27">
@@ -837,15 +655,11 @@ class Ball {
                                 <h2>Opgave G27 - Hvordan giver man start værdier når et objekt oprettes 2</h2>
                             </summary>
                             <p>Tilret løsningen for opgave G26, så boldene oprettes med forskellig farve.</p>
-                            <img src="images/basicExercises/basicExercises-g27.png"
-                                alt="Screenshot 2023-08-20 at 06.25.54.png">
+                            <img src="images/basicExercises/basicExercises-g27.png" alt="Screenshot 2023-08-20 at 06.25.54.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/SVRwK0mye"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/SVRwK0mye</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g28">
@@ -856,15 +670,11 @@ class Ball {
                             <p>Løs samme opgave som Opgave G1, men hvor firkanten er lavet som et objekt i stedet.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/tCDuWsLsP"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/tCDuWsLsP</a></p>
-                            <img src="images/basicExercises/basicExercises-g28.png"
-                                alt="Screenshot 2023-08-20 at 06.26.28.png">
+                            <img src="images/basicExercises/basicExercises-g28.png" alt="Screenshot 2023-08-20 at 06.26.28.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/tCDuWsLsP"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/tCDuWsLsP</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g29">
@@ -872,12 +682,11 @@ class Ball {
                             <summary>
                                 <h2>Opgave G29 - Hvordan laver man en on/off knap</h2>
                             </summary>
-                            <p>Vi skal i denne øvelse lave en kontakt som til at starte med er slukket. Når man trykker
-                                på den så er den tændt og hvis man herefter trykker på den igen, så er den slukket.</p>
+                            <p>Vi skal i denne øvelse lave en kontakt som til at starte med er slukket. Når man trykker på den så er den tændt og hvis man
+                                herefter trykker på den igen, så er den slukket.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/irak79Ufe"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/irak79Ufe</a></p>
-                            <img src="images/basicExercises/basicExercises-g29.png"
-                                alt="Screenshot 2023-08-20 at 06.27.02.png">
+                            <img src="images/basicExercises/basicExercises-g29.png" alt="Screenshot 2023-08-20 at 06.27.02.png">
                             <p>Du skal kombinere det du har lært i hele tre opgaver. </p>
                             <p>I Opgave G28 lavede vi en firkant som et objekt</p>
                             <p>I Opgave G6 lærte vi hvordan man tester for om muse cursoren er inde over en firkant</p>
@@ -888,14 +697,12 @@ class Ball {
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Lav et Klasse ved navn OnOffButton. I dens constructor metode skal du definere
-                                    variablerne this.x, this.y, this.w (bredde), this.h (højde) samt en boolean variabel
-                                    ved navn isClicked (En boolean variabel kan altid kun være true eller false).
-                                    Klassen skal have metoden checkIfPressed som skal kaldes fra mouseClicked
-                                    funktionen. I checkIfPressed kan du have følgende linie “this.isClicked =
-                                    !this.isClicked”. ! betyder ikke dvs. at vi sætter this.isClicked til det modsatte
-                                    af hvad den er. Hvis den har værdien false, så bliver den true og omvendt. I show()
-                                    metoden skal vi have en “if” betingelse der tester på this.isClicked. </p>
+                                <p>Lav et Klasse ved navn OnOffButton. I dens constructor metode skal du definere variablerne this.x, this.y, this.w (bredde),
+                                    this.h (højde) samt en boolean variabel ved navn isClicked (En boolean variabel kan altid kun være true eller false).
+                                    Klassen skal have metoden checkIfPressed som skal kaldes fra mouseClicked funktionen. I checkIfPressed kan du have følgende
+                                    linie “this.isClicked = !this.isClicked”. ! betyder ikke dvs. at vi sætter this.isClicked til det modsatte af hvad den er.
+                                    Hvis den har værdien false, så bliver den true og omvendt. I show() metoden skal vi have en “if” betingelse der tester på
+                                    this.isClicked. </p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -903,11 +710,8 @@ class Ball {
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/irak79Ufe"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/irak79Ufe</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g30">
@@ -915,25 +719,21 @@ class Ball {
                             <summary>
                                 <h2>Opgave G30 - Hvordan fjerner man et objekt fra skærmen</h2>
                             </summary>
-                            <p>Opret to bold (objekter) og tegn dem på skærmen. Hvis man klikker på en bold skal den
-                                forsvinde.</p>
+                            <p>Opret to bold (objekter) og tegn dem på skærmen. Hvis man klikker på en bold skal den forsvinde.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/ixyccu5DY"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/ixyccu5DY</a></p>
-                            <img src="images/basicExercises/basicExercises-g30.png"
-                                alt="Screenshot 2023-08-20 at 06.27.36.png">
+                            <img src="images/basicExercises/basicExercises-g30.png" alt="Screenshot 2023-08-20 at 06.27.36.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>Bold klassen skal ud over variablerne this.x, this.y, this.r også have en boolean
-                                    variabel ved navn this.exists som til at starte med er true. Klassen skal have en
-                                    metode som hedder removeIfClicked. Her skal du lave følgende kode:
+                                <p>Bold klassen skal ud over variablerne this.x, this.y, this.r også have en boolean variabel ved navn this.exists som til at
+                                    starte med er true. Klassen skal have en metode som hedder removeIfClicked. Her skal du lave følgende kode:
                                 <pre><code>
 if (dist(this.x, this.y,mouseX, mouseY) < this.r){
    this.exists = false
 }
 </code></pre>
-                                Den indbyggede p5js funktion “dist” finder afstanden mellem to punkter. Hvis afstanden
-                                mellem midten af bolden og muse cursoren er mindre end radius af cirklen, så må muse
-                                cursoren være inden for cirklen.</p>
+                                Den indbyggede p5js funktion “dist” finder afstanden mellem to punkter. Hvis afstanden mellem midten af bolden og muse cursoren
+                                er mindre end radius af cirklen, så må muse cursoren være inden for cirklen.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -946,11 +746,8 @@ if (dist(this.x, this.y,mouseX, mouseY) < this.r){
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/ixyccu5DY"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/ixyccu5DY</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g31">
@@ -958,22 +755,20 @@ if (dist(this.x, this.y,mouseX, mouseY) < this.r){
                             <summary>
                                 <h2>Opgave G31 - Hvordan fjerner man et objekt fra et Array</h2>
                             </summary>
-                            <p>Vi skal her lære at fjerne objekter fra et Array. Tag udgangspunkt i løsningen fra
-                                Opgave G25. Tilret så en bold fjernes hvis der klikkes på den.</p>
+                            <p>Vi skal her lære at fjerne objekter fra et Array. Tag udgangspunkt i løsningen fra Opgave G25. Tilret så en bold fjernes hvis der
+                                klikkes på den.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/E6lZycruy"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/E6lZycruy</a></p>
-                            <img src="images/basicExercises/basicExercises-g31.png"
-                                alt="Screenshot 2023-08-20 at 06.28.10.png">
+                            <img src="images/basicExercises/basicExercises-g31.png" alt="Screenshot 2023-08-20 at 06.28.10.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>Bold klassen skal have en metode ved navn isClicked skal returnere true hvis der er
-                                    klikket inden for bolden og som ellers returnere false.</p>
+                                <p>Bold klassen skal have en metode ved navn isClicked skal returnere true hvis der er klikket inden for bolden og som ellers
+                                    returnere false.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Benyt mousePressed som du gjorde i Opgave G10. Her skal du have følgende kode som
-                                    løber arrayet med bolde igennem bagfra og fjerner en bold hvis der er klikket på
-                                    den.
+                                <p>Benyt mousePressed som du gjorde i Opgave G10. Her skal du have følgende kode som løber arrayet med bolde igennem bagfra og
+                                    fjerner en bold hvis der er klikket på den.
                                 <pre><code> 
 for (let i = bolde.length - 1; i >= 0; i--) {
     if (bolde[i].isClicked()){
@@ -987,11 +782,8 @@ for (let i = bolde.length - 1; i >= 0; i--) {
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/E6lZycruy"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/E6lZycruy</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g32">
@@ -999,14 +791,12 @@ for (let i = bolde.length - 1; i >= 0; i--) {
                             <summary>
                                 <h2>Opgave G32 - Hvordan kommunikerer to objekter med hinanden</h2>
                             </summary>
-                            <p>Du skal her arbejde med hvordan to objekter (af samme klasse) kan kommunikere med
-                                hinanden. Tag udgangspunkt i løsningen fra Opgave G25. Lav en ekstra bold der er meget
-                                større end de andre. Hvis den store bold og en af de små bolde støder sammen, så skal
-                                den lille bold forsvinde.</p>
+                            <p>Du skal her arbejde med hvordan to objekter (af samme klasse) kan kommunikere med hinanden. Tag udgangspunkt i løsningen fra
+                                Opgave G25. Lav en ekstra bold der er meget større end de andre. Hvis den store bold og en af de små bolde støder sammen, så
+                                skal den lille bold forsvinde.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/5AiddKYCI"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/5AiddKYCI</a></p>
-                            <img src="images/basicExercises/basicExercises-g32.png"
-                                alt="Screenshot 2023-08-20 at 06.28.44.png">
+                            <img src="images/basicExercises/basicExercises-g32.png" alt="Screenshot 2023-08-20 at 06.28.44.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Bold klassen skal have følgende metode:</p>
@@ -1016,8 +806,8 @@ intersects(other) {
 return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
 }
 </code></pre>
-                                <p>Når alle boldene løbes igennem i draw metoden, så skal man for hver bold kalde dens
-                                    intersects metode med navnet på den store bold som argument.</p>
+                                <p>Når alle boldene løbes igennem i draw metoden, så skal man for hver bold kalde dens intersects metode med navnet på den store
+                                    bold som argument.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -1026,11 +816,8 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/5AiddKYCI"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/5AiddKYCI</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g33">
@@ -1038,16 +825,14 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Opgave G33 - Lav et objekt der langsomt følger efter muse cursoren</h2>
                             </summary>
-                            <p>Lav et bold objekt der langsomt følger efter muse cursoren. Hvis bolden rører muse
-                                cursoren skal den vokse sig større.</p>
+                            <p>Lav et bold objekt der langsomt følger efter muse cursoren. Hvis bolden rører muse cursoren skal den vokse sig større.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/ojx4Y9My-"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/ojx4Y9My-</a></p>
-                            <img src="images/basicExercises/basicExercises-g33.png"
-                                alt="Screenshot 2023-08-20 at 06.29.18.png">
+                            <img src="images/basicExercises/basicExercises-g33.png" alt="Screenshot 2023-08-20 at 06.29.18.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>I boldens move metode skal du gå hhv. til højre og venstre afhængig af hvor bolden er
-                                    i forhold til muse cursoren. Det samme med op og ned.</p>
+                                <p>I boldens move metode skal du gå hhv. til højre og venstre afhængig af hvor bolden er i forhold til muse cursoren. Det samme
+                                    med op og ned.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -1055,11 +840,8 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/ojx4Y9My-"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/ojx4Y9My-</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g34">
@@ -1067,26 +849,20 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Opgave G34 - Hvordan kommunikerer mange objekter med hinanden</h2>
                             </summary>
-                            <p>Lad os oprette en helt masse bolde der flyver rundt i et rum. Hvis de rammer hinanden
-                                skal
-                                de ændre retning.</p>
+                            <p>Lad os oprette en helt masse bolde der flyver rundt i et rum. Hvis de rammer hinanden skal de ændre retning.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/-9GUjLQzB"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/-9GUjLQzB</a></p>
-                            <img src="images/basicExercises/basicExercises-g34.png"
-                                alt="Screenshot 2023-08-20 at 06.29.52.png">
+                            <img src="images/basicExercises/basicExercises-g34.png" alt="Screenshot 2023-08-20 at 06.29.52.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>Løsningen er lidt svær. Du må gerne se på løsningseksemplet og læse kommentarer for
-                                    at forstå hvordan man kan løse denne opgave.</p>
+                                <p>Løsningen er lidt svær. Du må gerne se på løsningseksemplet og læse kommentarer for at forstå hvordan man kan løse denne
+                                    opgave.</p>
                             </details>
 
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/-9GUjLQzB"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/-9GUjLQzB</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g35">
@@ -1094,20 +870,16 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Opgave G35 - map funktionen</h2>
                             </summary>
-                            <p>Lav et objekt som er en bold der langsomt men sikkert af sig selv bevæger sig mod højre
-                                og skifter retning når den når til hhv. højre og venstre side af canvas. Herudover skal
-                                der være en kasse nederst i højre hjørne (på 100x100) der skal fungere som minimap.
-                                MiniMappet skal med en lille bold (et objekt ved navn minibold) vise hvor den store bold
-                                er på canvas.</p>
+                            <p>Lav et objekt som er en bold der langsomt men sikkert af sig selv bevæger sig mod højre og skifter retning når den når til hhv.
+                                højre og venstre side af canvas. Herudover skal der være en kasse nederst i højre hjørne (på 100x100) der skal fungere som
+                                minimap. MiniMappet skal med en lille bold (et objekt ved navn minibold) vise hvor den store bold er på canvas.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/3trrEYOSIt"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/3trrEYOSIt</a></p>
-                            <img src="images/basicExercises/basicExercises-g35.png"
-                                alt="Screenshot 2023-08-20 at 06.30.26.png">
+                            <img src="images/basicExercises/basicExercises-g35.png" alt="Screenshot 2023-08-20 at 06.30.26.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>Den indbyggede p5js “map” funktion mapper den første værdi (dvs. den store bolds x
-                                    koordinat) således at intervallet 0 til 400 bliver mappet over i intervallet 300 til
-                                    400.</p>
+                                <p>Den indbyggede p5js “map” funktion mapper den første værdi (dvs. den store bolds x koordinat) således at intervallet 0 til
+                                    400 bliver mappet over i intervallet 300 til 400.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -1119,11 +891,8 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/3trrEYOSIt"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/3trrEYOSIt</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g36">
@@ -1131,23 +900,18 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Opgave G36 - Peg et objekt mod et punkt</h2>
                             </summary>
-                            <p>Tegn et objekt så man tydeligt kan se hvilken retning det peger. Gør så objektet altid
-                                peger mod muse cursoren.</p>
+                            <p>Tegn et objekt så man tydeligt kan se hvilken retning det peger. Gør så objektet altid peger mod muse cursoren.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/h5eC38rJ_"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/h5eC38rJ_</a></p>
-                            <img src="images/basicExercises/basicExercises-g36.png"
-                                alt="Screenshot 2023-08-20 at 06.31.00.png">
+                            <img src="images/basicExercises/basicExercises-g36.png" alt="Screenshot 2023-08-20 at 06.31.00.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Hvis opgaven er lidt svær så må du gerne se i løsningseksemplet.</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/h5eC38rJ_"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/h5eC38rJ_</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g37">
@@ -1155,23 +919,18 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Opgave G37 - Hvordan får man et objekt til at skyde en lille bold afsted</h2>
                             </summary>
-                            <p>Tilret Opgave G36 så vores Hero skyder en lille gul bold i den retning som Hero peger
-                                hver gang der er gået to sekunder.</p>
+                            <p>Tilret Opgave G36 så vores Hero skyder en lille gul bold i den retning som Hero peger hver gang der er gået to sekunder.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/uVC3-3jMh"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/uVC3-3jMh</a></p>
-                            <img src="images/basicExercises/basicExercises-g37.png"
-                                alt="Screenshot 2023-08-20 at 06.31.34.png">
+                            <img src="images/basicExercises/basicExercises-g37.png" alt="Screenshot 2023-08-20 at 06.31.34.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Hvis opgaven er lidt svær så må du gerne se i løsningseksemplet.</p>
                             </details>
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/uVC3-3jMh"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/uVC3-3jMh</a></p>
-                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
-                                i
-                                bruger det i har lært. Alternativt kan i eksperimentere lidt eller lave det i har lyst
-                                til
-                                indtil i starter på næste opgave.</p>
+                            <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor i bruger det i har lært. Alternativt
+                                kan i eksperimentere lidt eller lave det i har lyst til indtil i starter på næste opgave.</p>
                         </details>
                     </section>
                     <section id="g38">
@@ -1183,8 +942,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 der flyver hurtigt skal være størst og klarest.</p>
                             <p>Afprøv funktionaliteten: <a href="https://editor.p5js.org/JensValdez/full/ybWzmAXed"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/ybWzmAXed</a></p>
-                            <img src="images/basicExercises/basicExercises-g38.png"
-                                alt="Screenshot 2023-08-20 at 06.32.08.png">
+                            <img src="images/basicExercises/basicExercises-g38.png" alt="Screenshot 2023-08-20 at 06.32.08.png">
                             <p>Løsningseksempel: <a href="https://editor.p5js.org/JensValdez/sketches/ybWzmAXed"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/ybWzmAXed</a></p>
                             <p>Hvad nu!!: Find en eller to at arbejde sammen med. I skal nu give hinanden en opgave hvor
@@ -1259,13 +1017,11 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 Additionally, write "mouseX:" and the value of mouseX to the Console.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/Jr9VUuOVi"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/Jr9VUuOVi</a></p>
-                            <img src="images/basicExercises/basicExercises-g1.png"
-                                alt="Screenshot 2023-08-20 at 06.08.05.png">
+                            <img src="images/basicExercises/basicExercises-g1.png" alt="Screenshot 2023-08-20 at 06.08.05.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up stroke, rect, strokeWeight, background, and mouseX in the reference, e.g., <a
-                                        href="https://p5js.org/reference/#/p5/stroke"
-                                        target="_blank">https://p5js.org/reference/#/p5/stroke</a></p>
+                                        href="https://p5js.org/reference/#/p5/stroke" target="_blank">https://p5js.org/reference/#/p5/stroke</a></p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -1290,16 +1046,12 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Exercise G2 - Code Sequence Importance</h2>
                             </summary>
-                            <p>Create a program where a yellow square without a border follows the mouse. The mouse
-                                cursor should be in the
-                                center of the square. The background should be purple. There should also be a blue
-                                ellipse and a four-sided red
-                                polygon. The yellow square should move over the blue ellipse but behind the red polygon.
-                            </p>
+                            <p>Create a program where a yellow square without a border follows the mouse. The mouse cursor should be in the center of the
+                                square. The background should be purple. There should also be a blue ellipse and a four-sided red polygon. The yellow square
+                                should move over the blue ellipse but behind the red polygon.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/MQ4rprVzY"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/MQ4rprVzY</a></p>
-                            <img src="images/basicExercises/basicExercises-g2.png"
-                                alt="Screenshot 2023-08-20 at 06.10.32.png">
+                            <img src="images/basicExercises/basicExercises-g2.png" alt="Screenshot 2023-08-20 at 06.10.32.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>See color codes here: <a href="https://www.w3schools.com/colors/colors_picker.asp"
@@ -1311,15 +1063,12 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Look in the reference (under "2D Primitives" (Shapes)) and find out what a polygon is
-                                    and how to draw it.</p>
+                                <p>Look in the reference (under "2D Primitives" (Shapes)) and find out what a polygon is and how to draw it.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/MQ4rprVzY"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/MQ4rprVzY</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1335,8 +1084,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 up and down when you move the mouse cursor left and right.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/HeGWk9hXX"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/HeGWk9hXX</a></p>
-                            <img src="images/basicExercises/basicExercises-g3.png"
-                                alt="Screenshot 2023-08-20 at 06.11.59.png">
+                            <img src="images/basicExercises/basicExercises-g3.png" alt="Screenshot 2023-08-20 at 06.11.59.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/HeGWk9hXX"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/HeGWk9hXX</a></p>
                             <p>What now!!: Find one or two people to work with. Now give each other a task where you
@@ -1356,8 +1104,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 is over the right half, the right half should be black (as shown below).</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/t6vGfd_qX"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/t6vGfd_qX</a></p>
-                            <img src="images/basicExercises/basicExercises-g4.png"
-                                alt="Screenshot 2023-08-20 at 06.12.53.png">
+                            <img src="images/basicExercises/basicExercises-g4.png" alt="Screenshot 2023-08-20 at 06.12.53.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up <strong>if-else</strong> in the references</p>
@@ -1385,8 +1132,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 parts.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/1qZ8McYdg"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/1qZ8McYdg</a></p>
-                            <img src="images/basicExercises/basicExercises-g5.png"
-                                alt="Screenshot 2023-08-20 at 06.13.34.png">
+                            <img src="images/basicExercises/basicExercises-g5.png" alt="Screenshot 2023-08-20 at 06.13.34.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>You can write:</p>
@@ -1421,8 +1167,7 @@ else {
                                 colored white.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/1ZYSw-kQm"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/1ZYSw-kQm</a></p>
-                            <img src="images/basicExercises/basicExercises-g6.png"
-                                alt="Screenshot 2023-08-20 at 06.14.25.png">
+                            <img src="images/basicExercises/basicExercises-g6.png" alt="Screenshot 2023-08-20 at 06.14.25.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Use && (AND) to check if the mouse cursor is both within the x and y coordinates of
@@ -1448,8 +1193,7 @@ else {
                                 holding down the mouse button at the same time, the square should turn white.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/YEQFMnWAu"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/YEQFMnWAu</a></p>
-                            <img src="images/basicExercises/basicExercises-g7.png"
-                                alt="Screenshot 2023-08-20 at 06.15.16.png">
+                            <img src="images/basicExercises/basicExercises-g7.png" alt="Screenshot 2023-08-20 at 06.15.16.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up mouseIsPressed in the reference</p>
@@ -1474,8 +1218,7 @@ else {
                                 make it active)</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/8L2bwgf3g"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/8L2bwgf3g</a></p>
-                            <img src="images/basicExercises/basicExercises-g8.png"
-                                alt="Screenshot 2023-05-06 at 05.43.27.png">
+                            <img src="images/basicExercises/basicExercises-g8.png" alt="Screenshot 2023-05-06 at 05.43.27.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up keyIsDown in the reference</p>
@@ -1504,16 +1247,14 @@ else {
                                 with the mouse first to make it active)</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/leEupVrtF"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/leEupVrtF</a></p>
-                            <img src="images/basicExercises/basicExercises-g9.png"
-                                alt="Screenshot 2023-05-06 at 05.43.59.png">
+                            <img src="images/basicExercises/basicExercises-g9.png" alt="Screenshot 2023-05-06 at 05.43.59.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up key in the reference</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p><a href="https://www.toptal.com/developers/keycode"
-                                        target="_blank">https://www.toptal.com/developers/keycode</a></p>
+                                <p><a href="https://www.toptal.com/developers/keycode" target="_blank">https://www.toptal.com/developers/keycode</a></p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -1539,8 +1280,7 @@ else {
                                 mouse first to make it active).</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/pmsrxBUYC"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/pmsrxBUYC</a></p>
-                            <img src="images/basicExercises/basicExercises-g10.png"
-                                alt="Screenshot 2023-05-06 at 05.44.20.png">
+                            <img src="images/basicExercises/basicExercises-g10.png" alt="Screenshot 2023-05-06 at 05.44.20.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up mousePressed</p>
@@ -1576,19 +1316,16 @@ else {
                                 <h2>Exercise G12 - Searching in Reference</h2>
                             </summary>
                             <p>Draw three circles next to each other that become more and more transparent</p>
-                            <img src="images/basicExercises/basicExercises-g12.png"
-                                alt="Screenshot 2023-08-20 at 06.16.13.png">
+                            <img src="images/basicExercises/basicExercises-g12.png" alt="Screenshot 2023-08-20 at 06.16.13.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>In the reference, the syntax for fill is: fill(v1, v2, v3, [alpha]) which means
-                                    the fourth parameter (alpha) is optional. That's the one you need to use here.</p>
+                                <p>In the reference, the syntax for fill is: fill(v1, v2, v3, [alpha]) which means the fourth parameter (alpha) is optional.
+                                    That's the one you need to use here.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/b5mRyijFt"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/b5mRyijFt</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1597,18 +1334,14 @@ else {
                             <summary>
                                 <h2>Exercise G13 - for loop</h2>
                             </summary>
-                            <p>Build on Exercise G12. Draw 5 circles next to each other that become more and more
-                                transparent using a for loop. See <a href="https://p5js.org/reference/p5/for/"
-                                    target="_blank">https://p5js.org/reference/p5/for/</a> in the reference for syntax.
-                            </p>
-                            <img src="images/basicExercises/basicExercises-g13.png"
-                                alt="Screenshot 2023-08-20 at 06.17.16.png">
+                            <p>Build on Exercise G12. Draw 5 circles next to each other that become more and more transparent using a for loop. See <a
+                                    href="https://p5js.org/reference/p5/for/" target="_blank">https://p5js.org/reference/p5/for/</a> in the reference for
+                                syntax.</p>
+                            <img src="images/basicExercises/basicExercises-g13.png" alt="Screenshot 2023-08-20 at 06.17.16.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/8hAQIpaU"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/8hAQIpaU</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1617,20 +1350,17 @@ else {
                             <summary>
                                 <h2>Exercise G14 - Code Sequence Importance</h2>
                             </summary>
-                            <p>Draw a red circle with a thick gray outline, two green circles without outlines, and a
-                                large text without an outline that says "Hello" in white.</p>
-                            <img src="images/basicExercises/basicExercises-g14.png"
-                                alt="Screenshot 2023-08-20 at 06.17.56.png">
+                            <p>Draw a red circle with a thick gray outline, two green circles without outlines, and a large text without an outline that says
+                                "Hello" in white.</p>
+                            <img src="images/basicExercises/basicExercises-g14.png" alt="Screenshot 2023-08-20 at 06.17.56.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Search for strokeWeight, textSize, and text</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/3dBOE-ebb"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/3dBOE-ebb</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1642,8 +1372,7 @@ else {
                             <p>Draw a blue ball that slowly but steadily moves to the right by itself</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/hYIRVvk6m"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/hYIRVvk6m</a></p>
-                            <img src="images/basicExercises/basicExercises-g15.png"
-                                alt="Screenshot 2023-05-06 at 05.44.47.png">
+                            <img src="images/basicExercises/basicExercises-g15.png" alt="Screenshot 2023-05-06 at 05.44.47.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Look up width in the reference</p>
@@ -1658,10 +1387,8 @@ else {
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/hYIRVvk6m"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/hYIRVvk6m</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1670,25 +1397,21 @@ else {
                             <summary>
                                 <h2>Exercise G16 - Object Direction Change 1</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G15 so that the ball turns around and moves in the
-                                opposite direction when it reaches the right side of the canvas.</p>
+                            <p>Modify the solution from Exercise G15 so that the ball turns around and moves in the opposite direction when it reaches the right
+                                side of the canvas.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/md754qAH8"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/md754qAH8</a></p>
-                            <img src="images/basicExercises/basicExercises-g16.png"
-                                alt="Screenshot 2023-05-06 at 05.45.10.png">
+                            <img src="images/basicExercises/basicExercises-g16.png" alt="Screenshot 2023-05-06 at 05.45.10.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>Create a variable called 'direction' that starts with a value of 1. If the ball
-                                    reaches the right side, multiply 'direction' by -1. When adding to x, multiply by
-                                    'direction' so that the sign of what we add to x changes, meaning we add a negative
+                                <p>Create a variable called 'direction' that starts with a value of 1. If the ball reaches the right side, multiply 'direction'
+                                    by -1. When adding to x, multiply by 'direction' so that the sign of what we add to x changes, meaning we add a negative
                                     number to x when the ball is moving left.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/md754qAH8"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/md754qAH8</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1697,22 +1420,19 @@ else {
                             <summary>
                                 <h2>Exercise G17 - Object Direction Change 2</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G16 so that the ball also turns around and moves in the
-                                opposite direction when it reaches the left side of the canvas.</p>
+                            <p>Modify the solution from Exercise G16 so that the ball also turns around and moves in the opposite direction when it reaches the
+                                left side of the canvas.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/KcEuBzzMN"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/KcEuBzzMN</a></p>
-                            <img src="images/basicExercises/basicExercises-g17.png"
-                                alt="Screenshot 2023-08-20 at 06.19.53.png">
+                            <img src="images/basicExercises/basicExercises-g17.png" alt="Screenshot 2023-08-20 at 06.19.53.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>The operator "||" means OR</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/KcEuBzzMN"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/KcEuBzzMN</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1721,18 +1441,14 @@ else {
                             <summary>
                                 <h2>Exercise G18 - Object Direction Change 3</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G17 so that the ball moves around like on a billiard
-                                table.</p>
+                            <p>Modify the solution from Exercise G17 so that the ball moves around like on a billiard table.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/c6bbSnWkR"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/c6bbSnWkR</a></p>
-                            <img src="images/basicExercises/basicExercises-g18.png"
-                                alt="Screenshot 2023-08-20 at 06.20.32.png">
+                            <img src="images/basicExercises/basicExercises-g18.png" alt="Screenshot 2023-08-20 at 06.20.32.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/c6bbSnWkR"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/c6bbSnWkR</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1741,12 +1457,10 @@ else {
                             <summary>
                                 <h2>Exercise G19 - random()</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G17 so the ball changes to a random color when it
-                                changes direction.</p>
+                            <p>Modify the solution from Exercise G17 so the ball changes to a random color when it changes direction.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/akF-RW1qp"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/akF-RW1qp</a></p>
-                            <img src="images/basicExercises/basicExercises-g19.png"
-                                alt="Screenshot 2023-08-20 at 06.21.10.png">
+                            <img src="images/basicExercises/basicExercises-g19.png" alt="Screenshot 2023-08-20 at 06.21.10.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>random(0, 255) returns a random number between 0 and 255</p>
@@ -1757,10 +1471,8 @@ else {
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/akF-RW1qp"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/akF-RW1qp</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1769,17 +1481,14 @@ else {
                             <summary>
                                 <h2>Exercise G20 - Creating Object 1</h2>
                             </summary>
-                            <p>Create a class called Ball. The Ball class should have the variables this.x and this.y
-                                for position. In setup(), create a variable called ball that is an instance of the Ball
-                                class, and display the ball in draw().</p>
-                            <img src="images/basicExercises/basicExercises-g20.png"
-                                alt="Screenshot 2023-08-20 at 06.21.48.png">
+                            <p>Create a class called Ball. The Ball class should have the variables this.x and this.y for position. In setup(), create a
+                                variable called ball that is an instance of the Ball class, and display the ball in draw().</p>
+                            <img src="images/basicExercises/basicExercises-g20.png" alt="Screenshot 2023-08-20 at 06.21.48.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>Link to some documentation: <a href="https://p5js.org/reference/p5/Object/"
                                         target="_blank">https://p5js.org/reference/p5/Object/</a></p>
                             </details>
-
                             <details>
                                 <summary>Hint</summary>
                                 <p>A class is defined like this:</p>
@@ -1803,10 +1512,8 @@ class Ball {
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/9fQ7kH9eh"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/9fQ7kH9eh</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1815,19 +1522,15 @@ class Ball {
                             <summary>
                                 <h2>Exercise G21 - Moving Object 1</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G20. Create a method in the Ball class called move()
-                                that makes the ball move to the right. Call the move() method in draw() so that the ball
-                                moves across the screen.</p>
+                            <p>Modify the solution from Exercise G20. Create a method in the Ball class called move() that makes the ball move to the right.
+                                Call the move() method in draw() so that the ball moves across the screen.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/FShufVA-F"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/FShufVA-F</a></p>
-                            <img src="images/basicExercises/basicExercises-g21.png"
-                                alt="Screenshot 2023-08-20 at 06.22.24.png">
+                            <img src="images/basicExercises/basicExercises-g21.png" alt="Screenshot 2023-08-20 at 06.22.24.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/FShufVA-F"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/FShufVA-F</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1836,35 +1539,30 @@ class Ball {
                             <summary>
                                 <h2>Exercise G22 - Moving Object 2</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G21 so that the move() method moves the ball around
-                                like a billiard ball. Adjust so the ball starts at a random x and y coordinate between
-                                50 and 350, and it starts moving in a random direction.</p>
+                            <p>Modify the solution from Exercise G21 so that the move() method moves the ball around like a billiard ball. Adjust so the ball
+                                starts at a random x and y coordinate between 50 and 350, and it starts moving in a random direction.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/Z3I-Vl7dh"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/Z3I-Vl7dh</a></p>
-                            <img src="images/basicExercises/basicExercises-g22.png"
-                                alt="Screenshot 2023-08-20 at 06.23.00.png">
+                            <img src="images/basicExercises/basicExercises-g22.png" alt="Screenshot 2023-08-20 at 06.23.00.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>See Exercise G18</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>All variables related to the ball must be defined in the constructor. Remember to
-                                    write "this" before all variables that belong to the object.</p>
+                                <p>All variables related to the ball must be defined in the constructor. Remember to write "this" before all variables that
+                                    belong to the object.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Create a variable called xDirection. Initially, set xDirection to 1. This means the
-                                    ball should move to the right. If the ball reaches the right edge, multiply
-                                    xDirection by -1. If you multiply xDirection by the number that determines how much
-                                    to move the ball at a time, the ball will move in the correct direction.</p>
+                                <p>Create a variable called xDirection. Initially, set xDirection to 1. This means the ball should move to the right. If the
+                                    ball reaches the right edge, multiply xDirection by -1. If you multiply xDirection by the number that determines how much to
+                                    move the ball at a time, the ball will move in the correct direction.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/Z3I-Vl7dh"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/Z3I-Vl7dh</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1873,18 +1571,14 @@ class Ball {
                             <summary>
                                 <h2>Exercise G23 - Object References</h2>
                             </summary>
-                            <p>Look at the solution example and understand the code. Explain the code to someone else.
-                            </p>
+                            <p>Look at the solution example and understand the code. Explain the code to someone else.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/M-KkFfFXR"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/M-KkFfFXR</a></p>
-                            <img src="images/basicExercises/basicExercises-g23.png"
-                                alt="Screenshot 2023-08-20 at 06.23.34.png">
+                            <img src="images/basicExercises/basicExercises-g23.png" alt="Screenshot 2023-08-20 at 06.23.34.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/M-KkFfFXR"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/M-KkFfFXR</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1893,20 +1587,16 @@ class Ball {
                             <summary>
                                 <h2>Exercise G24 - Arrays</h2>
                             </summary>
-                            <p>Create a program that puts four names into an array and prints them in draw() using a for
-                                loop.</p>
-                            <img src="images/basicExercises/basicExercises-g24.png"
-                                alt="Screenshot 2023-08-20 at 06.24.11.png">
+                            <p>Create a program that puts four names into an array and prints them in draw() using a for loop.</p>
+                            <img src="images/basicExercises/basicExercises-g24.png" alt="Screenshot 2023-08-20 at 06.24.11.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>This is a new syntax. You can look at the solution example.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/CEi9my8x6"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/CEi9my8x6</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1915,21 +1605,17 @@ class Ball {
                             <summary>
                                 <h2>Exercise G25 - Objects in Arrays</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G24 to store balls in the array instead of text. The
-                                Ball class can be copied from Exercise G23. Important: When using an object-oriented
-                                programming style, it's easy to reuse classes in other programs.</p>
-                            <img src="images/basicExercises/basicExercises-g25.png"
-                                alt="Screenshot 2023-08-20 at 06.24.45.png">
+                            <p>Modify the solution from Exercise G24 to store balls in the array instead of text. The Ball class can be copied from Exercise
+                                G23. Important: When using an object-oriented programming style, it's easy to reuse classes in other programs.</p>
+                            <img src="images/basicExercises/basicExercises-g25.png" alt="Screenshot 2023-08-20 at 06.24.45.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>If it's a bit difficult, you can look at the solution example.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/eKUJx8jdr"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/eKUJx8jdr</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1938,21 +1624,17 @@ class Ball {
                             <summary>
                                 <h2>Exercise G26 - Initial Values 1</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G20 to create two balls. When a ball is created, you
-                                should specify where to place it. One ball should be placed in the top-left corner and
-                                the other in the bottom-right corner.</p>
-                            <img src="images/basicExercises/basicExercises-g26.png"
-                                alt="Screenshot 2023-08-20 at 06.25.20.png">
+                            <p>Modify the solution from Exercise G20 to create two balls. When a ball is created, you should specify where to place it. One ball
+                                should be placed in the top-left corner and the other in the bottom-right corner.</p>
+                            <img src="images/basicExercises/basicExercises-g26.png" alt="Screenshot 2023-08-20 at 06.25.20.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>This is a new syntax. You can look at the solution example.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/5fVC4QjaE"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/5fVC4QjaE</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1961,16 +1643,12 @@ class Ball {
                             <summary>
                                 <h2>Exercise G27 - Initial Values 2</h2>
                             </summary>
-                            <p>Modify the solution from Exercise G26 so that the balls are created with different
-                                colors.</p>
-                            <img src="images/basicExercises/basicExercises-g27.png"
-                                alt="Screenshot 2023-08-20 at 06.25.54.png">
+                            <p>Modify the solution from Exercise G26 so that the balls are created with different colors.</p>
+                            <img src="images/basicExercises/basicExercises-g27.png" alt="Screenshot 2023-08-20 at 06.25.54.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/rBiVhnhdm"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/rBiVhnhdm</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1982,14 +1660,11 @@ class Ball {
                             <p>Solve the same task as Exercise G1, but make the square an object instead.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/-xEkHMtWG"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/-xEkHMtWG</a></p>
-                            <img src="images/basicExercises/basicExercises-g28.png"
-                                alt="Screenshot 2023-08-20 at 06.26.28.png">
+                            <img src="images/basicExercises/basicExercises-g28.png" alt="Screenshot 2023-08-20 at 06.26.28.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/-xEkHMtWG"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/-xEkHMtWG</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -1998,12 +1673,11 @@ class Ball {
                             <summary>
                                 <h2>Exercise G29 - On/off Button</h2>
                             </summary>
-                            <p>In this exercise, we need to create a switch that is initially turned off. When clicked,
-                                it turns on, and if clicked again, it turns off.</p>
+                            <p>In this exercise, we need to create a switch that is initially turned off. When clicked, it turns on, and if clicked again, it
+                                turns off.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/cAUHYBREm"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/cAUHYBREm</a></p>
-                            <img src="images/basicExercises/basicExercises-g29.png"
-                                alt="Screenshot 2023-08-20 at 06.27.02.png">
+                            <img src="images/basicExercises/basicExercises-g29.png" alt="Screenshot 2023-08-20 at 06.27.02.png">
                             <p>You'll need to combine what you've learned in three different exercises:</p>
                             <p>In Exercise G28, we created a square as an object.</p>
                             <p>In Exercise G6, we learned how to test if the mouse cursor is over a square.</p>
@@ -2014,26 +1688,20 @@ class Ball {
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Create a class called OnOffButton. In its constructor method, define the variables
-                                    this.x, this.y, this.w (width), this.h (height), and a boolean variable called
-                                    isClicked (A boolean variable can only be true or false). The class should have a
-                                    checkIfPressed method that is called from the mouseClicked function. In
-                                    checkIfPressed, you can have the line "this.isClicked = !this.isClicked". ! means
-                                    "not" so we set this.isClicked to the opposite of what it is. If it has the value
-                                    false, it becomes true and vice versa. In the show() method, we need an "if"
-                                    condition that checks this.isClicked.</p>
+                                <p>Create a class called OnOffButton. In its constructor method, define the variables this.x, this.y, this.w (width), this.h
+                                    (height), and a boolean variable called isClicked (A boolean variable can only be true or false). The class should have a
+                                    checkIfPressed method that is called from the mouseClicked function. In checkIfPressed, you can have the line
+                                    "this.isClicked = !this.isClicked". ! means "not" so we set this.isClicked to the opposite of what it is. If it has the
+                                    value false, it becomes true and vice versa. In the show() method, we need an "if" condition that checks this.isClicked.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>You can look at the solution example if this is too difficult to create without help.
-                                </p>
+                                <p>You can look at the solution example if this is too difficult to create without help.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/cAUHYBREm"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/cAUHYBREm</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2042,30 +1710,25 @@ class Ball {
                             <summary>
                                 <h2>Exercise G30 - Remove Object from Screen</h2>
                             </summary>
-                            <p>Create two balls (objects) and draw them on the screen. If you click on a ball, it should
-                                disappear.</p>
+                            <p>Create two balls (objects) and draw them on the screen. If you click on a ball, it should disappear.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/GeCiCAiqu"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/GeCiCAiqu</a></p>
-                            <img src="images/basicExercises/basicExercises-g30.png"
-                                alt="Screenshot 2023-08-20 at 06.27.36.png">
+                            <img src="images/basicExercises/basicExercises-g30.png" alt="Screenshot 2023-08-20 at 06.27.36.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>In addition to the variables this.x, this.y, this.r, the Ball class should also have
-                                    a boolean variable called this.exists which is initially true. The class should have
-                                    a method called removeIfClicked. Here you should have the following code:</p>
+                                <p>In addition to the variables this.x, this.y, this.r, the Ball class should also have a boolean variable called this.exists
+                                    which is initially true. The class should have a method called removeIfClicked. Here you should have the following code:</p>
                                 <pre><code>
 if (dist(this.x, this.y,mouseX, mouseY) < this.r){
    this.exists = false
 }
 </code></pre>
-                                <p>The built-in p5.js function "dist" finds the distance between two points. If the
-                                    distance between the center of the ball and the mouse cursor is less than the radius
-                                    of the circle, then the mouse cursor must be inside the circle.</p>
+                                <p>The built-in p5.js function "dist" finds the distance between two points. If the distance between the center of the ball and
+                                    the mouse cursor is less than the radius of the circle, then the mouse cursor must be inside the circle.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Look for inspiration in Exercise 29 for how to check if an object has been clicked.
-                                </p>
+                                <p>Look for inspiration in Exercise 29 for how to check if an object has been clicked.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -2073,10 +1736,8 @@ if (dist(this.x, this.y,mouseX, mouseY) < this.r){
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/GeCiCAiqu"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/GeCiCAiqu</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2085,22 +1746,19 @@ if (dist(this.x, this.y,mouseX, mouseY) < this.r){
                             <summary>
                                 <h2>Exercise G31 - Remove Object from Array</h2>
                             </summary>
-                            <p>Here we will learn to remove objects from an array. Start with the solution from Exercise
-                                G25. Modify it so that a ball is removed if it is clicked.</p>
+                            <p>Here we will learn to remove objects from an array. Start with the solution from Exercise G25. Modify it so that a ball is
+                                removed if it is clicked.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/u-7vP2l1S"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/u-7vP2l1S</a></p>
-                            <img src="images/basicExercises/basicExercises-g31.png"
-                                alt="Screenshot 2023-08-20 at 06.28.10.png">
+                            <img src="images/basicExercises/basicExercises-g31.png" alt="Screenshot 2023-08-20 at 06.28.10.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>The Ball class should have a method called isClicked that returns true if the ball
-                                    has been clicked and false otherwise.</p>
+                                <p>The Ball class should have a method called isClicked that returns true if the ball has been clicked and false otherwise.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
-                                <p>Use mousePressed as you did in Exercise G10. Here you should have the following code
-                                    that loops through the array of balls backwards and removes a ball if it has been
-                                    clicked:</p>
+                                <p>Use mousePressed as you did in Exercise G10. Here you should have the following code that loops through the array of balls
+                                    backwards and removes a ball if it has been clicked:</p>
                                 <pre><code> 
 for (let i = balls.length - 1; i >= 0; i--) {
     if (balls[i].isClicked()){
@@ -2113,10 +1771,8 @@ for (let i = balls.length - 1; i >= 0; i--) {
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/u-7vP2l1S"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/u-7vP2l1S</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2125,14 +1781,12 @@ for (let i = balls.length - 1; i >= 0; i--) {
                             <summary>
                                 <h2>Exercise G32 - Object Communication 1</h2>
                             </summary>
-                            <p>Here you will work on how two objects (of the same class) can communicate with each
-                                other. Start with the solution from Exercise G25. Create an extra ball that is much
-                                larger than the others. If the large ball and one of the small balls collide, the small
+                            <p>Here you will work on how two objects (of the same class) can communicate with each other. Start with the solution from Exercise
+                                G25. Create an extra ball that is much larger than the others. If the large ball and one of the small balls collide, the small
                                 ball should disappear.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/KFO5e0XSo"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/KFO5e0XSo</a></p>
-                            <img src="images/basicExercises/basicExercises-g32.png"
-                                alt="Screenshot 2023-08-20 at 06.28.44.png">
+                            <img src="images/basicExercises/basicExercises-g32.png" alt="Screenshot 2023-08-20 at 06.28.44.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>The Ball class should have the following method:</p>
@@ -2142,8 +1796,8 @@ intersects(other) {
 return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
 }
 </code></pre>
-                                <p>When iterating through all the balls in the draw method, for each ball, call its
-                                    intersects method with the name of the large ball as the argument.</p>
+                                <p>When iterating through all the balls in the draw method, for each ball, call its intersects method with the name of the large
+                                    ball as the argument.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -2151,10 +1805,8 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/KFO5e0XSo"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/KFO5e0XSo</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2163,16 +1815,14 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Exercise G33 - Follow Cursor</h2>
                             </summary>
-                            <p>Create a ball object that slowly follows the mouse cursor. If the ball touches the mouse
-                                cursor, it should grow larger.</p>
+                            <p>Create a ball object that slowly follows the mouse cursor. If the ball touches the mouse cursor, it should grow larger.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/H9rINWJpR"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/H9rINWJpR</a></p>
-                            <img src="images/basicExercises/basicExercises-g33.png"
-                                alt="Screenshot 2023-08-20 at 06.29.18.png">
+                            <img src="images/basicExercises/basicExercises-g33.png" alt="Screenshot 2023-08-20 at 06.29.18.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>In the ball's move method, you should move right or left depending on where the ball
-                                    is relative to the mouse cursor. Same with up and down.</p>
+                                <p>In the ball's move method, you should move right or left depending on where the ball is relative to the mouse cursor. Same
+                                    with up and down.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -2180,10 +1830,8 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/H9rINWJpR"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/H9rINWJpR</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2192,23 +1840,19 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Exercise G34 - Object Communication 2</h2>
                             </summary>
-                            <p>Let's create a lot of balls that fly around in a room. If they hit each other, they
-                                should change direction.</p>
+                            <p>Let's create a lot of balls that fly around in a room. If they hit each other, they should change direction.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/ZHhYLK17p"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/ZHhYLK17p</a></p>
-                            <img src="images/basicExercises/basicExercises-g34.png"
-                                alt="Screenshot 2023-08-20 at 06.29.52.png">
+                            <img src="images/basicExercises/basicExercises-g34.png" alt="Screenshot 2023-08-20 at 06.29.52.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>The solution is a bit challenging. You can look at the solution example and read the
-                                    comments to understand how to solve this task.</p>
+                                <p>The solution is a bit challenging. You can look at the solution example and read the comments to understand how to solve this
+                                    task.</p>
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/ZHhYLK17p"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/ZHhYLK17p</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2217,19 +1861,16 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             <summary>
                                 <h2>Exercise G35 - map() Function</h2>
                             </summary>
-                            <p>Create an object that is a ball that slowly but surely moves to the right by itself and
-                                changes direction when it reaches the right and left sides of the canvas. Additionally,
-                                there should be a box in the bottom right corner (100x100) that functions as a minimap.
-                                The minimap should use a small ball (an object called miniball) to show where the big
-                                ball is on the canvas.</p>
+                            <p>Create an object that is a ball that slowly but surely moves to the right by itself and changes direction when it reaches the
+                                right and left sides of the canvas. Additionally, there should be a box in the bottom right corner (100x100) that functions as a
+                                minimap. The minimap should use a small ball (an object called miniball) to show where the big ball is on the canvas.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/cyYr29QEH"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/cyYr29QEH</a></p>
-                            <img src="images/basicExercises/basicExercises-g35.png"
-                                alt="Screenshot 2023-08-20 at 06.30.26.png">
+                            <img src="images/basicExercises/basicExercises-g35.png" alt="Screenshot 2023-08-20 at 06.30.26.png">
                             <details>
                                 <summary>Hint</summary>
-                                <p>The built-in p5.js "map" function maps the first value (i.e., the large ball's x
-                                    coordinate) so that the range 0 to 400 is mapped to the range 300 to 400.</p>
+                                <p>The built-in p5.js "map" function maps the first value (i.e., the large ball's x coordinate) so that the range 0 to 400 is
+                                    mapped to the range 300 to 400.</p>
                             </details>
                             <details>
                                 <summary>Hint</summary>
@@ -2241,10 +1882,8 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                             </details>
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/cyYr29QEH"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/cyYr29QEH</a></p>
-                            <p>What now!!: Find one or two people to work with. Now give each other a task where you
-                                use what you've learned. Alternatively, you can experiment a bit or do what you feel
-                                like
-                                until you start the next task.</p>
+                            <p>What now!!: Find one or two people to work with. Now give each other a task where you use what you've learned. Alternatively, you
+                                can experiment a bit or do what you feel like until you start the next task.</p>
                         </details>
                     </section>
 
@@ -2257,8 +1896,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 always point towards the mouse cursor.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/36vwot4Dm"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/36vwot4Dm</a></p>
-                            <img src="images/basicExercises/basicExercises-g36.png"
-                                alt="Screenshot 2023-08-20 at 06.31.00.png">
+                            <img src="images/basicExercises/basicExercises-g36.png" alt="Screenshot 2023-08-20 at 06.31.00.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>If the task is a bit difficult, you can look at the solution example.</p>
@@ -2281,8 +1919,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 is pointing every two seconds.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/RmdzKavho"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/RmdzKavho</a></p>
-                            <img src="images/basicExercises/basicExercises-g37.png"
-                                alt="Screenshot 2023-08-20 at 06.31.34.png">
+                            <img src="images/basicExercises/basicExercises-g37.png" alt="Screenshot 2023-08-20 at 06.31.34.png">
                             <details>
                                 <summary>Hint</summary>
                                 <p>If the task is a bit difficult, you can look at the solution example.</p>
@@ -2305,8 +1942,7 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
                                 that move fastest should be largest and brightest.</p>
                             <p>Try the functionality: <a href="https://editor.p5js.org/JensValdez/full/sDH7z8Vbq"
                                     target="_blank">https://editor.p5js.org/JensValdez/full/sDH7z8Vbq</a></p>
-                            <img src="images/basicExercises/basicExercises-g38.png"
-                                alt="Screenshot 2023-08-20 at 06.32.08.png">
+                            <img src="images/basicExercises/basicExercises-g38.png" alt="Screenshot 2023-08-20 at 06.32.08.png">
                             <p>Solution example: <a href="https://editor.p5js.org/JensValdez/sketches/sDH7z8Vbq"
                                     target="_blank">https://editor.p5js.org/JensValdez/sketches/sDH7z8Vbq</a></p>
                             <p>What now!!: Find one or two people to work with. Now give each other a task where you
@@ -2319,18 +1955,6 @@ return dist(this.x, this.y, other.x, other.y) < this.r + other.r;
             </div>
         </div>
     </div>
-
-    <!-- The Modal 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Exercise Description</h2>
-            <div id="modal-body">
-            </div>
-        </div>
-    </div>
-    <script src="modal.js"></script>
-    -->
     <script src="script.js"></script>
 </body>
 
