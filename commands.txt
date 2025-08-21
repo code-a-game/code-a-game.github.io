@@ -1,0 +1,69 @@
+git diff --no-index --unified=2000 ZeldaInitialCode.js ZeldaSubtask1.js  > ZeldaInitialCodeToSubtask1.diff 
+git diff --no-index --unified=2000 ZeldaSubtask1.js ZeldaSubtask2.js  > ZeldaSubtask1ToSubtask2.diff 
+git diff --no-index --unified=2000 ZeldaSubtask2.js ZeldaSubtask3.js  > ZeldaSubtask2ToSubtask3.diff 
+git diff --no-index --unified=2000 ZeldaSubtask3.js ZeldaSubtask4.js  > ZeldaSubtask3ToSubtask4.diff 
+git diff --no-index --unified=2000 ZeldaSubtask4.js ZeldaSubtask5.js  > ZeldaSubtask4ToSubtask5.diff 
+
+git diff --no-index --unified=2000 QuizInitialCode.js QuizSubtask1.js  > QuizInitialCodeToSubtask1.diff 
+git diff --no-index --unified=2000 QuizSubtask1.js QuizSubtask2.js  > QuizSubtask1ToSubtask2.diff 
+git diff --no-index --unified=2000 QuizSubtask2.js QuizSubtask3.js  > QuizSubtask2ToSubtask3.diff 
+git diff --no-index --unified=2000 QuizSubtask3.js QuizSubtask4.js  > QuizSubtask3ToSubtask4.diff 
+git diff --no-index --unified=2000 QuizSubtask4.js QuizSubtask5.js  > QuizSubtask4ToSubtask5.diff
+git diff --no-index --unified=2000 indexOriginal.html indexFinal.html  > indexOriginalToFinal.diff 
+
+git diff --no-index --unified=2000 HeroManStartKodeSkabelon.js HeroManDelopgave1.js  > HeroManStartKodeSkabelonToDelopgave1.diff 
+git diff --no-index --unified=2000 HeroManDelopgave1.js HeroManDelopgave2.js  > HeroManDelopgave1ToDelopgave2.diff 
+git diff --no-index --unified=2000 HeroManDelopgave2.js HeroManDelopgave3.js  > HeroManDelopgave2ToDelopgave3.diff 
+git diff --no-index --unified=2000 HeroManDelopgave3.js HeroManDelopgave4.js  > HeroManDelopgave3ToDelopgave4.diff 
+git diff --no-index --unified=2000 HeroManDelopgave4.js HeroManDelopgave5.js  > HeroManDelopgave4ToDelopgave5.diff 
+git diff --no-index --unified=2000 HeroManDelopgave5.js HeroManDelopgave6.js  > HeroManDelopgave5ToDelopgave6.diff 
+git diff --no-index --unified=2000 HeroManDelopgave6.js HeroManDelopgave7.js  > HeroManDelopgave6ToDelopgave7.diff 
+git diff --no-index --unified=2000 HeroManDelopgave7.js HeroManDelopgave8.js  > HeroManDelopgave7ToDelopgave8.diff 
+git diff --no-index --unified=2000 HeroManDelopgave8.js HeroManDelopgave9.js  > HeroManDelopgave8ToDelopgave9.diff 
+git diff --no-index --unified=2000 HeroManDelopgave9.js HeroManDelopgave10.js  > HeroManDelopgave9ToDelopgave10.diff 
+git diff --no-index --unified=2000 HeroManDelopgave10.js HeroManDelopgave11.js  > HeroManDelopgave10ToDelopgave11.diff 
+git diff --no-index --unified=2000 HeroManDelopgave11.js HeroManDelopgave12.js  > HeroManDelopgave11ToDelopgave12.diff 
+git diff --no-index --unified=2000 HeroManDelopgave12.js HeroManDelopgave13.js  > HeroManDelopgave12ToDelopgave13.diff 
+git diff --no-index --unified=2000 HeroManDelopgave13.js HeroManDelopgave14.js  > HeroManDelopgave13ToDelopgave14.diff 
+git diff --no-index --unified=2000 HeroManDelopgave14.js HeroManDelopgave15.js  > HeroManDelopgave14ToDelopgave15.diff 
+git diff --no-index --unified=2000 HeroManDelopgave15.js HeroManDelopgave16.js  > HeroManDelopgave15ToDelopgave16.diff 
+git diff --no-index --unified=2000 HeroManDelopgave16.js HeroManDelopgave17.js  > HeroManDelopgave16ToDelopgave17.diff 
+git diff --no-index --unified=2000 HeroManDelopgave17.js HeroManDelopgave18.js  > HeroManDelopgave17ToDelopgave18.diff 
+git diff --no-index --unified=2000 HeroManDelopgave18.js HeroManDelopgave19.js  > HeroManDelopgave18ToDelopgave19.diff 
+git diff --no-index --unified=2000 HeroManDelopgave19.js HeroManDelopgave20.js  > HeroManDelopgave19ToDelopgave20.diff 
+git diff --no-index --unified=2000 HeroManDelopgave20.js HeroManDelopgave21.js  > HeroManDelopgave20ToDelopgave21.diff 
+git diff --no-index --unified=2000 HeroManDelopgave21.js HeroManDelopgave22.js  > HeroManDelopgave21ToDelopgave22.diff 
+git diff --no-index --unified=2000 HeroManDelopgave22.js HeroManDelopgave23.js  > HeroManDelopgave22ToDelopgave23.diff 
+git diff --no-index --unified=2000 HeroManDelopgave23.js HeroManDelopgave24.js  > HeroManDelopgave23ToDelopgave24.diff 
+git diff --no-index --unified=2000 HeroManDelopgave24.js HeroManDelopgave25.js  > HeroManDelopgave24ToDelopgave25.diff 
+git diff --no-index --unified=2000 HeroManDelopgave25.js HeroManDelopgave26.js  > HeroManDelopgave25ToDelopgave26.diff 
+git diff --no-index --unified=2000 HeroManDelopgave26.js HeroManDelopgave27.js  > HeroManDelopgave26ToDelopgave27.diff 
+git diff --no-index --unified=2000 HeroManDelopgave27.js HeroManDelopgave28.js  > HeroManDelopgave27ToDelopgave28.diff 
+git diff --no-index --unified=2000 HeroManDelopgave28.js HeroManDelopgave29.js  > HeroManDelopgave28ToDelopgave29.diff 
+git diff --no-index --unified=2000 HeroManDelopgave29.js HeroManDelopgave30.js  > HeroManDelopgave29ToDelopgave30.diff 
+git diff --no-index --unified=2000 HeroManDelopgave30.js HeroManDelopgave31.js  > HeroManDelopgave30ToDelopgave31.diff 
+git diff --no-index --unified=2000 HeroManDelopgave31.js HeroManFaerdigLoesning.js  > HeroManDelopgave31ToHeroManFaerdigLoesning.diff 
+
+git diff --no-index --unified=2000 GrandPrixInitialCode.js GrandPrixSubtask1.js  > GrandPrixInitialCodeToSubtask1.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask1.js GrandPrixSubtask2.js  > GrandPrixSubtask1ToSubtask2.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask2.js GrandPrixSubtask3.js  > GrandPrixSubtask2ToSubtask3.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask3.js GrandPrixSubtask4.js  > GrandPrixSubtask3ToSubtask4.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask4.js GrandPrixSubtask5.js  > GrandPrixSubtask4ToSubtask5.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask5.js GrandPrixSubtask6.js  > GrandPrixSubtask5ToSubtask6.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask6.js GrandPrixSubtask7.js  > GrandPrixSubtask6ToSubtask7.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask7.js GrandPrixSubtask8.js  > GrandPrixSubtask7ToSubtask8.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask8.js GrandPrixSubtask9.js  > GrandPrixSubtask8ToSubtask9.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask9.js GrandPrixSubtask10.js  > GrandPrixSubtask9ToSubtask10.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask10.js GrandPrixSubtask11.js  > GrandPrixSubtask10ToSubtask11.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask11.js GrandPrixSubtask12.js  > GrandPrixSubtask11ToSubtask12.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask12.js GrandPrixSubtask13.js  > GrandPrixSubtask12ToSubtask13.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask13.js GrandPrixSubtask14.js  > GrandPrixSubtask13ToSubtask14.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask14.js GrandPrixSubtask15.js  > GrandPrixSubtask14ToSubtask15.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask15.js GrandPrixSubtask16.js  > GrandPrixSubtask15ToSubtask16.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask16.js GrandPrixSubtask17.js  > GrandPrixSubtask16ToSubtask17.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask17.js GrandPrixSubtask18.js  > GrandPrixSubtask17ToSubtask18.diff 
+git diff --no-index --unified=2000 GrandPrixSubtask18.js GrandPrixFullSolution.js  > GrandPrixSubtask18ToFullSolution.diff 
+
+
+
+

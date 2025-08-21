@@ -32,7 +32,7 @@ function switchLanguage() {
 }
 
 function initializeLanguage() {
-    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'da';
     const danishContent = document.getElementById('danish-content');
     const englishContent = document.getElementById('english-content');
     const languageFlag = document.getElementById('languageFlag');

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="modal.css">
 </head>
+
 <body>
     <nav class="header-nav">
         <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
@@ -19,7 +21,7 @@
             <div class="container">
                 <header>
                     <h1>Opgave 1 - HeroMan</h1>
-                </header> 
+                </header>
                 <div class="toc">
                     <h2>Indholdsfortegnelse</h2>
                     <ul>
@@ -68,28 +70,41 @@
                                 <h2>Introduktion</h2>
                             </summary>
                             <p>Vi skal lave følgende spil der hedder HeroMan:</p>
-                            <img src="images/heroMan/heroMan-image1.png" alt="HeroMan Game Screenshot" class="content-img">
-                            <p>Du kan lige prøve det af så du kender funktionaliteten. Se om du kan gennemføre alle levels.</p>
-                            <p>Prøv spillet her: <a href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
-                            <p>Når du skal lave en større opgave er det nemmest at dele den op i mindre delopgaver som du godt kan løse. For at hjælpe har jeg oprettet en masse delopgaver. Hvis du går i stå må du gerne se på løsningenseksemplet for delopgaven. Herefter skal du selv prøve at løse den. Det er fint hvis du finder dine egne løsninger til delopgaverne. Det er dog en god ide altid at se løsningseksemplet for hver delopgave igennem og forstå det efter at du har løst en delopgave.</p>
+                            <img src="images/heroMan/heroMan-image1.png" alt="HeroMan Game Screenshot">
+                            <p>Du kan lige prøve det af så du kender funktionaliteten. Se om du kan gennemføre alle
+                                levels.</p>
+                            <p>Prøv spillet her: <a href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
+                            <p>Når du skal lave en større opgave er det nemmest at dele den op i mindre delopgaver som
+                                du godt kan løse. For at hjælpe har jeg oprettet en masse delopgaver. Hvis du går i stå
+                                må du gerne se på løsningenseksemplet for delopgaven. Herefter skal du selv prøve at
+                                løse den. Det er fint hvis du finder dine egne løsninger til delopgaverne. Det er dog en
+                                god ide altid at se løsningseksemplet for hver delopgave igennem og forstå det efter at
+                                du har løst en delopgave.</p>
                             <p>Det er en lidt avanceret opgave som har fokus på følgende:</p>
                             <ul>
                                 <li>Hvordan en opgave kan deles ind i mindre delopgaver som er godt at løse.</li>
-                                <li>Hvordan man kan strukturere koden i klasser, en styringsfunktion og mindre hjælpe funktioner så koden er til at overskue.</li>
-                                <li>Hvordan man kan håndtere de forskellige tilstande som spillet kan være i og styre dialogen med brugeren.</li>
+                                <li>Hvordan man kan strukturere koden i klasser, en styringsfunktion og mindre hjælpe
+                                    funktioner så koden er til at overskue.</li>
+                                <li>Hvordan man kan håndtere de forskellige tilstande som spillet kan være i og styre
+                                    dialogen med brugeren.</li>
                                 <li>Hvordan funktionalitet kan deles op så hjælpefunktionerne kun gør en ting.</li>
                                 <li>Hvordan man kan lave genbrugelig kode.</li>
-                                <li>Hvordan man kan bruge nedarvning (Engelsk: inheritance) og håndtere objekter der ligner hinanden på en ens måde (Det der på engelsk kaldes polymorphism)</li>
-                                <li>Hvordan man kan lave klasser og hjælpefunktioner således at de ikke gør brug af globale variabler. Dette gør at de er nemme at forstå og bruge og at de kan testes uafhængig af resten af koden.</li>
+                                <li>Hvordan man kan bruge nedarvning (Engelsk: inheritance) og håndtere objekter der
+                                    ligner hinanden på en ens måde (Det der på engelsk kaldes polymorphism)</li>
+                                <li>Hvordan man kan lave klasser og hjælpefunktioner således at de ikke gør brug af
+                                    globale variabler. Dette gør at de er nemme at forstå og bruge og at de kan testes
+                                    uafhængig af resten af koden.</li>
                                 <li>Hvor man kan gøre brug af tilfældighed til at gøre hver spiloplevelse unique.</li>
-                                <li>Hvordan man kan starte med at lave den mest simple version af et spil men som stadig kan spilles hvorefter man gradvist tilføjer flere og flere lækre detaljer.</li>
+                                <li>Hvordan man kan starte med at lave den mest simple version af et spil men som stadig
+                                    kan spilles hvorefter man gradvist tilføjer flere og flere lækre detaljer.</li>
                             </ul>
                         </details>
                     </section>
                     <section id="start-her">
                         <details open>
                             <summary>
-                                <h2>Start her</h2> 
+                                <h2>Start her</h2>
                             </summary>
                             <p>Start med at forstå start kode skabelonen::</p>
                             <pre><code class="language-javascript">// HeroManStartKodeSkabelon
@@ -125,7 +140,8 @@ class HeroMan {
   }
 }
 </code></pre>
-                            <p>og kopier koden ind i et nyt program i p5js editoren. Giv spillet et navn og husk at gemme løbende.</p>
+                            <p>og kopier koden ind i et nyt program i p5js editoren. Giv spillet et navn og husk at
+                                gemme løbende.</p>
                         </details>
                     </section>
                     <section id="delopgave-1">
@@ -133,8 +149,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 1: HeroMans pladsering</h2>
                             </summary>
-                            <p>Tilret så heroMan’s pladsering (x og y koordinat) er variabler i HeroMan klassens constructor.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/jGtlGKNnL" target="_blank">https://editor.p5js.org/JensValdez/full/jGtlGKNnL</a></p>
+                            <p>Tilret så heroMan’s pladsering (x og y koordinat) er variabler i HeroMan klassens
+                                constructor.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/jGtlGKNnL"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/jGtlGKNnL</a></p>
                             <p><a href="heroMan/heroMan-solution-task1.html">Solution example - Subtask 1</a></p>
                         </details>
                     </section>
@@ -144,7 +163,9 @@ class HeroMan {
                                 <h2>Delopgave 2: HeroMans størrelse</h2>
                             </summary>
                             <p>Tilret så heroMan har en størrelse (cirkel) og så han er gul.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/QIiW_dJ_j" target="_blank">https://editor.p5js.org/JensValdez/full/QIiW_dJ_j</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/QIiW_dJ_j"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/QIiW_dJ_j</a></p>
                             <p><a href="heroMan/heroMan-solution-task2.html">Solution example - Subtask 2</a></p>
                         </details>
                     </section>
@@ -154,7 +175,9 @@ class HeroMan {
                                 <h2>Delopgave 3: HeroMans bevægelse</h2>
                             </summary>
                             <p>Tilret så man kan bevæge heroMan ved at bruge piletasterne.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/s7vJKOAAf" target="_blank">https://editor.p5js.org/JensValdez/full/s7vJKOAAf</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/s7vJKOAAf"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/s7vJKOAAf</a></p>
                             <p><a href="heroMan/heroMan-solution-task3.html">Solution example - Subtask 3</a></p>
                         </details>
                     </section>
@@ -163,8 +186,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 4: Begrænsninger til HeroMans bevægelse</h2>
                             </summary>
-                            <p>Tilret så heroMan ikke kan bevæge sig uden for canvas, således at man hele tiden kan se hele den gule cirkel.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/iMRNyipiU" target="_blank">https://editor.p5js.org/JensValdez/full/iMRNyipiU</a></p>
+                            <p>Tilret så heroMan ikke kan bevæge sig uden for canvas, således at man hele tiden kan se
+                                hele den gule cirkel.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/iMRNyipiU"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/iMRNyipiU</a></p>
                             <p><a href="heroMan/heroMan-solution-task4.html">Solution example - Subtask 4</a></p>
                         </details>
                     </section>
@@ -173,8 +199,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 5: Målområde</h2>
                             </summary>
-                            <p>Tilret så der er et målområde. Der skal ikke ske noget når heroMan kommer indenfor målområdet.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/jB59gNr7o" target="_blank">https://editor.p5js.org/JensValdez/full/jB59gNr7o</a></p>
+                            <p>Tilret så der er et målområde. Der skal ikke ske noget når heroMan kommer indenfor
+                                målområdet.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/jB59gNr7o"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/jB59gNr7o</a></p>
                             <p><a href="heroMan/heroMan-solution-task5.html">Solution example - Subtask 5</a></p>
                         </details>
                     </section>
@@ -184,7 +213,9 @@ class HeroMan {
                                 <h2>Delopgave 6: Vinder betingelser</h2>
                             </summary>
                             <p>Skriv en besked til skærmen hvis midten af heroMan er inden for målområdet.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/cyJcXrdd7" target="_blank">https://editor.p5js.org/JensValdez/full/cyJcXrdd7</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/cyJcXrdd7"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/cyJcXrdd7</a></p>
                             <p><a href="heroMan/heroMan-solution-task6.html">Solution example - Subtask 6</a></p>
                         </details>
                     </section>
@@ -194,8 +225,12 @@ class HeroMan {
                                 <h2>Delopgave 7: Stop spillet hvis spillet vindes</h2>
                             </summary>
                             <p>Tilret så spillet stopper hvis midten af heroMan er indenfor målområdet</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/eZKveUUW2" target="_blank">https://editor.p5js.org/JensValdez/full/eZKveUUW2</a></p>
-                            <p>Hint: I setup sættes gameState til “GAME-IN-PROGRESS”. Hvis heroMan kommer indenfor målområdet, så sættes gameState til “GAME-WON”. Tilret “draw” funktionen så heroMan kun bevæger sig hvis gameState er “GAME-IN-PROGRESS”.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/eZKveUUW2"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/eZKveUUW2</a></p>
+                            <p>Hint: I setup sættes gameState til “GAME-IN-PROGRESS”. Hvis heroMan kommer indenfor
+                                målområdet, så sættes gameState til “GAME-WON”. Tilret “draw” funktionen så heroMan kun
+                                bevæger sig hvis gameState er “GAME-IN-PROGRESS”.</p>
                             <p><a href="heroMan/heroMan-solution-task7.html">Solution example - Subtask 7</a></p>
                         </details>
                     </section>
@@ -204,9 +239,13 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 8: Genstart af nyt spil</h2>
                             </summary>
-                            <p>Hvis heroMan er i målområdet, så skal spillet starte forfra hvis man klikker med musen.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/fOsAx8Q6J" target="_blank">https://editor.p5js.org/JensValdez/full/fOsAx8Q6J</a></p>
-                            <p>Hint: Tilføj en ny gameState der hedder “SET-START-VALUES”. Sæt denne i “setup” og når der klikkes med musen (og gameState samtig er “GAME-WON”).</p>
+                            <p>Hvis heroMan er i målområdet, så skal spillet starte forfra hvis man klikker med musen.
+                            </p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/fOsAx8Q6J"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/fOsAx8Q6J</a></p>
+                            <p>Hint: Tilføj en ny gameState der hedder “SET-START-VALUES”. Sæt denne i “setup” og når
+                                der klikkes med musen (og gameState samtig er “GAME-WON”).</p>
                             <p><a href="heroMan/heroMan-solution-task8.html">Solution example - Subtask 8</a></p>
                         </details>
                     </section>
@@ -216,7 +255,9 @@ class HeroMan {
                                 <h2>Delopgave 9: Grøn mand</h2>
                             </summary>
                             <p>Tilret så der er en grøn mand (grøn cirkel uden et ansigt)</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/ni0SyGscX" target="_blank">https://editor.p5js.org/JensValdez/full/ni0SyGscX</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/ni0SyGscX"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/ni0SyGscX</a></p>
                             <p><a href="heroMan/heroMan-solution-task9.html">Solution example - Subtask 9</a></p>
                         </details>
                     </section>
@@ -226,8 +267,14 @@ class HeroMan {
                                 <h2>Delopgave 10: Interaktion med den grønne mand</h2>
                             </summary>
                             <p>Tilret så spillet stopper hvis heroMan rører den grønne mand.</p>
-                            <p>Hint: Lave en metode i HeroMan klassen ved navn intersectsAngryMan (”Intersects” betyder at to linier krydser hinanden). Denne skal tage et angryMan object ind som argument og returnere true hvis de to cirkler rører hinanden. “validateGameState” funktionen skal sætte gameState til “GAME-LOST” hvis heroMan rører ved den grønne mand. Tilret “draw” funktionen så spille stopper hvis spillet er tabt.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/9Kcg2VSqH" target="_blank">https://editor.p5js.org/JensValdez/full/9Kcg2VSqH</a></p>
+                            <p>Hint: Lave en metode i HeroMan klassen ved navn intersectsAngryMan (”Intersects” betyder
+                                at to linier krydser hinanden). Denne skal tage et angryMan object ind som argument og
+                                returnere true hvis de to cirkler rører hinanden. “validateGameState” funktionen skal
+                                sætte gameState til “GAME-LOST” hvis heroMan rører ved den grønne mand. Tilret “draw”
+                                funktionen så spille stopper hvis spillet er tabt.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/9Kcg2VSqH"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/9Kcg2VSqH</a></p>
                             <p><a href="heroMan/heroMan-solution-task10.html">Solution example - Subtask 10</a></p>
                         </details>
                     </section>
@@ -237,7 +284,9 @@ class HeroMan {
                                 <h2>Delopgave 11: Den grønne mands bevægelse</h2>
                             </summary>
                             <p>Tilret så den grønne mand følger efter heroMan</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/Nou3cVy10" target="_blank">https://editor.p5js.org/JensValdez/full/Nou3cVy10</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/Nou3cVy10"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/Nou3cVy10</a></p>
                             <p><a href="heroMan/heroMan-solution-task11.html">Solution example - Subtask 11</a></p>
                         </details>
                     </section>
@@ -246,9 +295,14 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 12: Den grønne mands placering</h2>
                             </summary>
-                            <p>Tilret til den grønne mand fra start er pladseret et tilfældig sted på skærmen. Gør dette på en fleksibel måde således at det stadig vil virke hvis du beslutter at lave canvas større.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/iXqQV9yhS" target="_blank">https://editor.p5js.org/JensValdez/full/iXqQV9yhS</a></p>
-                            <p>Hint: Hvis man i koden skriver “width” så returneres bredten på canvas og hvis man skrive “height” så returneres højden på canvas.</p>
+                            <p>Tilret til den grønne mand fra start er pladseret et tilfældig sted på skærmen. Gør dette
+                                på en fleksibel måde således at det stadig vil virke hvis du beslutter at lave canvas
+                                større.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/iXqQV9yhS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/iXqQV9yhS</a></p>
+                            <p>Hint: Hvis man i koden skriver “width” så returneres bredten på canvas og hvis man skrive
+                                “height” så returneres højden på canvas.</p>
                             <p><a href="heroMan/heroMan-solution-task12.html">Solution example - Subtask 12</a></p>
                         </details>
                     </section>
@@ -257,8 +311,13 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 13: Juster spil parametre</h2>
                             </summary>
-                            <p>Tilret så heroMan’s hastighed er parameter i HeroMans klassen’s constructor. Tilret også så den grønne mands farve og maksimale hastighed er parametere i GreenAngryMan klassens constructor. Tilret contructoren så den grønne mand får en tilfældig højeste hastighed hver gang man starter spillet.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/Puxo9WIWA" target="_blank">https://editor.p5js.org/JensValdez/full/Puxo9WIWA</a></p>
+                            <p>Tilret så heroMan’s hastighed er parameter i HeroMans klassen’s constructor. Tilret også
+                                så den grønne mands farve og maksimale hastighed er parametere i GreenAngryMan klassens
+                                constructor. Tilret contructoren så den grønne mand får en tilfældig højeste hastighed
+                                hver gang man starter spillet.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/Puxo9WIWA"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/Puxo9WIWA</a></p>
                             <p><a href="heroMan/heroMan-solution-task13.html">Solution example - Subtask 13</a></p>
                         </details>
                     </section>
@@ -267,9 +326,16 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 14: Start besked</h2>
                             </summary>
-                            <p>Tilret så der kommer en start besked med beskrivelse af hvad spillet går ud på når man starter spillet.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/m4zbD7JGK" target="_blank">https://editor.p5js.org/JensValdez/full/m4zbD7JGK</a></p>
-                            <p>Hint: Lav en funktion ved navn “showStartMessage”. Introducer en ny gameState ved navn “START-SCREEN” og sæt denne i “setup”. Tilret også “draw” funktionen så den kan håndtere den nye gameState. Når der klikkes med musen og gameState = “START-SCREEN”, så skal gameState sættes til “SET-START-VALUES” og når gameState er “GAME-WON” eller “GAME-LOST” så skal gameState sættes til “START-SCREEN”.</p>
+                            <p>Tilret så der kommer en start besked med beskrivelse af hvad spillet går ud på når man
+                                starter spillet.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/m4zbD7JGK"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/m4zbD7JGK</a></p>
+                            <p>Hint: Lav en funktion ved navn “showStartMessage”. Introducer en ny gameState ved navn
+                                “START-SCREEN” og sæt denne i “setup”. Tilret også “draw” funktionen så den kan håndtere
+                                den nye gameState. Når der klikkes med musen og gameState = “START-SCREEN”, så skal
+                                gameState sættes til “SET-START-VALUES” og når gameState er “GAME-WON” eller “GAME-LOST”
+                                så skal gameState sættes til “START-SCREEN”.</p>
                             <p><a href="heroMan/heroMan-solution-task14.html">Solution example - Subtask 14</a></p>
                         </details>
                     </section>
@@ -279,7 +345,9 @@ class HeroMan {
                                 <h2>Delopgave 15: Vinder besked</h2>
                             </summary>
                             <p>Tilret så der kommer en besked med at man har vundet.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/3CYEf2dKy" target="_blank">https://editor.p5js.org/JensValdez/full/3CYEf2dKy</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/3CYEf2dKy"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/3CYEf2dKy</a></p>
                             <p><a href="heroMan/heroMan-solution-task15.html">Solution example - Subtask 15</a></p>
                         </details>
                     </section>
@@ -289,7 +357,9 @@ class HeroMan {
                                 <h2>Delopgave 16: Tab besked</h2>
                             </summary>
                             <p>Tilret så der kommer en besked når man har tabt spillet</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/ZHAWhHINM" target="_blank">https://editor.p5js.org/JensValdez/full/ZHAWhHINM</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/ZHAWhHINM"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/ZHAWhHINM</a></p>
                             <p><a href="heroMan/heroMan-solution-task16.html">Solution example - Subtask 16</a></p>
                         </details>
                     </section>
@@ -299,7 +369,9 @@ class HeroMan {
                                 <h2>Delopgave 17: HeroMans ansigt</h2>
                             </summary>
                             <p>Tilret så heroMan får et ansigt.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/W35hCRabZ" target="_blank">https://editor.p5js.org/JensValdez/full/W35hCRabZ</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/W35hCRabZ"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/W35hCRabZ</a></p>
                             <p><a href="heroMan/heroMan-solution-task17.html">Solution example - Subtask 17</a></p>
                         </details>
                     </section>
@@ -308,8 +380,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 18: Den sure grønne mands ansigt</h2>
                             </summary>
-                            <p>Tilret så den sure grønne mand får et ansigt. Han må gerne se lidt sur eller farlig ud</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/ZDTthADQP" target="_blank">https://editor.p5js.org/JensValdez/full/ZDTthADQP</a></p>
+                            <p>Tilret så den sure grønne mand får et ansigt. Han må gerne se lidt sur eller farlig ud
+                            </p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/ZDTthADQP"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/ZDTthADQP</a></p>
                             <p><a href="heroMan/heroMan-solution-task18.html">Solution example - Subtask 18</a></p>
                         </details>
                     </section>
@@ -319,8 +394,11 @@ class HeroMan {
                                 <h2>Delopgave 19: Flere sure grønne mænd</h2>
                             </summary>
                             <p>Tilret så der kommer flere sure grønne mænd.</p>
-                            <p>Hint: Alle de stedet hvor angryMan objektet håndteres, der skal man i stedet håndtere et array af sure mænd.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/AJbeL453i" target="_blank">https://editor.p5js.org/JensValdez/full/AJbeL453i</a></p>
+                            <p>Hint: Alle de stedet hvor angryMan objektet håndteres, der skal man i stedet håndtere et
+                                array af sure mænd.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/AJbeL453i"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/AJbeL453i</a></p>
                             <p><a href="heroMan/heroMan-solution-task19.html">Solution example - Subtask 19</a></p>
                         </details>
                     </section>
@@ -329,8 +407,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 20: Introduktion af røde mænd</h2>
                             </summary>
-                            <p>Tilret så der også kommer sure røde mænd. De skal stå stille og langsomt bevæge sig større.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/4T_UDdM3f" target="_blank">https://editor.p5js.org/JensValdez/full/4T_UDdM3f</a></p>
+                            <p>Tilret så der også kommer sure røde mænd. De skal stå stille og langsomt bevæge sig
+                                større.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/4T_UDdM3f"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/4T_UDdM3f</a></p>
                             <p><a href="heroMan/heroMan-solution-task20.html">Solution example - Subtask 20</a></p>
                         </details>
                     </section>
@@ -339,8 +420,12 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 21: Oprettelse af AngryMan klasse</h2>
                             </summary>
-                            <p>Lav en ny klasse ved navn AngryMan som GreenAngryMan og RedAngryMan klassen nedarver fra. Den skal indehold de variabler og metoder som er fælles for de to eksisterende klasser. AngryMan klassens constructor skal tage “colour” som parameter.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/cge0Hv2WQS" target="_blank">https://editor.p5js.org/JensValdez/full/cge0Hv2WQS</a></p>
+                            <p>Lav en ny klasse ved navn AngryMan som GreenAngryMan og RedAngryMan klassen nedarver fra.
+                                Den skal indehold de variabler og metoder som er fælles for de to eksisterende klasser.
+                                AngryMan klassens constructor skal tage “colour” som parameter.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/cge0Hv2WQS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/cge0Hv2WQS</a></p>
                             <p><a href="heroMan/heroMan-solution-task21.html">Solution example - Subtask 21</a></p>
                         </details>
                     </section>
@@ -349,9 +434,17 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 22: Transparente sure mænd</h2>
                             </summary>
-                            <p>Tilret så der hele tiden er to transparente sure mænd. Man skal stadig tabe spillet hvis man rører dem.</p>
-                            <p>Hint: Lav en variabel i AngryMan klassens constructor ved navn “colourAlpha” (Alpha betyder gennemsigtighed) samt en ny metode ved navn “turnTransparent” som sætter “colourAlpha” variablen til 100. I “updateGameState” funktionen skal “turnTransparent” metoden kaldes for de to første sure mænd der løbes igennem i for løkken. Det er lidt tricky at få det til at virke helt så de sure mænd vises med korrekt farve og alpha. Du må gerne smugkikke på løsningseksemplet.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/mLEmUPg4R" target="_blank">https://editor.p5js.org/JensValdez/full/mLEmUPg4R</a></p>
+                            <p>Tilret så der hele tiden er to transparente sure mænd. Man skal stadig tabe spillet hvis
+                                man rører dem.</p>
+                            <p>Hint: Lav en variabel i AngryMan klassens constructor ved navn “colourAlpha” (Alpha
+                                betyder gennemsigtighed) samt en ny metode ved navn “turnTransparent” som sætter
+                                “colourAlpha” variablen til 100. I “updateGameState” funktionen skal “turnTransparent”
+                                metoden kaldes for de to første sure mænd der løbes igennem i for løkken. Det er lidt
+                                tricky at få det til at virke helt så de sure mænd vises med korrekt farve og alpha. Du
+                                må gerne smugkikke på løsningseksemplet.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/mLEmUPg4R"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/mLEmUPg4R</a></p>
                             <p><a href="heroMan/heroMan-solution-task22.html">Solution example - Subtask 22</a></p>
                         </details>
                     </section>
@@ -360,9 +453,16 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 23: Pop-funktionalitet</h2>
                             </summary>
-                            <p>Tilret så de transparente sure mænd forsvinder hvis heroMan rører dem. Der skal hele tiden være to transparente sure mænd.</p>
-                            <p>Hint: Lav en ny metode i AngryMan klassen ved navn “canPop”. Denne skal returnere true hvis den sure mand er gennemsigtig. Tilret “validateGameState” funktionen til at gøre følgende: Hvis heroMan rører den sur mand og den sure mand kan pop’e, så skal den sure mand fjernes fra arrayet med det sure mænd. Hvis den sure mand ikke kan pop’e, så er spillet tabt.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/CrF33AMvz" target="_blank">https://editor.p5js.org/JensValdez/full/CrF33AMvz</a></p>
+                            <p>Tilret så de transparente sure mænd forsvinder hvis heroMan rører dem. Der skal hele
+                                tiden være to transparente sure mænd.</p>
+                            <p>Hint: Lav en ny metode i AngryMan klassen ved navn “canPop”. Denne skal returnere true
+                                hvis den sure mand er gennemsigtig. Tilret “validateGameState” funktionen til at gøre
+                                følgende: Hvis heroMan rører den sur mand og den sure mand kan pop’e, så skal den sure
+                                mand fjernes fra arrayet med det sure mænd. Hvis den sure mand ikke kan pop’e, så er
+                                spillet tabt.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/CrF33AMvz"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/CrF33AMvz</a></p>
                             <p><a href="heroMan/heroMan-solution-task23.html">Solution example - Subtask 23</a></p>
                         </details>
                     </section>
@@ -371,9 +471,13 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 24: Tilretning af vinder besked</h2>
                             </summary>
-                            <p>Tilret beskeden der kommer når man vinder spillet nævner hvor mange sure mænd man har pop’et</p>
-                            <p>Hint: Lad heroMan holde styr på hvor mange sure mænd han har pop’et og tæl denne op i “validateGameState” funktionen.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/l8AN85fVt" target="_blank">https://editor.p5js.org/JensValdez/full/l8AN85fVt</a></p>
+                            <p>Tilret beskeden der kommer når man vinder spillet nævner hvor mange sure mænd man har
+                                pop’et</p>
+                            <p>Hint: Lad heroMan holde styr på hvor mange sure mænd han har pop’et og tæl denne op i
+                                “validateGameState” funktionen.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/l8AN85fVt"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/l8AN85fVt</a></p>
                             <p><a href="heroMan/heroMan-solution-task24.html">Solution example - Subtask 24</a></p>
                         </details>
                     </section>
@@ -383,7 +487,9 @@ class HeroMan {
                                 <h2>Delopgave 25: Grå mænd</h2>
                             </summary>
                             <p>Hvis heroMan og en sur mand rører hinanden, så skal de begge farves grå</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/PQvfzAQMs" target="_blank">https://editor.p5js.org/JensValdez/full/PQvfzAQMs</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/PQvfzAQMs"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/PQvfzAQMs</a></p>
                             <p><a href="heroMan/heroMan-solution-task25.html">Solution example - Subtask 25</a></p>
                         </details>
                     </section>
@@ -392,8 +498,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 26: Solbriller</h2>
                             </summary>
-                            <p>Tilret så den sure grønne mand får solbriller. Dette kan gøres ved at lave en “show” metode i GreenAngryMan klassen (som overskriver den fra AngryMan klassen).</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/nF3SnGZ3W" target="_blank">https://editor.p5js.org/JensValdez/full/nF3SnGZ3W</a></p>
+                            <p>Tilret så den sure grønne mand får solbriller. Dette kan gøres ved at lave en “show”
+                                metode i GreenAngryMan klassen (som overskriver den fra AngryMan klassen).</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/nF3SnGZ3W"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/nF3SnGZ3W</a></p>
                             <p><a href="heroMan/heroMan-solution-task26.html">Solution example - Subtask 26</a></p>
                         </details>
                     </section>
@@ -403,7 +512,9 @@ class HeroMan {
                                 <h2>Delopgave 27: Sure blå sure mænd</h2>
                             </summary>
                             <p>Tilret så der også kommer blå sure mænd. De skal bevæge sig som billard kugler.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/zP1rgQT6Q" target="_blank">https://editor.p5js.org/JensValdez/full/zP1rgQT6Q</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/zP1rgQT6Q"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/zP1rgQT6Q</a></p>
                             <p><a href="heroMan/heroMan-solution-task27.html">Solution example - Subtask 27</a></p>
                         </details>
                     </section>
@@ -412,9 +523,13 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 28: Sværhedsgradsknap</h2>
                             </summary>
-                            <p>Tilret så man på start skærmen skal trykke på en knap ved navn “EASY” for at starte spillet. Lav knappen som en klasse ved navn Button der kan genbruges til forskellige knap objekter.</p>
+                            <p>Tilret så man på start skærmen skal trykke på en knap ved navn “EASY” for at starte
+                                spillet. Lav knappen som en klasse ved navn Button der kan genbruges til forskellige
+                                knap objekter.</p>
                             <p>Hint: Giv Button klassen en metode ved navn “isClicked”.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/akXqd0rap" target="_blank">https://editor.p5js.org/JensValdez/full/akXqd0rap</a></p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/akXqd0rap"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/akXqd0rap</a></p>
                             <p><a href="heroMan/heroMan-solution-task28.html">Solution example - Subtask 28</a></p>
                         </details>
                     </section>
@@ -423,9 +538,17 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 29: Flere sværhedsgrader</h2>
                             </summary>
-                            <p>Tilret så der også er knapper for level “NORMAL”, “HARD” og “EXTREME”. Lav en ny globel variabel ved navn “gameLevel” som sættes når man trykker på knapperne. I “setStartValues” skal man sætte forskellige start værdier afhængig af hvilken level spillet er startet på.</p>
-                            <p>Hint: Tilføj knapper for de forskellige levels under start beskeden. Tilføj en ny global variabel ved navn “gameLevel” således at denne sættes til hhv. “EASY”, “NOTMAL”, “HARD” og “EXTREME” når man starter spillet på de forskellige levels. Tilret “setStartValues” så start værdierne sættes afhængig af game level.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/nAFM3C3HS" target="_blank">https://editor.p5js.org/JensValdez/full/nAFM3C3HS</a></p>
+                            <p>Tilret så der også er knapper for level “NORMAL”, “HARD” og “EXTREME”. Lav en ny globel
+                                variabel ved navn “gameLevel” som sættes når man trykker på knapperne. I
+                                “setStartValues” skal man sætte forskellige start værdier afhængig af hvilken level
+                                spillet er startet på.</p>
+                            <p>Hint: Tilføj knapper for de forskellige levels under start beskeden. Tilføj en ny global
+                                variabel ved navn “gameLevel” således at denne sættes til hhv. “EASY”, “NOTMAL”, “HARD”
+                                og “EXTREME” når man starter spillet på de forskellige levels. Tilret “setStartValues”
+                                så start værdierne sættes afhængig af game level.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/nAFM3C3HS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/nAFM3C3HS</a></p>
                             <p><a href="heroMan/heroMan-solution-task29.html">Solution example - Subtask 29</a></p>
                         </details>
                     </section>
@@ -435,8 +558,13 @@ class HeroMan {
                                 <h2>Delopgave 30: Tilretning af vinderbesked</h2>
                             </summary>
                             <p>Tilret vinder beskeden så der står hvilket level man har vundet på.</p>
-                            <p>Hint: Giv “Button” klassen en ny variabel i constructoren ved navn “wasClicked” samt en metode ved navn “getWasClicked” der returnerer true hvis der er blevet klikket på knappen. I “showGameWonMessage” funktionen kan man herved lave en differentieret tekst afhængig af hvilken knap spillet er startet med.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/-BkB4Bpt1" target="_blank">https://editor.p5js.org/JensValdez/full/-BkB4Bpt1</a></p>
+                            <p>Hint: Giv “Button” klassen en ny variabel i constructoren ved navn “wasClicked” samt en
+                                metode ved navn “getWasClicked” der returnerer true hvis der er blevet klikket på
+                                knappen. I “showGameWonMessage” funktionen kan man herved lave en differentieret tekst
+                                afhængig af hvilken knap spillet er startet med.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/-BkB4Bpt1"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/-BkB4Bpt1</a></p>
                             <p><a href="heroMan/heroMan-solution-task30.html">Solution example - Subtask 30</a></p>
                         </details>
                     </section>
@@ -445,8 +573,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 31: Genstart af spillet</h2>
                             </summary>
-                            <p>Under beskeden der kommer når man har vundet eller tabt skal der være en knap man skal trykke på for at starte spillet igen.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/fkmc4f7dS" target="_blank">https://editor.p5js.org/JensValdez/full/fkmc4f7dS</a></p>
+                            <p>Under beskeden der kommer når man har vundet eller tabt skal der være en knap man skal
+                                trykke på for at starte spillet igen.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/fkmc4f7dS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/fkmc4f7dS</a></p>
                             <p><a href="heroMan/heroMan-solution-task31.html">Solution example - Subtask 31</a></p>
                         </details>
                     </section>
@@ -455,8 +586,11 @@ class HeroMan {
                             <summary>
                                 <h2>Delopgave 32: Beskeders pladsering</h2>
                             </summary>
-                            <p>Hvis heroMan er på den øverste halvdel af canvas når man taber spillet, så skal beskeden med at man har tabe vises på den nederste halvdel af canvas og omvendt.</p>
-                            <p>Prøv løsningen til delopgaven her: <a href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
+                            <p>Hvis heroMan er på den øverste halvdel af canvas når man taber spillet, så skal beskeden
+                                med at man har tabe vises på den nederste halvdel af canvas og omvendt.</p>
+                            <p>Prøv løsningen til delopgaven her: <a
+                                    href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
                             <p><a href="heroMan/heroMan-solution-task32.html">Solution example - Subtask 32</a></p>
                         </details>
                     </section>
@@ -465,7 +599,8 @@ class HeroMan {
                             <summary>
                                 <h2>Færdig løsning uden kommentarer:</h2>
                             </summary>
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg</a></p>
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg"
+                                    target="_blank">https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg</a></p>
                         </details>
                     </section>
                     <section id="faerdig-loesning-med-kommentarer">
@@ -473,7 +608,8 @@ class HeroMan {
                             <summary>
                                 <h2>Færdig løsning med kommentarer:</h2>
                             </summary>
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/_BuV2lsPm" target="_blank">https://editor.p5js.org/JensValdez/sketches/_BuV2lsPm</a></p>
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/_BuV2lsPm"
+                                    target="_blank">https://editor.p5js.org/JensValdez/sketches/_BuV2lsPm</a></p>
                         </details>
                     </section>
                 </main>
@@ -532,21 +668,34 @@ class HeroMan {
                                 <h2>Introduction</h2>
                             </summary>
                             <p>We are going to make the following game called HeroMan:</p>
-                            <img src="images/heroMan/heroMan-image1.png" alt="HeroMan Game Screenshot" class="content-img">
+                            <img src="images/heroMan/heroMan-image1.png" alt="HeroMan Game Screenshot">
                             <p>You can try it out so you know the functionality. See if you can complete all levels.</p>
-                            <p>Try the game here: <a href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
-                            <p>When you have to do a larger task, it is easiest to divide it into smaller subtasks that you can solve. To help, I have created a lot of subtasks. If you get stuck, you are welcome to look at the solution example for the subtask. After that, you should try to solve it yourself. It's fine if you find your own solutions to the subtasks. However, it is a good idea to always look through the solution example for each delopgave igennem and forstå det efter at du har løst en delopgave.</p>
+                            <p>Try the game here: <a href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
+                            <p>When you have to do a larger task, it is easiest to divide it into smaller subtasks that
+                                you can solve. To help, I have created a lot of subtasks. If you get stuck, you are
+                                welcome to look at the solution example for the subtask. After that, you should try to
+                                solve it yourself. It's fine if you find your own solutions to the subtasks. However, it
+                                is a good idea to always look through the solution example for each delopgave igennem
+                                and forstå det efter at du har løst en delopgave.</p>
                             <p>This is a slightly advanced task that focuses on the following:</p>
                             <ul>
                                 <li>How a task can be divided into smaller subtasks that are good to solve.</li>
-                                <li>How to structure the code in classes, a control function and smaller helper functions so that the code is easy to manage.</li>
-                                <li>How to handle the different states the game can be in and control the dialogue with the user.</li>
-                                <li>How functionality can be divided so that the helper functions only do one thing.</li>
+                                <li>How to structure the code in classes, a control function and smaller helper
+                                    functions so that the code is easy to manage.</li>
+                                <li>How to handle the different states the game can be in and control the dialogue with
+                                    the user.</li>
+                                <li>How functionality can be divided so that the helper functions only do one thing.
+                                </li>
                                 <li>How to create reusable code.</li>
-                                <li>How to use inheritance and handle objects that are similar to each other in a uniform way (what is called polymorphism in English)</li>
-                                <li>How to create classes and helper functions so that they do not use global variables. This makes them easy to understand and use and they can be tested independently of the rest of the code.</li>
+                                <li>How to use inheritance and handle objects that are similar to each other in a
+                                    uniform way (what is called polymorphism in English)</li>
+                                <li>How to create classes and helper functions so that they do not use global variables.
+                                    This makes them easy to understand and use and they can be tested independently of
+                                    the rest of the code.</li>
                                 <li>Where you can use randomness to make each game experience unique.</li>
-                                <li>How to start by making the simplest version of a game that can still be played, after which you gradually add more and more nice details.</li>
+                                <li>How to start by making the simplest version of a game that can still be played,
+                                    after which you gradually add more and more nice details.</li>
                             </ul>
                         </details>
                     </section>
@@ -589,7 +738,8 @@ class HeroMan {
   }
 }
 </code></pre>
-                            <p>and copy the code into a new program in the p5js editor. Give the game a name and remember to save regularly.</p>
+                            <p>and copy the code into a new program in the p5js editor. Give the game a name and
+                                remember to save regularly.</p>
                         </details>
                     </section>
                     <section id="en-delopgave-1">
@@ -597,8 +747,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 1: HeroMan's position</h2>
                             </summary>
-                            <p>Adjust so that heroMan's position (x and y coordinates) are variables in the HeroMan class's constructor.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/jGtlGKNnL" target="_blank">https://editor.p5js.org/JensValdez/full/jGtlGKNnL</a></p>
+                            <p>Adjust so that heroMan's position (x and y coordinates) are variables in the HeroMan
+                                class's constructor.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/jGtlGKNnL"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/jGtlGKNnL</a></p>
                             <p><a href="heroMan/heroMan-solution-task1.html">Solution example - Subtask 1</a></p>
                         </details>
                     </section>
@@ -608,7 +761,9 @@ class HeroMan {
                                 <h2>Subtask 2: HeroMan's size</h2>
                             </summary>
                             <p>Adjust so that heroMan has a size (circle) and is yellow.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/QIiW_dJ_j" target="_blank">https://editor.p5js.org/JensValdez/full/QIiW_dJ_j</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/QIiW_dJ_j"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/QIiW_dJ_j</a></p>
                             <p><a href="heroMan/heroMan-solution-task2.html">Solution example - Subtask 2</a></p>
                         </details>
                     </section>
@@ -618,7 +773,9 @@ class HeroMan {
                                 <h2>Subtask 3: HeroMan's movement</h2>
                             </summary>
                             <p>Adjust so that you can move heroMan using the arrow keys.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/s7vJKOAAf" target="_blank">https://editor.p5js.org/JensValdez/full/s7vJKOAAf</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/s7vJKOAAf"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/s7vJKOAAf</a></p>
                             <p><a href="heroMan/heroMan-solution-task3.html">Solution example - Subtask 3</a></p>
                         </details>
                     </section>
@@ -627,8 +784,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 4: Restrictions on HeroMan's movement</h2>
                             </summary>
-                            <p>Adjust so that heroMan cannot move outside the canvas, so that you can always see the entire yellow circle.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/iMRNyipiU" target="_blank">https://editor.p5js.org/JensValdez/full/iMRNyipiU</a></p>
+                            <p>Adjust so that heroMan cannot move outside the canvas, so that you can always see the
+                                entire yellow circle.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/iMRNyipiU"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/iMRNyipiU</a></p>
                             <p><a href="heroMan/heroMan-solution-task4.html">Solution example - Subtask 4</a></p>
                         </details>
                     </section>
@@ -637,8 +797,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 5: Goal area</h2>
                             </summary>
-                            <p>Adjust so that there is a goal area. Nothing should happen when heroMan enters the goal area.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/jB59gNr7o" target="_blank">https://editor.p5js.org/JensValdez/full/jB59gNr7o</a></p>
+                            <p>Adjust so that there is a goal area. Nothing should happen when heroMan enters the goal
+                                area.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/jB59gNr7o"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/jB59gNr7o</a></p>
                             <p><a href="heroMan/heroMan-solution-task5.html">Solution example - Subtask 5</a></p>
                         </details>
                     </section>
@@ -648,7 +811,9 @@ class HeroMan {
                                 <h2>Subtask 6: Winning conditions</h2>
                             </summary>
                             <p>Write a message to the screen if the center of heroMan is within the goal area.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/cyJcXrdd7" target="_blank">https://editor.p5js.org/JensValdez/full/cyJcXrdd7</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/cyJcXrdd7"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/cyJcXrdd7</a></p>
                             <p><a href="heroMan/heroMan-solution-task6.html">Solution example - Subtask 6</a></p>
                         </details>
                     </section>
@@ -658,8 +823,12 @@ class HeroMan {
                                 <h2>Subtask 7: Stop the game if the game is won</h2>
                             </summary>
                             <p>Adjust so that the game stops if the center of heroMan is within the goal area</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/eZKveUUW2" target="_blank">https://editor.p5js.org/JensValdez/full/eZKveUUW2</a></p>
-                            <p>Hint: In setup, gameState is set to “GAME-IN-PROGRESS”. If heroMan enters the goal area, gameState is set to “GAME-WON”. Adjust the “draw” function so that heroMan only moves if gameState is “GAME-IN-PROGRESS”.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/eZKveUUW2"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/eZKveUUW2</a></p>
+                            <p>Hint: In setup, gameState is set to “GAME-IN-PROGRESS”. If heroMan enters the goal area,
+                                gameState is set to “GAME-WON”. Adjust the “draw” function so that heroMan only moves if
+                                gameState is “GAME-IN-PROGRESS”.</p>
                             <p><a href="heroMan/heroMan-solution-task7.html">Solution example - Subtask 7</a></p>
                         </details>
                     </section>
@@ -669,8 +838,11 @@ class HeroMan {
                                 <h2>Subtask 8: Restart new game</h2>
                             </summary>
                             <p>If heroMan is in the goal area, the game should restart if you click the mouse.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/fOsAx8Q6J" target="_blank">https://editor.p5js.org/JensValdez/full/fOsAx8Q6J</a></p>
-                            <p>Hint: Add a new gameState called “SET-START-VALUES”. Set this in “setup” and when the mouse is clicked (and gameState is also “GAME-WON”).</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/fOsAx8Q6J"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/fOsAx8Q6J</a></p>
+                            <p>Hint: Add a new gameState called “SET-START-VALUES”. Set this in “setup” and when the
+                                mouse is clicked (and gameState is also “GAME-WON”).</p>
                             <p><a href="heroMan/heroMan-solution-task8.html">Solution example - Subtask 8</a></p>
                         </details>
                     </section>
@@ -680,7 +852,9 @@ class HeroMan {
                                 <h2>Subtask 9: Green man</h2>
                             </summary>
                             <p>Adjust so that there is a green man (green circle without a face)</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/ni0SyGscX" target="_blank">https://editor.p5js.org/JensValdez/full/ni0SyGscX</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/ni0SyGscX"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/ni0SyGscX</a></p>
                             <p><a href="heroMan/heroMan-solution-task9.html">Solution example - Subtask 9</a></p>
                         </details>
                     </section>
@@ -690,8 +864,13 @@ class HeroMan {
                                 <h2>Subtask 10: Interaction with the green man</h2>
                             </summary>
                             <p>Adjust so that the game stops if heroMan touches the green man.</p>
-                            <p>Hint: Create a method in the HeroMan class called intersectsAngryMan. This should take an angryMan object as an argument and return true if the two circles touch. The “validateGameState” function should set gameState to “GAME-LOST” if heroMan touches the green man. Adjust the “draw” function so that the game stops if the game is lost.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/9Kcg2VSqH" target="_blank">https://editor.p5js.org/JensValdez/full/9Kcg2VSqH</a></p>
+                            <p>Hint: Create a method in the HeroMan class called intersectsAngryMan. This should take an
+                                angryMan object as an argument and return true if the two circles touch. The
+                                “validateGameState” function should set gameState to “GAME-LOST” if heroMan touches the
+                                green man. Adjust the “draw” function so that the game stops if the game is lost.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/9Kcg2VSqH"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/9Kcg2VSqH</a></p>
                             <p><a href="heroMan/heroMan-solution-task10.html">Solution example - Subtask 10</a></p>
                         </details>
                     </section>
@@ -701,7 +880,9 @@ class HeroMan {
                                 <h2>Subtask 11: The green man's movement</h2>
                             </summary>
                             <p>Adjust so that the green man follows heroMan</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/Nou3cVy10" target="_blank">https://editor.p5js.org/JensValdez/full/Nou3cVy10</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/Nou3cVy10"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/Nou3cVy10</a></p>
                             <p><a href="heroMan/heroMan-solution-task11.html">Solution example - Subtask 11</a></p>
                         </details>
                     </section>
@@ -710,9 +891,14 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 12: The green man's location</h2>
                             </summary>
-                            <p>Adjust so that the green man is placed in a random place on the screen from the start. Do this in a flexible way so that it will still work if you decide to make the canvas larger.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/iXqQV9yhS" target="_blank">https://editor.p5js.org/JensValdez/full/iXqQV9yhS</a></p>
-                            <p>Hint: If you write “width” in the code, the width of the canvas is returned, and if you write “height”, the height of the canvas is returned.</p>
+                            <p>Adjust so that the green man is placed in a random place on the screen from the start. Do
+                                this in a flexible way so that it will still work if you decide to make the canvas
+                                larger.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/iXqQV9yhS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/iXqQV9yhS</a></p>
+                            <p>Hint: If you write “width” in the code, the width of the canvas is returned, and if you
+                                write “height”, the height of the canvas is returned.</p>
                             <p><a href="heroMan/heroMan-solution-task12.html">Solution example - Subtask 12</a></p>
                         </details>
                     </section>
@@ -721,8 +907,13 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 13: Adjust game parameters</h2>
                             </summary>
-                            <p>Adjust so that heroMan's speed is a parameter in the HeroMan class's constructor. Also adjust so that the green man's color and maximum speed are parameters in the GreenAngryMan class's constructor. Adjust the constructor so that the green man gets a random maximum speed every time you start the game.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/Puxo9WIWA" target="_blank">https://editor.p5js.org/JensValdez/full/Puxo9WIWA</a></p>
+                            <p>Adjust so that heroMan's speed is a parameter in the HeroMan class's constructor. Also
+                                adjust so that the green man's color and maximum speed are parameters in the
+                                GreenAngryMan class's constructor. Adjust the constructor so that the green man gets a
+                                random maximum speed every time you start the game.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/Puxo9WIWA"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/Puxo9WIWA</a></p>
                             <p><a href="heroMan/heroMan-solution-task13.html">Solution example - Subtask 13</a></p>
                         </details>
                     </section>
@@ -731,9 +922,16 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 14: Start message</h2>
                             </summary>
-                            <p>Adjust so that a start message appears with a description of what the game is about when you start the game.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/m4zbD7JGK" target="_blank">https://editor.p5js.org/JensValdez/full/m4zbD7JGK</a></p>
-                            <p>Hint: Create a function called “showStartMessage”. Introduce a new gameState called “START-SCREEN” and set it in “setup”. Also adjust the “draw” function so that it can handle the new gameState. When the mouse is clicked and gameState = “START-SCREEN”, gameState should be set to “SET-START-VALUES” and when gameState is “GAME-WON” or “GAME-LOST”, gameState should be set to “START-SCREEN”.</p>
+                            <p>Adjust so that a start message appears with a description of what the game is about when
+                                you start the game.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/m4zbD7JGK"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/m4zbD7JGK</a></p>
+                            <p>Hint: Create a function called “showStartMessage”. Introduce a new gameState called
+                                “START-SCREEN” and set it in “setup”. Also adjust the “draw” function so that it can
+                                handle the new gameState. When the mouse is clicked and gameState = “START-SCREEN”,
+                                gameState should be set to “SET-START-VALUES” and when gameState is “GAME-WON” or
+                                “GAME-LOST”, gameState should be set to “START-SCREEN”.</p>
                             <p><a href="heroMan/heroMan-solution-task14.html">Solution example - Subtask 14</a></p>
                         </details>
                     </section>
@@ -743,7 +941,9 @@ class HeroMan {
                                 <h2>Subtask 15: Winner message</h2>
                             </summary>
                             <p>Adjust so that a message appears saying that you have won.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/3CYEf2dKy" target="_blank">https://editor.p5js.org/JensValdez/full/3CYEf2dKy</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/3CYEf2dKy"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/3CYEf2dKy</a></p>
                             <p><a href="heroMan/heroMan-solution-task15.html">Solution example - Subtask 15</a></p>
                         </details>
                     </section>
@@ -753,7 +953,9 @@ class HeroMan {
                                 <h2>Subtask 16: Loser message</h2>
                             </summary>
                             <p>Adjust so that a message appears when you have lost the game</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/ZHAWhHINM" target="_blank">https://editor.p5js.org/JensValdez/full/ZHAWhHINM</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/ZHAWhHINM"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/ZHAWhHINM</a></p>
                             <p><a href="heroMan/heroMan-solution-task16.html">Solution example - Subtask 16</a></p>
                         </details>
                     </section>
@@ -763,7 +965,9 @@ class HeroMan {
                                 <h2>Subtask 17: HeroMan's face</h2>
                             </summary>
                             <p>Adjust so that heroMan gets a face.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/W35hCRabZ" target="_blank">https://editor.p5js.org/JensValdez/full/W35hCRabZ</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/W35hCRabZ"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/W35hCRabZ</a></p>
                             <p><a href="heroMan/heroMan-solution-task17.html">Solution example - Subtask 17</a></p>
                         </details>
                     </section>
@@ -772,8 +976,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 18: The angry green man's face</h2>
                             </summary>
-                            <p>Adjust so that the angry green man gets a face. He can look a little angry or dangerous</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/ZDTthADQP" target="_blank">https://editor.p5js.org/JensValdez/full/ZDTthADQP</a></p>
+                            <p>Adjust so that the angry green man gets a face. He can look a little angry or dangerous
+                            </p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/ZDTthADQP"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/ZDTthADQP</a></p>
                             <p><a href="heroMan/heroMan-solution-task18.html">Solution example - Subtask 18</a></p>
                         </details>
                     </section>
@@ -783,8 +990,11 @@ class HeroMan {
                                 <h2>Subtask 19: More angry green men</h2>
                             </summary>
                             <p>Adjust so that more angry green men appear.</p>
-                            <p>Hint: In all the places where the angryMan object is handled, you should instead handle an array of angry men.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/AJbeL453i" target="_blank">https://editor.p5js.org/JensValdez/full/AJbeL453i</a></p>
+                            <p>Hint: In all the places where the angryMan object is handled, you should instead handle
+                                an array of angry men.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/AJbeL453i"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/AJbeL453i</a></p>
                             <p><a href="heroMan/heroMan-solution-task19.html">Solution example - Subtask 19</a></p>
                         </details>
                     </section>
@@ -793,8 +1003,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 20: Introduction of red men</h2>
                             </summary>
-                            <p>Adjust so that angry red men also appear. They should stand still and slowly grow larger.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/4T_UDdM3f" target="_blank">https://editor.p5js.org/JensValdez/full/4T_UDdM3f</a></p>
+                            <p>Adjust so that angry red men also appear. They should stand still and slowly grow larger.
+                            </p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/4T_UDdM3f"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/4T_UDdM3f</a></p>
                             <p><a href="heroMan/heroMan-solution-task20.html">Solution example - Subtask 20</a></p>
                         </details>
                     </section>
@@ -803,8 +1016,12 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 21: Creation of AngryMan class</h2>
                             </summary>
-                            <p>Create a new class called AngryMan from which the GreenAngryMan and RedAngryMan classes inherit. It should contain the variables and methods that are common to the two existing classes. The AngryMan class's constructor should take “colour” as a parameter.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/cge0Hv2WQS" target="_blank">https://editor.p5js.org/JensValdez/full/cge0Hv2WQS</a></p>
+                            <p>Create a new class called AngryMan from which the GreenAngryMan and RedAngryMan classes
+                                inherit. It should contain the variables and methods that are common to the two existing
+                                classes. The AngryMan class's constructor should take “colour” as a parameter.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/cge0Hv2WQS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/cge0Hv2WQS</a></p>
                             <p><a href="heroMan/heroMan-solution-task21.html">Solution example - Subtask 21</a></p>
                         </details>
                     </section>
@@ -813,9 +1030,17 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 22: Transparent angry men</h2>
                             </summary>
-                            <p>Adjust so that there are always two transparent angry men. You should still lose the game if you touch them.</p>
-                            <p>Hint: Create a variable in the AngryMan class's constructor called “colourAlpha” (Alpha means transparency) and a new method called “turnTransparent” that sets the “colourAlpha” variable to 100. In the “updateGameState” function, the “turnTransparent” method should be called for the first two angry men that are looped through in the for loop. It's a bit tricky to get it to work completely so that the angry men are displayed with the correct color and alpha. You are welcome to peek at the solution example.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/mLEmUPg4R" target="_blank">https://editor.p5js.org/JensValdez/full/mLEmUPg4R</a></p>
+                            <p>Adjust so that there are always two transparent angry men. You should still lose the game
+                                if you touch them.</p>
+                            <p>Hint: Create a variable in the AngryMan class's constructor called “colourAlpha” (Alpha
+                                means transparency) and a new method called “turnTransparent” that sets the
+                                “colourAlpha” variable to 100. In the “updateGameState” function, the “turnTransparent”
+                                method should be called for the first two angry men that are looped through in the for
+                                loop. It's a bit tricky to get it to work completely so that the angry men are displayed
+                                with the correct color and alpha. You are welcome to peek at the solution example.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/mLEmUPg4R"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/mLEmUPg4R</a></p>
                             <p><a href="heroMan/heroMan-solution-task22.html">Solution example - Subtask 22</a></p>
                         </details>
                     </section>
@@ -824,9 +1049,16 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 23: Pop functionality</h2>
                             </summary>
-                            <p>Adjust so that the transparent angry men disappear if heroMan touches them. There should always be two transparent angry men.</p>
-                            <p>Hint: Create a new method in the AngryMan class called “canPop”. This should return true if the angry man is transparent. Adjust the “validateGameState” function to do the following: If heroMan touches the angry man and the angry man can pop, the angry man should be removed from the array of angry men. If the angry man cannot pop, the game is lost.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/CrF33AMvz" target="_blank">https://editor.p5js.org/JensValdez/full/CrF33AMvz</a></p>
+                            <p>Adjust so that the transparent angry men disappear if heroMan touches them. There should
+                                always be two transparent angry men.</p>
+                            <p>Hint: Create a new method in the AngryMan class called “canPop”. This should return true
+                                if the angry man is transparent. Adjust the “validateGameState” function to do the
+                                following: If heroMan touches the angry man and the angry man can pop, the angry man
+                                should be removed from the array of angry men. If the angry man cannot pop, the game is
+                                lost.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/CrF33AMvz"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/CrF33AMvz</a></p>
                             <p><a href="heroMan/heroMan-solution-task23.html">Solution example - Subtask 23</a></p>
                         </details>
                     </section>
@@ -835,9 +1067,13 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 24: Adjustment of winner message</h2>
                             </summary>
-                            <p>Adjust the message that appears when you win the game to mention how many angry men you have popped</p>
-                            <p>Hint: Let heroMan keep track of how many angry men he has popped and increment this in the “validateGameState” function.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/l8AN85fVt" target="_blank">https://editor.p5js.org/JensValdez/full/l8AN85fVt</a></p>
+                            <p>Adjust the message that appears when you win the game to mention how many angry men you
+                                have popped</p>
+                            <p>Hint: Let heroMan keep track of how many angry men he has popped and increment this in
+                                the “validateGameState” function.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/l8AN85fVt"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/l8AN85fVt</a></p>
                             <p><a href="heroMan/heroMan-solution-task24.html">Solution example - Subtask 24</a></p>
                         </details>
                     </section>
@@ -847,7 +1083,9 @@ class HeroMan {
                                 <h2>Subtask 25: Gray men</h2>
                             </summary>
                             <p>If heroMan and an angry man touch each other, they should both be colored gray</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/PQvfzAQMs" target="_blank">https://editor.p5js.org/JensValdez/full/PQvfzAQMs</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/PQvfzAQMs"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/PQvfzAQMs</a></p>
                             <p><a href="heroMan/heroMan-solution-task25.html">Solution example - Subtask 25</a></p>
                         </details>
                     </section>
@@ -856,8 +1094,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 26: Sunglasses</h2>
                             </summary>
-                            <p>Adjust so that the angry green man gets sunglasses. This can be done by creating a “show” method in the GreenAngryMan class (which overrides the one from the AngryMan class).</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/nF3SnGZ3W" target="_blank">https://editor.p5js.org/JensValdez/full/nF3SnGZ3W</a></p>
+                            <p>Adjust so that the angry green man gets sunglasses. This can be done by creating a “show”
+                                method in the GreenAngryMan class (which overrides the one from the AngryMan class).</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/nF3SnGZ3W"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/nF3SnGZ3W</a></p>
                             <p><a href="heroMan/heroMan-solution-task26.html">Solution example - Subtask 26</a></p>
                         </details>
                     </section>
@@ -867,7 +1108,9 @@ class HeroMan {
                                 <h2>Subtask 27: Angry blue angry men</h2>
                             </summary>
                             <p>Adjust so that angry blue men also appear. They should move like billiard balls.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/zP1rgQT6Q" target="_blank">https://editor.p5js.org/JensValdez/full/zP1rgQT6Q</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/zP1rgQT6Q"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/zP1rgQT6Q</a></p>
                             <p><a href="heroMan/heroMan-solution-task27.html">Solution example - Subtask 27</a></p>
                         </details>
                     </section>
@@ -876,9 +1119,13 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 28: Difficulty button</h2>
                             </summary>
-                            <p>Adjust so that on the start screen you have to press a button called “EASY” to start the game. Create the button as a class called Button that can be reused for different button objects.</p>
+                            <p>Adjust so that on the start screen you have to press a button called “EASY” to start the
+                                game. Create the button as a class called Button that can be reused for different button
+                                objects.</p>
                             <p>Hint: Give the Button class a method called “isClicked”.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/akXqd0rap" target="_blank">https://editor.p5js.org/JensValdez/full/akXqd0rap</a></p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/akXqd0rap"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/akXqd0rap</a></p>
                             <p><a href="heroMan/heroMan-solution-task28.html">Solution example - Subtask 28</a></p>
                         </details>
                     </section>
@@ -887,9 +1134,17 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 29: More difficulty levels</h2>
                             </summary>
-                            <p>Adjust so that there are also buttons for levels “NORMAL”, “HARD” and “EXTREME”. Create a new global variable called “gameLevel” which is set when you press the buttons. In “setStartValues” you should set different start values depending on which level the game is started on.</p>
-                            <p>Hint: Add buttons for the different levels under the start message. Add a new global variable called “gameLevel” so that it is set to “EASY”, “NORMAL”, “HARD” and “EXTREME” respectively when you start the game on the different levels. Adjust “setStartValues” so that the start values are set depending on the game level.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/nAFM3C3HS" target="_blank">https://editor.p5js.org/JensValdez/full/nAFM3C3HS</a></p>
+                            <p>Adjust so that there are also buttons for levels “NORMAL”, “HARD” and “EXTREME”. Create a
+                                new global variable called “gameLevel” which is set when you press the buttons. In
+                                “setStartValues” you should set different start values depending on which level the game
+                                is started on.</p>
+                            <p>Hint: Add buttons for the different levels under the start message. Add a new global
+                                variable called “gameLevel” so that it is set to “EASY”, “NORMAL”, “HARD” and “EXTREME”
+                                respectively when you start the game on the different levels. Adjust “setStartValues” so
+                                that the start values are set depending on the game level.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/nAFM3C3HS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/nAFM3C3HS</a></p>
                             <p><a href="heroMan/heroMan-solution-task29.html">Solution example - Subtask 29</a></p>
                         </details>
                     </section>
@@ -899,8 +1154,13 @@ class HeroMan {
                                 <h2>Subtask 30: Adjustment of winner message</h2>
                             </summary>
                             <p>Adjust the winner message so that it says which level you have won on.</p>
-                            <p>Hint: Give the “Button” class a new variable in the constructor called “wasClicked” and a method called “getWasClicked” that returns true if the button has been clicked. In the “showGameWonMessage” function, you can then create a differentiated text depending on which button the game was started with.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/-BkB4Bpt1" target="_blank">https://editor.p5js.org/JensValdez/full/-BkB4Bpt1</a></p>
+                            <p>Hint: Give the “Button” class a new variable in the constructor called “wasClicked” and a
+                                method called “getWasClicked” that returns true if the button has been clicked. In the
+                                “showGameWonMessage” function, you can then create a differentiated text depending on
+                                which button the game was started with.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/-BkB4Bpt1"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/-BkB4Bpt1</a></p>
                             <p><a href="heroMan/heroMan-solution-task30.html">Solution example - Subtask 30</a></p>
                         </details>
                     </section>
@@ -909,8 +1169,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 31: Restarting the game</h2>
                             </summary>
-                            <p>Under the message that appears when you have won or lost, there should be a button you have to press to start the game again.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/fkmc4f7dS" target="_blank">https://editor.p5js.org/JensValdez/full/fkmc4f7dS</a></p>
+                            <p>Under the message that appears when you have won or lost, there should be a button you
+                                have to press to start the game again.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/fkmc4f7dS"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/fkmc4f7dS</a></p>
                             <p><a href="heroMan/heroMan-solution-task31.html">Solution example - Subtask 31</a></p>
                         </details>
                     </section>
@@ -919,8 +1182,11 @@ class HeroMan {
                             <summary>
                                 <h2>Subtask 32: Placement of messages</h2>
                             </summary>
-                            <p>If heroMan is on the upper half of the canvas when you lose the game, the message that you have lost should be displayed on the lower half of the canvas and vice versa.</p>
-                            <p>Try the solution to the subtask here: <a href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
+                            <p>If heroMan is on the upper half of the canvas when you lose the game, the message that
+                                you have lost should be displayed on the lower half of the canvas and vice versa.</p>
+                            <p>Try the solution to the subtask here: <a
+                                    href="https://editor.p5js.org/JensValdez/full/xgY-XIeXg"
+                                    target="_blank">https://editor.p5js.org/JensValdez/full/xgY-XIeXg</a></p>
                             <p><a href="heroMan/heroMan-solution-task32.html">Solution example - Subtask 32</a></p>
                         </details>
                     </section>
@@ -929,7 +1195,8 @@ class HeroMan {
                             <summary>
                                 <h2>Finished solution without comments:</h2>
                             </summary>
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg</a></p>
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg"
+                                    target="_blank">https://editor.p5js.org/JensValdez/sketches/xgY-XIeXg</a></p>
                         </details>
                     </section>
                     <section id="en-faerdig-loesning-med-kommentarer">
@@ -937,7 +1204,8 @@ class HeroMan {
                             <summary>
                                 <h2>Finished solution with comments:</h2>
                             </summary>
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/2gY-XIeXg" target="_blank">https://editor.p5js.org/JensValdez/sketches/2gY-XIeXg</a></p>
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/_BuV2lsPm"
+                                    target="_blank">https://editor.p5js.org/JensValdez/sketches/_BuV2lsPm</a></p>
                         </details>
                     </section>
                 </main>
@@ -954,4 +1222,5 @@ class HeroMan {
     <script src="modal.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

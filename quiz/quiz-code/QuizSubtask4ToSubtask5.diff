@@ -1,0 +1,232 @@
+diff --git a/QuizSubtask4.js b/QuizSubtask5.js
+index f2d5a0b..6eb258f 100644
+--- a/QuizSubtask4.js
++++ b/QuizSubtask5.js
+@@ -1,155 +1,222 @@
+-//QuizSubtask4
++//QuizSubtask5
+ // programming = 'Set your imagination free' / Jens Valdez
+ // https://code-a-game.github.io
+ 
+ let gameState;
+ 
+ let currentQuestion = 0;
+ let yPositionForQuestionsToStart = 0;
+ 
+ var questions = [
+   {
+-    question: "Question 1",
+-    options: ["Q1 Option 1", "Q1 Option 2", "Q1 Option 3"],
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "Udforsker det ukendte",
++      "Tager ind til byen om natten",
++      "Tager op i de mørke bjerge",
++    ],
+     selected: -1,
+     correct: 0,
+   },
+   {
+-    question: "Question 2",
+-    options: ["Q2 Option 1", "Q2 Option 2", "Q2 Option 3"],
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "De ved der er en skat",
++      "De vil gøre alt",
++      "De er ikke bange for noget",
++    ],
++    selected: -1,
++    correct: 1,
++  },
++  {
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "For at få hævn",
++      "I jagten på skatte",
++      "For at finde gemmestedet",
++    ],
++    selected: -1,
++    correct: 1,
++  },
++  {
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "Med livet som indsats",
++      "De har kun en change",
++      "De har kæmpet så hårdt",
++    ],
+     selected: -1,
+     correct: 0,
+   },
++  {
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "Mødes de med piraterne",
++      "Går de på kirkegården",
++      "Tager de afsted",
++    ],
++    selected: -1,
++    correct: 2,
++  },
++  {
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "Mod kongens slot",
++      "På et fantastisk eventyr",
++      "Mod krydset på kortet",
++    ],
++    selected: -1,
++    correct: 1,
++  },
++  {
++    question: "Vælg den næste sætning i historien:",
++    options: [
++      "og finder guldet",
++      "og lykkes i deres quest",
++      "i evig tørst efter guld",
++    ],
++    selected: -1,
++    correct: 2,
++  },
+ ];
+ 
+ function setup() {
+   createCanvas(400, 320);
+   textSize(15);
+   fill(255);
+   gameState = "QUIZ-START-SCREEN";
+ }
+ 
+ function draw() {
+   background(100);
++  showTextOverVideo();
+ 
+   switch (gameState) {
+     case "QUIZ-START-SCREEN":
+       showStartScreen();
+       break;
+     case "QUIZ-QUESTIONS":
+       if (currentQuestion == questions.length) {
+         gameState = "QUIZ-FINISHED-SCREEN";
+       } else {
+         showQuestionsToAnswer();
+         showAnsweredQuestions();
+       }
+       break;
+     case "QUIZ-FINISHED-SCREEN":
+       showFinalResult();
+       showAnsweredQuestions();
+       break;
+   }
+ }
+ 
+ function mouseClicked() {
+   if (gameState == "QUIZ-START-SCREEN") {
+     gameState = "QUIZ-QUESTIONS";
+   }
+ }
+ 
++function showTextOverVideo() {
++  text("Vent med at se videoen til du har taget quiz'en", 20, 310);
++}
++
+ function showStartScreen() {
+   text("Quiz", 10, 20);
+   text("Vi skal se hvor god du er til at forudsige en historie.", 20, 40);
+   text("Klik med musen for at starte.", 20, 60);
+ }
+ 
+ function showQuestionsToAnswer() {
+   fill(0);
+   rect(10, 30, 380, 70);
+   yPositionForQuestionsToStart = 30;
+ 
+   fill(255);
+ 
+   text(questions[currentQuestion].question, 10, 20);
+ 
+   if (questions[currentQuestion].selected == -1) {
+     for (let i = 0; i < questions[currentQuestion].options.length; i++) {
+       yPositionForQuestionsToStart += 20;
+       text(
+         "Tryk " +
+         (i + 1) +
+         " på keyboarded: " +
+         questions[currentQuestion].options[i],
+         20,
+         yPositionForQuestionsToStart
+       );
+     }
+   } else {
+     currentQuestion++;
+   }
+ }
+ 
+ function keyPressed() {
+   if (currentQuestion < questions.length) {
+     if (key == "1") {
+       questions[currentQuestion].selected = 0;
+     }
+     if (key == "2") {
+       questions[currentQuestion].selected = 1;
+     }
+     if (key == "3") {
+       questions[currentQuestion].selected = 2;
+     }
+   }
+ }
+ 
+ function showAnsweredQuestions() {
+   let yPositionForAnswers = 130;
+ 
+   fill(0);
+   rect(10, 110, 380, 170);
+   fill(255);
+   text("Hvad tror du der sker i historien: ", 20, 130);
+ 
+   for (let i = 0; i < questions.length && questions[i].selected > -1; i++) {
+     yPositionForAnswers += 20;
+ 
+     if (questions[i].selected == questions[i].correct) {
+       fill("green");
+     } else {
+       fill("red");
+     }
+     text(questions[i].options[questions[i].selected], 20, yPositionForAnswers);
+   }
+   fill(255);
+ }
+ 
+ function showFinalResult() {
+   let numberOfCorrectAnswers = 0;
+   let numberOfWrongAnswers = 0;
+   for (let i = 0; i < questions.length; i++) {
+     if (questions[i].selected == questions[i].correct) {
+       numberOfCorrectAnswers++;
+     } else {
+       numberOfWrongAnswers++;
+     }
+   }
+   text("Quizen er færdig", 10, 20);
+ 
+   fill(0);
+   rect(10, 30, 380, 70);
+   if (numberOfWrongAnswers == 0) {
+     fill("green");
+   } else {
+     fill("red");
+   }
+   text(
+     "Du svarede rigtigt på " +
+     numberOfCorrectAnswers +
+     " ud af " +
+     (numberOfCorrectAnswers + numberOfWrongAnswers) +
+     " spørgsmål",
+     20,
+     50
+   );
++
++  fill(255);
++  text("Se videoen nedenfor for at se de korrekte svar og husk", 20, 70);
++  text("at skue op for lyden samt at vælge fullscreen", 20, 90);
+ }

@@ -1,18 +1,38 @@
-diff --git a/zelda/zelda-code/ZeldaSubtask2.js b/zelda/zelda-code/ZeldaSubtask3.js
-index 1234567..89abcde 100644
---- a/zelda/zelda-code/ZeldaSubtask2.js
-+++ b/zelda/zelda-code/ZeldaSubtask3.js
-@@ -1,4 +1,4 @@
+diff --git a/ZeldaSubtask2.js b/ZeldaSubtask3.js
+index d4d4f2c..959b6f6 100644
+--- a/ZeldaSubtask2.js
++++ b/ZeldaSubtask3.js
+@@ -1,92 +1,105 @@
 -// ZeldaSubtask2
 +// ZeldaSubtask3
  // programming = 'Set your imagination free' / Jens Valdez
  // https://code-a-game.github.io
  
-@@ -26,15 +26,36 @@ function draw() {
+ let hero;
+ let gameMap;
+ 
+ function preload() {
+   imageBackground = loadImage(`images/background1.png`);
+   imageHero = loadImage(`images/zelda.png`);
+ }
+ function setup() {
+   createCanvas(483, 313);
+ 
+   gameMap = new GameMap();
+   hero = new Hero();
+ }
+ 
+ function draw() {
+   image(imageBackground, 0, 0, 483, 313);
+ 
+   gameMap.show();
+   hero.show();
+ 
+   //  text(mouseX + " " + mouseY, mouseX, mouseY);
  }
  
  class GameMap {
--  constructor() {}
+-  constructor() { }
 +  constructor() {
 +    this.fieldObject = [];
 +    this.setInitialFieldObjects();
@@ -41,7 +61,15 @@ index 1234567..89abcde 100644
          y += 37;
        }
        y = 27;
-@@ -50,25 +71,25 @@ class Hero {
+       x += 37;
+     }
+   }
+ }
+ 
+ class Hero {
+   constructor() {
+     this.x = 5;
+     this.y = 6;
    }
  
    moveLeft() {
@@ -71,3 +99,20 @@ index 1234567..89abcde 100644
        this.y++;
      }
    }
+ 
+   show() {
+     image(imageHero, 37 * this.x, 27 + 37 * this.y);
+   }
+ }
+ 
+ function keyPressed() {
+   if (keyCode === LEFT_ARROW) {
+     hero.moveLeft();
+   } else if (keyCode === RIGHT_ARROW) {
+     hero.moveRight();
+   } else if (keyCode === UP_ARROW) {
+     hero.moveUp();
+   } else if (keyCode === DOWN_ARROW) {
+     hero.moveDown();
+   }
+ }

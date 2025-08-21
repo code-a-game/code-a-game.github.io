@@ -106,7 +106,7 @@ class Hero {
     image(imageHero, 37 * this.x, 27 + 37 * this.y);
   }
 }
- 
+
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
     hero.moveLeft();

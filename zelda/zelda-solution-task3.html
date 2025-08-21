@@ -2,56 +2,13 @@
 <html lang="da">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program Struktur</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../modal.css">
+    <title>Program Struktur</title> 
+    <link rel="stylesheet" href="../styles.css"> 
+    <link rel="stylesheet" href="../compare.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
-    <style>
-        .toc {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-
-        .toc h2 {
-            margin-top: 0;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .toc ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .toc li {
-            margin-bottom: 8px;
-        }
-
-        .toc a {
-            text-decoration: none;
-            color: #0275d8;
-            font-weight: 500;
-        }
-
-        .toc a:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .d2h-wrapper {
-            font-size: 0.8em;
-        }
-    </style>
 </head>
 
 <body>
@@ -68,10 +25,9 @@
                         <summary>
                             <h2>Zelda - Løsningseksempel - Delopgave 3</h2>
                         </summary>
-                        <p>Tilret så Zelda ikke kan gå hvor der er sten (i de to hjørner til højre)</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/9QMcWTPMR"
+                        <p>Tilret så Zelda ikke kan gå hvor der er sten (i de to hjørner til højre).</p>
+                        <p>Sådan kan koden se ud: <a href="https://editor.p5js.org/JensValdez/sketches/9QMcWTPMR"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/9QMcWTPMR</a></p>
-                        <p>Nedenfor kan du se ændringerne fra delopgave 2 til løsningen af delopgave 3:</p>
                         <div id="diff"></div>
                         <script>
                             fetch('zelda-code/ZeldaSubtask2ToSubtask3.diff')
@@ -104,10 +60,9 @@
                         <summary>
                             <h2>Zelda - Solution Example - Subtask 3</h2>
                         </summary>
-                        <p>Set up so Zelda can't walk where there are stones (in the two corners on the right)</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/9QMcWTPMR"
+                        <p>Set up so Zelda can't walk where there are stones (in the two corners on the right).</p>
+                        <p>A possible solution in code:<a href="https://editor.p5js.org/JensValdez/sketches/9QMcWTPMR"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/9QMcWTPMR</a></p>
-                        <p>Below you can see the changes from subtask 2 to the solution of subtask 3:</p>
                         <div id="diff-en"></div>
                         <script>
                             fetch('zelda-code/ZeldaSubtask2ToSubtask3.diff')
@@ -134,16 +89,6 @@
             </div>
         </div>
     </div>
-    </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
-
-    <script src="../modal.js"></script>
     <script src="../scriptSubPage.js"></script>
 </body>
 

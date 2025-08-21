@@ -2,80 +2,57 @@
 <html lang="da">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Struktur</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../intro.css">
-    <link rel="stylesheet" href="../modal.css">
-    <style>
-        .toc {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-
-        .toc h2 {
-            margin-top: 0;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .toc ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .toc li {
-            margin-bottom: 8px;
-        }
-
-        .toc a {
-            text-decoration: none;
-            color: #0275d8;
-            font-weight: 500;
-        }
-
-        .toc a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css"> 
+    <link rel="stylesheet" href="../compare.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
 </head>
 
 <body>
     <nav class="header-nav">
-        <img src="../images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
-            onclick="window.location.href='../index.html'">
+        <img src="../images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='../index.html'">
         <img id="languageFlag" src="../images/languageIconUK.png" alt="Switch to English" class="language-switch"
             onclick="switchLanguage()">
     </nav>
-    <div class="container">
+    <div class="main-content">
         <div id="danish-content">
             <div class="container">
                 <main>
-                    <section id="del6">
+                    <section id="del1">
                         <summary>
                             <h2>Quiz - Løsningseksempel - Delopgave 6</h2>
                         </summary>
                         <p>Tilret så den youtube video som har har baseret quizen på vises under quiz’en.</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/pJO9kT0hI"
+                        <p>Sådan kan koden se ud: <a href="https://editor.p5js.org/JensValdez/sketches/pJO9kT0hI"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/pJO9kT0hI</a></p>
-                        <p>Delopgave 5:</p>
+                        <p>Her er der behov for at man retter i sidens index.html fil vist her:</p>
                         <img src="../images/quiz/quiz-task6-image1.png"
-                            alt="Quiz - Løsningseksempel - Delopgave 6 - Image 1">
-                        <p>Delopgave 6:</p>
-                        <img src="../images/quiz/quiz-task6-image2.png"
-                            alt="Quiz - Løsningseksempel - Delopgave 6 - Image 2">
-                        <pre><code>&lt;iframe width="400" height="225" src="https://www.youtube.com/embed/eWWGsLC8nJY"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen&gt;&lt;/iframe&gt;
-                </code></pre>
-                        <p>Note: Her kan du skifte youtube videoen i løsningseksemplet ud med en youtube video som du
-                            selv har
-                            fundet.</p>
+                            alt="Quiz - Løsningseksempel - Delopgave 6 - Image 1"
+                            style="max-width:480px;height:auto;">
+                        <div id="diff"></div>
+                        <script>
+                            fetch('quiz-code/indexOriginalToFinal.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
                     </section>
                 </main>
             </div>
@@ -83,33 +60,39 @@
         <div id="english-content" class="hidden">
             <div class="container">
                 <main>
-                    <section id="del6">
+                    <section id="del1">
                         <summary>
                             <h2>Quiz - Solution Example - Subtask 6</h2>
                         </summary>
-                        <p>Modify so that the YouTube video on which the quiz is based is displayed during the quiz.
-                        </p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/pJO9kT0hI"
+                        <p>Modify so that the YouTube video on which the quiz is based is displayed during the quiz.</p>
+                        <p>A possible solution in code:<a href="https://editor.p5js.org/JensValdez/sketches/pJO9kT0hI"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/pJO9kT0hI</a></p>
-                        <p>Subtask 5:</p>
-                        <img src="../images/quiz/quiz-task6-image1.png"
-                            alt="Quiz - Solution Example - Subtask 6 - Image 1">
-                        <p>Subtask 6:</p>
-                        <img src="../images/quiz/quiz-task6-image2.png"
-                            alt="Quiz - Solution Example - Subtask 6 - Image 2">
-                        <pre><code>&lt;iframe width="400" height="225" src="https://www.youtube.com/embed/eWWGsLC8nJY"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen&gt;&lt;/iframe&gt;
-                </code></pre>
-                        <p>Note: Here you can replace the YouTube video in the solution example with a YouTube video
-                            that you have found yourself.</p>
+                        <div id="diff-en"></div>
+                        <script>
+                            fetch('quiz-code/indexOriginalToFinal.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff-en');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
                     </section>
                 </main>
             </div>
         </div>
     </div>
-    <script src="../modal.js"></script>
     <script src="../scriptSubPage.js"></script>
 </body>
 

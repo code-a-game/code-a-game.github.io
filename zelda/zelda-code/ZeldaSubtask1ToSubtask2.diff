@@ -1,20 +1,13 @@
-diff --git a/zelda/zelda-code/ZeldaSubtask1.js b/zelda/zelda-code/ZeldaSubtask2.js
-index 1234567..89abcde 100644
---- a/zelda/zelda-code/ZeldaSubtask1.js
-+++ b/zelda/zelda-code/ZeldaSubtask2.js
-@@ -1,15 +1,14 @@
--// ZeldaSubtask1 - Solution
+diff --git a/ZeldaSubtask1.js b/ZeldaSubtask2.js
+index c6268f5..d4d4f2c 100644
+--- a/ZeldaSubtask1.js
++++ b/ZeldaSubtask2.js
+@@ -1,41 +1,92 @@
+-// ZeldaSubtask1
 +// ZeldaSubtask2
  // programming = 'Set your imagination free' / Jens Valdez
  // https://code-a-game.github.io
  
--function setup() {
--  createCanvas(400, 400);
--}
--
--function draw() {
--  background(220);
--}
 +let hero;
  let gameMap;
  
@@ -37,11 +30,26 @@ index 1234567..89abcde 100644
  
    //  text(mouseX + " " + mouseY, mouseX, mouseY);
  }
-@@ -38,5 +37,46 @@ class GameMap {
+ 
+ class GameMap {
+   constructor() { }
+ 
+   show() {
+     noFill();
+     let x = 0;
+     let y = 27;
+ 
+     for (let i = 0; i < 7; i++) {
+       for (let j = 0; j < 7; j++) {
+         rect(x, y, 37, 37);
+         y += 37;
+       }
+       y = 27;
+       x += 37;
      }
    }
  }
- 
++
 +class Hero {
 +  constructor() {
 +    this.x = 5;
@@ -88,4 +96,3 @@ index 1234567..89abcde 100644
 +    hero.moveDown();
 +  }
 +}
-+

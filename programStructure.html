@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Struktur</title>
     <link rel="stylesheet" href="styles.css">  
-    <link rel="stylesheet" href="modal.css">
+ <!--   <link rel="stylesheet" href="modal.css"> -->
 </head>
 <body> 
 
@@ -19,83 +19,133 @@
         <div id="danish-content">
             <div class="container">
                 <header>
-                    <h1>Forklaring af program struktur</h1>
+                    <h1>Hvordan programmerer man</h1>
                 </header>
                 <main>
                     <section class="toc">
                         <h2>Indhold</h2>
                         <ul>
-                            <li><a href="#indledning">Indledning</a></li>
-                            <li><a href="#del1">Del 1 - Koordinat system og brug af interne p5js funktioner</a></li>
-                            <li><a href="#del2">Del 2 - Variabler, scope og egne funktioner</a></li>
-                            <li><a href="#del3">Del 3 - Objekt Orienteret Programmering</a></li>
-                            <li><a href="#del4">Del 4 - Nedarvning (Class Inheritance)</a></li>
-                            <li><a href="#del5">Del 5 - Brug af billeder</a></li>
+                            <li><a href="#da-indledning">Indledning</a></li>
+                            <li><a href="#da-koncept1">Dette er et simpelt program i p5.js</a></li>
+                            <li><a href="#da-koncept2">Variabler</a></li>
+                            <li><a href="#da-koncept3">Betingelser</a></li>
+                            <li><a href="#da-koncept4">For loop</a></li>
+                            <li><a href="#da-koncept5">Egne funktioner</a></li>
+                            <li><a href="#da-koncept6">Egen funktion der returnerer et resultat</a></li>
+                            <li><a href="#da-koncept7">Objekt orienteret</a></li>
+                            <li><a href="#da-koncept8">Objekt orienteret med bevægelse</a></li>
+                            <li><a href="#da-koncept9">Objekt der ikke er en klasse</a></li>
+                            <li><a href="#da-koncept10">Brug af billeder</a></li>
+                            <li><a href="#da-koncept11">Brug af array</a></li>
+                            <li><a href="#da-koncept12">Adskildelse af data og program logik</a></li>
+                            <li><a href="#da-koncept13">Brug af User Interface elementer</a></li>
+                            <li><a href="#da-koncept14">Nogle hints der kan gøre det nemmere at fejl finde</a></li>
                         </ul>
                     </section>
-                    
-                    <section id="indledning"> 
+
+                    <section id="da-indledning">
                         <details open>
-                            <summary>
-                                <h2>Indledning</h2>
-                            </summary>
-                            <p>Der er en del at forklare med hensyn til hvordan et program er opbygget og hvad man har af muligheder. Jeg har derfor valg at dele forklaringen op. Nedenfor er vist stor set alt hvad man skal vide med hensyn til hvordan et program er opbygget og hvad man har af muligheder. Resten er udelukkende at skrive kode der kalder de interne p5js funktioner.</p>
-                            <p><strong>Vigtigt:</strong> Det gør ikke noget hvis du ikke forstår det hele. Vi kommer til at lave en masse spændende opgaver som langsom introducerer de forskellige elementer. Nedenstående kan derfor bruges som reference hvis man er i tvivl om hvordan man kan opbygge et program.</p>
-                                            
-                        </details>
-                    </section>
-                    <section id="del1"> 
-                        <details open>
-                            <summary>
-                                <h2>Forklaring af program struktur - Del 1 - Koordinat system og brug af interne p5js funktioner</h2>
-                            </summary>
-                            <p>Klik på billedet for at gøre det større.</p>
-                            <img src="images/programStructure/programStructure-image1.png" alt="Program struktur del 1" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/nmChYFpHg" target="_blank">https://editor.p5js.org/JensValdez/sketches/nmChYFpHg</a></p>
+                            <summary><h2>Indledning</h2></summary>
+                            <p>Nedenfor er vist nogle af de mest grundlæggende ting man kan gøre når man programmere. Bagefter kan du lave de grundlæggende opgaver for at få lidt øvelse inden du starter på dine egne spil eller programmer.</p>
                         </details>
                     </section>
                     
-                    <section id="del2">
+                    <section id="da-koncept1"> 
                         <details open>
-                            <summary>
-                                <h2>Forklaring af program struktur - Del 2 - Variabler, scope og egne funktioner</h2>
-                            </summary>
-                            <p>Klik på billedet for at gøre det større.</p>
-                            <img src="images/programStructure/programStructure-image2.png" alt="Program struktur del 2" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xkC_Wm5KW" target="_blank">https://editor.p5js.org/JensValdez/sketches/xkC_Wm5KW</a></p>
+                            <summary><h2>Dette er et simpelt program i p5.js</h2></summary>
+                            <img src="images/programStructure/Program concept da - 1.png" alt="Dette er et simpelt program i p5.js">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/PWa27MMep" target="_blank">https://editor.p5js.org/JensValdez/sketches/PWa27MMep</a></p>
                         </details>
                     </section>
-        
-                    <section id="del3"> 
+                    <section id="da-koncept2">
                         <details open>
-                            <summary>
-                                <h2>Forklaring af program struktur - Del 3 - Objekt Orienteret Programmering</h2>
-                            </summary>
-                            <p>Klik på billedet for at gøre det større.</p>
-                            <img src="images/programStructure/programStructure-image3.png" alt="Program struktur del 3" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/vJ1Z3B7iI" target="_blank">https://editor.p5js.org/JensValdez/sketches/vJ1Z3B7iI</a></p>
+                            <summary><h2>Variabler</h2></summary>
+                            <img src="images/programStructure/Program concept da - 2.png" alt="Variabler">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/CvZonu2p_" target="_blank">https://editor.p5js.org/JensValdez/sketches/CvZonu2p_</a></p>
                         </details>
                     </section>
-        
-                    <section id="del4">
+                    <section id="da-koncept3">
                         <details open>
-                            <summary>
-                                <h2>Forklaring af program struktur - Del 4 - Nedarvning (Engelsk: Class Inheritance)</h2>
-                            </summary>
-                            <p>Klik på billederne for at gøre dem større.</p>
-                            <img src="images/programStructure/programStructure-image4.png" alt="Program struktur del 4" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/rn0D8huSI" target="_blank">https://editor.p5js.org/JensValdez/sketches/rn0D8huSI</a></p>
+                            <summary><h2>Betingelser</h2></summary>
+                            <img src="images/programStructure/Program concept da - 3.png" alt="Betingelser">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/UbgRRBLKd" target="_blank">https://editor.p5js.org/JensValdez/sketches/UbgRRBLKd</a></p>
                         </details>
                     </section>
-        
-                    <section id="del5">
+                    <section id="da-koncept4">
                         <details open>
-                            <summary>
-                                <h2>Forklaring af program struktur - Del 5 - Brug af billeder</h2>
-                            </summary> 
-                            <p>Klik på billedet for at gøre det større.</p>
-                            <img src="images/programStructure/programStructure-image5.png" alt="Program struktur del 5" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/oMNzF1DIO" target="_blank">https://editor.p5js.org/JensValdez/sketches/oMNzF1DIO</a></p>
+                            <summary><h2>For loop</h2></summary>
+                            <img src="images/programStructure/Program concept da - 4.png" alt="For loop">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/tp4fj9g4b" target="_blank">https://editor.p5js.org/JensValdez/sketches/tp4fj9g4b</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept5">
+                        <details open>
+                            <summary><h2>Egne funktioner</h2></summary>
+                            <img src="images/programStructure/Program concept da - 5.png" alt="Egne funktioner">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/fFOnTfIKt" target="_blank">https://editor.p5js.org/JensValdez/sketches/fFOnTfIKt</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept6">
+                        <details open>
+                            <summary><h2>Egen funktion der returnerer et resultat</h2></summary>
+                            <img src="images/programStructure/Program concept da - 6.png" alt="Egen funktion der returnerer et resultat">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/Hd4D_rlWN" target="_blank">https://editor.p5js.org/JensValdez/sketches/Hd4D_rlWN</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept7">
+                        <details open>
+                            <summary><h2>Objekt orienteret</h2></summary>
+                            <img src="images/programStructure/Program concept da - 7.png" alt="Objekt orienteret">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/_Avym4vyf" target="_blank">https://editor.p5js.org/JensValdez/sketches/_Avym4vyf</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept8">
+                        <details open>
+                            <summary><h2>Objekt orienteret med bevægelse</h2></summary>
+                            <img src="images/programStructure/Program concept da - 8.png" alt="Objekt orienteret med bevægelse">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/JGJPSi1ey" target="_blank">https://editor.p5js.org/JensValdez/sketches/JGJPSi1ey</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept9">
+                        <details open>
+                            <summary><h2>Objekt der ikke er en klasse</h2></summary>
+                            <img src="images/programStructure/Program concept da - 9.png" alt="Objekt der ikke er en klasse">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/Ca9p2TQAZ" target="_blank">https://editor.p5js.org/JensValdez/sketches/Ca9p2TQAZ</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept10">
+                        <details open>
+                            <summary><h2>Brug af billeder</h2></summary>
+                            <img src="images/programStructure/Program concept da - 10.png" alt="Brug af billeder">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/XBJLDJMEB" target="_blank">https://editor.p5js.org/JensValdez/sketches/XBJLDJMEB</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept11">
+                        <details open>
+                            <summary><h2>Brug af array</h2></summary>
+                            <img src="images/programStructure/Program concept da - 11.png" alt="Brug af array">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/5boDaSPIN" target="_blank">https://editor.p5js.org/JensValdez/sketches/5boDaSPIN</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept12">
+                        <details open>
+                            <summary><h2>Adskildelse af data og program logik</h2></summary>
+                            <img src="images/programStructure/Program concept da - 12.png" alt="Adskildelse af data og program logik">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/mMz0m9wXX" target="_blank">https://editor.p5js.org/JensValdez/sketches/mMz0m9wXX</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept13">
+                        <details open>
+                            <summary><h2>Brug af User Interface elementer</h2></summary>
+                            <img src="images/programStructure/Program concept da - 13.png" alt="Brug af User Interface elementer">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/XIu4D8UlV" target="_blank">https://editor.p5js.org/JensValdez/sketches/XIu4D8UlV</a></p>
+                        </details>
+                    </section>
+                    <section id="da-koncept14">
+                        <details open>
+                            <summary><h2>Nogle hints der kan gøre det nemmere at fejl finde</h2></summary>
+                            <img src="images/programStructure/Program concept da - 14.png" alt="Nogle hints der kan gøre det nemmere at fejl finde">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/Flzse2t8q" target="_blank">https://editor.p5js.org/JensValdez/sketches/Flzse2t8q</a></p>
                         </details>
                     </section>
                 </main>
@@ -104,91 +154,141 @@
         <div id="english-content" class="hidden">
             <div class="container">
                 <header>
-                    <h1>Explanation of Program Structure</h1>
+                    <h1>How to program</h1>
                 </header>
                 <main>
                     <section class="toc">
                         <h2>Table of Contents</h2>
                         <ul>
                             <li><a href="#en-indledning">Introduction</a></li>
-                            <li><a href="#en-del1">Part 1 - Coordinate system and use of internal p5.js functions</a></li>
-                            <li><a href="#en-del2">Part 2 - Variables, scope, and custom functions</a></li>
-                            <li><a href="#en-del3">Part 3 - Object-Oriented Programming</a></li>
-                            <li><a href="#en-del4">Part 4 - Class Inheritance</a></li>
-                            <li><a href="#en-del5">Part 5 - Using images</a></li>
+                            <li><a href="#en-koncept1">This is a simple program in p5.js</a></li>
+                            <li><a href="#en-koncept2">Variables</a></li>
+                            <li><a href="#en-koncept3">Conditions</a></li>
+                            <li><a href="#en-koncept4">For loop</a></li>
+                            <li><a href="#en-koncept5">Own functions</a></li>
+                            <li><a href="#en-koncept6">Own function that returns a result</a></li>
+                            <li><a href="#en-koncept7">Object-oriented</a></li>
+                            <li><a href="#en-koncept8">Object-oriented with movement</a></li>
+                            <li><a href="#en-koncept9">Object that is not a class</a></li>
+                            <li><a href="#en-koncept10">Using images</a></li>
+                            <li><a href="#en-koncept11">Using arrays</a></li>
+                            <li><a href="#en-koncept12">Separation of data and program logic</a></li>
+                            <li><a href="#en-koncept13">User of User Interface elements</a></li>
+                            <li><a href="#en-koncept14">Some hints that can make debugging easier</a></li>
                         </ul>
                     </section>
-                    
-                    <section id="en-indledning"> 
+
+                    <section id="en-indledning">
                         <details open>
-                            <summary>
-                                <h2>Introduction</h2>
-                            </summary>
-                            <p>There is a lot to explain regarding how a program is structured and what possibilities you have. I have therefore chosen to divide the explanation. Below is shown almost everything you need to know about how a program is structured and what possibilities you have. The rest is solely writing code that calls the internal p5.js functions.</p>
-                            <p><strong>Important:</strong> It doesn't matter if you don't understand everything. We will be doing a lot of exciting tasks that slowly introduce the different elements. The following can therefore be used as a reference if you are in doubt about how to structure a program.</p>
-                                            
-                        </details>
-                    </section>
-                    <section id="en-del1">  
-                        <details open>
-                            <summary>
-                                <h2>Explanation of program structure - Part 1 - Coordinate system and use of internal p5.js functions</h2>
-                            </summary>
-                            <p>Click on the image to enlarge it.</p>
-                            <img src="images/programStructure/programStructure-image1-en.png" alt="Program structure part 1" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/HTKLkTUmt" target="_blank">https://editor.p5js.org/JensValdez/sketches/HTKLkTUmt</a></p>
+                            <summary><h2>Introduction</h2></summary>
+                            <p>Below are shown some of the most basic things you can do when programming. Afterwards, you can do the basic exercises to get some practice before you start on your own games or programs.</p>
                         </details>
                     </section>
                     
-                    <section id="en-del2">
+                    <section id="en-koncept1">
                         <details open>
-                            <summary>
-                                <h2>Explanation of program structure - Part 2 - Variables, scope, and custom functions</h2>
-                            </summary>
-                            <p>Click on the image to enlarge it.</p>
-                            <img src="images/programStructure/programStructure-image2-en.png" alt="Program structure part 2" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/GtADqd1IP" target="_blank">https://editor.p5js.org/JensValdez/sketches/GtADqd1IP</a></p>
+                            <summary><h2>This is a simple program in p5.js</h2></summary>
+                            <img src="images/programStructure/Program concept en - 1.png" alt="This is a simple program in p5.js">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/hJtIJJgK8" target="_blank">https://editor.p5js.org/JensValdez/sketches/hJtIJJgK8</a></p>
                         </details>
                     </section>
-        
-                    <section id="en-del3"> 
+                    <section id="en-koncept2">
                         <details open>
-                            <summary>
-                                <h2>Explanation of program structure - Part 3 - Object-Oriented Programming</h2>
-                            </summary>
-                            <p>Click on the image to enlarge it.</p>
-                            <img src="images/programStructure/programStructure-image3.png" alt="Program structure part 3" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/1XxuF9592" target="_blank">https://editor.p5js.org/JensValdez/sketches/1XxuF9592</a></p>
+                            <summary><h2>Variables</h2></summary>
+                            <img src="images/programStructure/Program concept en - 2.png" alt="Variables">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xxjzCTqSg" target="_blank">https://editor.p5js.org/JensValdez/sketches/xxjzCTqSg</a></p>
                         </details>
                     </section>
-        
-                    <section id="en-del4">
+                    <section id="en-koncept3">
                         <details open>
-                            <summary>
-                                <h2>Explanation of program structure - Part 4 - Class Inheritance</h2>
-                            </summary>
-                            <p>Click on the images to enlarge them.</p> 
-                            <img src="images/programStructure/programStructure-image4-en.png" alt="Program structure part 4" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/vHVqghFXn" target="_blank">https://editor.p5js.org/JensValdez/sketches/vHVqghFXn</a></p>
+                            <summary><h2>Conditions</h2></summary>
+                            <img src="images/programStructure/Program concept en - 3.png" alt="Conditions">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/Xw1vYJyIg" target="_blank">https://editor.p5js.org/JensValdez/sketches/Xw1vYJyIg</a></p>
                         </details>
                     </section>
-        
-                    <section id="en-del5">
+                    <section id="en-koncept4">
                         <details open>
-                            <summary>
-                                <h2>Explanation of program structure - Part 5 - Using images</h2>
-                            </summary>
-                            <p>Click on the image to enlarge it.</p>
-                            <img src="images/programStructure/programStructure-image5-en.png" alt="Program structure part 5" class="content-img">
-                            <p><a href="https://editor.p5js.org/JensValdez/sketches/a5rRKO_H_" target="_blank">https://editor.p5js.org/JensValdez/sketches/a5rRKO_H_</a></p>
+                            <summary><h2>for loop</h2></summary>
+                            <img src="images/programStructure/Program concept en - 4.png" alt="for loop">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/OmcRNzoWl" target="_blank">https://editor.p5js.org/JensValdez/sketches/OmcRNzoWl</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept5">
+                        <details open>
+                            <summary><h2>Own functions</h2></summary>
+                            <img src="images/programStructure/Program concept en - 5.png" alt="Own functions">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/GHR6NrN9D" target="_blank">https://editor.p5js.org/JensValdez/sketches/GHR6NrN9D</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept6">
+                        <details open>
+                            <summary><h2>Own function that return a result</h2></summary>
+                            <img src="images/programStructure/Program concept en - 6.png" alt="Own function that return a result">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/y0XUdCrCu" target="_blank">https://editor.p5js.org/JensValdez/sketches/y0XUdCrCu</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept7">
+                        <details open>
+                            <summary><h2>Object-oriented</h2></summary>
+                            <img src="images/programStructure/Program concept en - 7.png" alt="Object-oriented">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/xbuqXq5t1" target="_blank">https://editor.p5js.org/JensValdez/sketches/xbuqXq5t1</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept8">
+                        <details open>
+                            <summary><h2>Object-oriented with movement</h2></summary>
+                            <img src="images/programStructure/Program concept en - 8.png" alt="Object-oriented with movement">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/Y4O93mAy4" target="_blank">https://editor.p5js.org/JensValdez/sketches/Y4O93mAy4</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept9">
+                        <details open>
+                            <summary><h2>Object that is not a class</h2></summary>
+                            <img src="images/programStructure/Program concept en - 9.png" alt="Object that is not a class">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/MhfHeJR2f" target="_blank">https://editor.p5js.org/JensValdez/sketches/MhfHeJR2f</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept10">
+                        <details open>
+                            <summary><h2>Using images</h2></summary>
+                            <img src="images/programStructure/Program concept en - 10.png" alt="Using images">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/sAyTf6ywx" target="_blank">https://editor.p5js.org/JensValdez/sketches/sAyTf6ywx</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept11">
+                        <details open>
+                            <summary><h2>Using arrays</h2></summary>
+                            <img src="images/programStructure/Program concept en - 11.png" alt="Using arrays">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/TfekYfdi-" target="_blank">https://editor.p5js.org/JensValdez/sketches/TfekYfdi-</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept12">
+                        <details open>
+                            <summary><h2>Separation of data and program logic</h2></summary>
+                            <img src="images/programStructure/Program concept en - 12.png" alt="Separation of data and program logic">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/8Iq7zdYpG" target="_blank">https://editor.p5js.org/JensValdez/sketches/8Iq7zdYpG</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept13">
+                        <details open>
+                            <summary><h2>User of User Interface elements</h2></summary>
+                            <img src="images/programStructure/Program concept en - 13.png" alt="User of User Interface elements">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/ZcYyNUUK2" target="_blank">https://editor.p5js.org/JensValdez/sketches/ZcYyNUUK2</a></p>
+                        </details>
+                    </section>
+                    <section id="en-koncept14">
+                        <details open>
+                            <summary><h2>Some hints that can make debugging easier</h2></summary>
+                            <img src="images/programStructure/Program concept en - 14.png" alt="Some hints that can make debugging easier">
+                            <p><a href="https://editor.p5js.org/JensValdez/sketches/75UfA6qq6" target="_blank">https://editor.p5js.org/JensValdez/sketches/75UfA6qq6</a></p>
                         </details>
                     </section>
                 </main>
             </div>
         </div>
     </div>
-
-    <!-- The Modal -->
+ 
+    <!-- The Modal 
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
@@ -196,5 +296,6 @@
     </div>
     <script src="modal.js"></script>
     <script src="script.js"></script>
+    -->
 </body>
 </html>

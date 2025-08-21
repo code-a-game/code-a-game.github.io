@@ -5,7 +5,7 @@
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Struktur</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css"> 
     <link rel="stylesheet" href="../compare.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
@@ -25,13 +25,12 @@
                         <summary>
                             <h2>Zelda - Løsningseksempel - Delopgave 1</h2>
                         </summary>
-                        <p>Tilret så der vises et baggrundsbillede og felter hvor Zelda skal kunne bevæge sig på</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/IBpQFulsv"
+                        <p>Tilret så der vises et baggrundsbillede og felter hvor Zelda skal kunne bevæge sig på.</p>
+                        <p>Sådan kan koden se ud: <a href="https://editor.p5js.org/JensValdez/sketches/IBpQFulsv"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/IBpQFulsv</a></p>
-                        <p>Nedenfor kan du se ændringerne fra den initielle kode til løsningen af delopgave 1:</p>
                         <div id="diff"></div>
                         <script>
-                            fetch('zelda-code/ZeldaInitialToSubtask1.diff')
+                            fetch('zelda-code/ZeldaInitialCodeToSubtask1.diff')
                                 .then(res => res.text())
                                 .then(diffString => {
                                     const targetElement = document.getElementById('diff');
@@ -61,13 +60,12 @@
                         <summary>
                             <h2>Zelda - Solution Example - Subtask 1</h2>
                         </summary>
-                        <p>Set up so that a background image is displayed and fields where Zelda can move</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/IBpQFulsv"
+                        <p>Set up so that a background image is displayed and fields where Zelda can move.</p>
+                        <p>A possible solution in code:<a href="https://editor.p5js.org/JensValdez/sketches/IBpQFulsv"
                                 target="_blank">https://editor.p5js.org/JensValdez/sketches/IBpQFulsv</a></p>
-                        <p>Below you can see the changes from the initial code to the solution for subtask 1:</p>
                         <div id="diff-en"></div>
                         <script>
-                            fetch('zelda-code/ZeldaInitialToSubtask1.diff')
+                            fetch('zelda-code/ZeldaInitialCodeToSubtask1.diff')
                                 .then(res => res.text())
                                 .then(diffString => {
                                     const targetElement = document.getElementById('diff-en');

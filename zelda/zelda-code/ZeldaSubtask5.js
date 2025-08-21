@@ -169,7 +169,7 @@ class Hero {
       this.x++;
     }
   }
- 
+
   moveUp() {
     if (this.y > 0 && gameMap.fieldObject[this.x][this.y - 1] === "EMPTY") {
       this.y--;

@@ -2,69 +2,53 @@
 <html lang="da">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program Struktur</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../intro.css">
-    <link rel="stylesheet" href="../modal.css">
-    <style>
-        .toc {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-
-        .toc h2 {
-            margin-top: 0;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .toc ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .toc li {
-            margin-bottom: 8px;
-        }
-
-        .toc a {
-            text-decoration: none;
-            color: #0275d8;
-            font-weight: 500;
-        }
-
-        .toc a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css"> 
+    <link rel="stylesheet" href="../compare.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html.min.js"></script>
 </head>
 
 <body>
     <nav class="header-nav">
-        <img src="../images/logoCodeHd.png" alt="Code a Game Logo" class="logo"
-            onclick="window.location.href='../index.html'">
+        <img src="../images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='../index.html'">
         <img id="languageFlag" src="../images/languageIconUK.png" alt="Switch to English" class="language-switch"
             onclick="switchLanguage()">
     </nav>
-    <div class="container">
+    <div class="main-content">
         <div id="danish-content">
             <div class="container">
                 <main>
                     <section id="del1">
                         <summary>
-                            <h2>Hero Man - Løsningseksempel - Delopgave 17</h2>
+                            <h2>HeroMan - Løsningseksempel - Delopgave 17</h2>
                         </summary>
-                        <p>Tilret så Hero Man kan lande på alle platformene.</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/2_8PqgS3I"
-                                target="_blank">https://editor.p5js.org/JensValdez/sketches/2_8PqgS3I</a></p>
-                        <p>Klik på billedet for at gøre det større.</p>
-                        <img src="../images/heroMan/heroMan-task17-image1.png"
-                            alt="Hero Man - Løsningseksempel - Delopgave 17 - Image 1" class="content-img">
+                        <p>Tilret så heroMan får et ansigt.</p>
+                        <p>Sådan kan koden se ud: <a href="https://editor.p5js.org/JensValdez/sketches/W35hCRabZ"
+                                target="_blank">https://editor.p5js.org/JensValdez/sketches/W35hCRabZ</a></p>
+                        <div id="diff"></div>
+                        <script>
+                            fetch('heroMan-code/HeroManDelopgave16ToDelopgave17.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
                     </section>
                 </main>
             </div>
@@ -74,27 +58,37 @@
                 <main>
                     <section id="del1">
                         <summary>
-                            <h2>Hero Man - Solution Example - Subtask 17</h2>
+                            <h2>HeroMan - Solution Example - Subtask 17</h2>
                         </summary>
-                        <p>Modify so that Hero Man can land on all platforms.</p>
-                        <p><a href="https://editor.p5js.org/JensValdez/sketches/2_8PqgS3I"
-                                target="_blank">https://editor.p5js.org/JensValdez/sketches/2_8PqgS3I</a></p>
-                        <p>Click on the image to make it larger.</p>
-                        <img src="../images/heroMan/heroMan-task17-image1.png"
-                            alt="Hero Man - Solution Example - Subtask 17 - Image 1" class="content-img">
+                        <p>Adjust so that heroMan gets a face.</p>
+                        <p>A possible solution in code:<a href="https://editor.p5js.org/JensValdez/sketches/W35hCRabZ"
+                                target="_blank">https://editor.p5js.org/JensValdez/sketches/W35hCRabZ</a></p>
+                        <div id="diff-en"></div>
+                        <script>
+                            fetch('heroMan-code/HeroManDelopgave16ToDelopgave17.diff')
+                                .then(res => res.text())
+                                .then(diffString => {
+                                    const targetElement = document.getElementById('diff-en');
+                                    const configuration = {
+                                        drawFileList: true,
+                                        matching: 'words',
+                                        outputFormat: 'side-by-side',
+                                        renderNothingWhenEmpty: false,
+                                        matchWordsThreshold: 0.25,
+                                        matchingMaxComparisons: 2500,
+                                        maxLineSizeInBlockForComparison: 200,
+                                        maxLineLengthHighlight: 10000,
+                                        stylesheetDefault: true
+                                    };
+                                    const diffHtml = Diff2Html.html(diffString, configuration);
+                                    targetElement.innerHTML = diffHtml;
+                                });
+                        </script>
                     </section>
                 </main>
             </div>
         </div>
     </div>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
-    <script src="../modal.js"></script>
     <script src="../scriptSubPage.js"></script>
 </body>
 

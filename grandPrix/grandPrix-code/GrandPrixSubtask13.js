@@ -1,0 +1,382 @@
+// GrandPrixSubtask13 
+// programming = 'Set your imagination free' / Jens Valdez
+// https://code-a-game.github.io
+
+let cars = [];
+let leftSideObject = [];
+let rightSideObject = [];
+let pits = [];
+let lives = [];
+
+let gameState;
+let gameAction;
+let gameStepTimer;
+let rowCounter;
+let heroLanePosition;
+let heroRacePosition;
+let lifeLostInThisStep;
+let countDownForNoLeftFenceToShow;
+let countDownForNoRightFenceToShow;
+let highScore = 100;
+let numberOfCarsToOvertake;
+let timeUpLimit;
+
+function setup() {
+  createCanvas(600, 444);
+
+  initializeGameState();
+}
+
+function initializeGameState() {
+  setInitialValues();
+  setImageObjectPositions();
+  setupInitialLeftAndRightSideObjectsForDisplay();
+  setupInitialPitsForDisplay();
+  generateCarStream();
+
+  gameState = "GAME-IN-PROGRESS";
+}
+
+function draw() {
+  switch (gameState) {
+    case "GAME-IN-PROGRESS":
+      handeGameAction();
+      showGameState();
+      updateGameState();
+      validateGameState();
+      break;
+    case "GAME-WON":
+      showGameState();
+      break;
+    case "GAME-LOST":
+      showGameState();
+      break;
+  }
+}
+
+function keyPressed() {
+  if (gameState == "GAME-IN-PROGRESS") {
+    if (keyCode === LEFT_ARROW) {
+      gameAction = "MOVE-LEFT";
+    } else if (keyCode === RIGHT_ARROW) {
+      gameAction = "MOVE-RIGHT";
+    }
+  }
+}
+
+function handeGameAction() {
+  switch (gameAction) {
+    case "MOVE-LEFT":
+      moveLeft();
+      gameAction = "";
+      break;
+    case "MOVE-RIGHT":
+      moveRight();
+      gameAction = "";
+      break;
+    default:
+      break;
+  }
+}
+
+function moveLeft() {
+  if (
+    (leftSideObject[1] == "PIT" && heroLanePosition == 0) ||
+    heroLanePosition > 0
+  ) {
+    heroLanePosition--;
+
+    if (heroLanePosition == -1) {
+      leftSideObject[1] = "DONE";
+    }
+  }
+}
+
+function moveRight() {
+  if (
+    (rightSideObject[1] == "FUEL" && heroLanePosition == 2) ||
+    heroLanePosition < 2
+  ) {
+    heroLanePosition++;
+  }
+}
+
+function setInitialValues() {
+  textSize(32);
+  fill(0);
+  gameAction = "";
+  lives = 3;
+  numberOfCarsToOvertake = 100;
+  heroRacePosition = numberOfCarsToOvertake + 1;
+  timeUpLimit = 50;
+  rowCounter = 1;
+  heroLanePosition = 1;
+  gameStepTimer = new CoolDownTimer();
+  gameStepTimer.setCoolDownInterval(900);
+  gameStepTimer.startCoolDownTimer();
+  setCountDownForNoLeftFenceToShow();
+  setCountDownForNoRightFenceToShow();
+}
+
+function setCountDownForNoLeftFenceToShow() {
+  countDownForNoLeftFenceToShow = int(random(6, 20));
+}
+function setCountDownForNoRightFenceToShow() {
+  countDownForNoRightFenceToShow = int(random(12, 25));
+}
+
+function setupInitialLeftAndRightSideObjectsForDisplay() {
+  for (let row = 0; row < 5; row++) {
+    leftSideObject[row] = "FENCE";
+    rightSideObject[row] = "FENCE";
+  }
+}
+
+function setupInitialPitsForDisplay() {
+  for (let row = 0; row < 4; row++) {
+    pits[row] = "EMPTY";
+  }
+}
+
+function generateCarStream() {
+  let numberOfCars;
+  for (let row = 1; row < 106; row++) {
+    cars[row] = [];
+    numberOfCars = 0;
+    for (let column = 0; column < 3; column++) {
+      if (
+        random(1) < 0.5 &&
+        numberOfCars < 2 &&
+        row > 5 &&
+        numberOfCarsToOvertake > 0
+      ) {
+        cars[row][column] = "CAR";
+        numberOfCarsToOvertake--;
+        numberOfCars++;
+      } else {
+        cars[row][column] = "EMPTY";
+      }
+    }
+    cars[row][3] = numberOfCarsToOvertake;
+  }
+}
+
+function showGameState() {
+  displayBackground();
+
+  showCars();
+  showLeftSideObjects();
+  showRightSideObjects();
+  showPits();
+  showManWithFlag();
+  showLives();
+  showGameStatus();
+}
+
+function showCars() {
+  for (let row = 1; row < 6; row++) {
+    for (let column = 0; column < 3; column++) {
+      if (cars[rowCounter + row][column] == "CAR") {
+        displayCar(row, column);
+      }
+    }
+  }
+  if (heroLanePosition >= 0 && heroLanePosition <= 2) {
+    displayCar(0, heroLanePosition);
+  }
+
+  if (heroLanePosition == -1) {
+    displayCarInPit();
+  }
+  if (heroLanePosition == 3) {
+    displayFuelUnitAndCar();
+  }
+}
+
+function showLeftSideObjects() {
+  for (let row = 0; row < 5; row++) {
+    if (leftSideObject[row] == "FENCE") {
+      displayLeftFence(row);
+    }
+  }
+}
+function showRightSideObjects() {
+  for (let row = 0; row < 5; row++) {
+    if (rightSideObject[row] == "FENCE") {
+      displayRightFence(row);
+    }
+  }
+}
+
+function showPits() {
+  for (let column = 0; column < 4; column++) {
+    if (leftSideObject[column + 1] == "PIT") {
+      displayPit(column);
+    }
+  }
+}
+
+function showManWithFlag() {
+  for (let column = 0; column < 4; column++) {
+    if (rightSideObject[1] == "FUEL" && heroLanePosition < 3) {
+      displayManWithFlag();
+    }
+  }
+}
+
+function showLives() {
+  if (lives > 2) {
+    displayLife(2);
+  }
+  if (lives > 1) {
+    displayLife(1);
+  }
+  if (lives > 0) {
+    displayLife(0);
+  }
+}
+
+function showGameStatus() {
+  if (gameState == "GAME-WON") {
+    displayWinnerTrophyAndText();
+  } else {
+    displayPosition(heroRacePosition);
+    if (highScore < 100) {
+      displayHighScore(highScore);
+    }
+    if (gameState == "GAME-LOST") {
+      displayGameOver();
+    }
+  }
+}
+
+function updateGameState() {
+  if (gameStepTimer.coolDownTimeLeft() > 0) {
+    return;
+  }
+
+  heroRacePosition = cars[rowCounter + 1][3] + 1;
+  lifeLostInThisStep = false;
+
+  if (heroLanePosition >= 0 && heroLanePosition <= 2) {
+    insertNewRowAndMoveOtherRowsDown();
+    countDownForNoLeftFenceToShow--;
+    countDownForNoRightFenceToShow--;
+    rowCounter++;
+  }
+  if (heroLanePosition == -1) {
+    rowCounter--;
+  }
+  if (heroLanePosition == 3) {
+    rowCounter--;
+  }
+  gameStepTimer.startCoolDownTimer();
+}
+
+function insertNewRowAndMoveOtherRowsDown() {
+  moveLeftSideRowsDown();
+  insertNewLeftSideRow();
+
+  moveRightSideRowsDown();
+  insertNewRightSideRow();
+}
+
+function moveLeftSideRowsDown() {
+  for (let row = 1; row < 4; row++) {
+    leftSideObject[row] = leftSideObject[row + 1];
+  }
+}
+
+function moveRightSideRowsDown() {
+  for (let row = 1; row < 4; row++) {
+    rightSideObject[row] = rightSideObject[row + 1];
+  }
+}
+
+function insertNewLeftSideRow() {
+  if (countDownForNoLeftFenceToShow == 0) {
+    leftSideObject[4] = "PIT";
+    setCountDownForNoLeftFenceToShow();
+  } else {
+    leftSideObject[4] = "FENCE";
+  }
+}
+
+function insertNewRightSideRow() {
+  if (countDownForNoRightFenceToShow == 0) {
+    rightSideObject[4] = "FUEL";
+    setCountDownForNoRightFenceToShow();
+  } else {
+    rightSideObject[4] = "FENCE";
+  }
+}
+
+function validateGameState() {
+  if (lifeLostInThisStep) {
+    return;
+  }
+
+  let lifeLost = false;
+
+  if (isHeroDrivingIntoAnotherCar()) {
+    lifeLost = true;
+    displayCrash(heroLanePosition);
+  }
+
+  if (hasHeroMissedPit()) {
+    lifeLost = true;
+  }
+
+  if (lifeLost) {
+    handleLifeLost();
+  }
+
+  if (rowCounter == 0) {
+    lives = 0;
+  }
+
+  if (lives == 0) {
+    handleGameLost();
+  } else if (heroRacePosition == 1) {
+    handleGameWon();
+  }
+}
+
+function handleLifeLost() {
+  lives--;
+  lifeLostInThisStep = true;
+}
+
+function handleGameLost() {
+  gameState = "GAME-LOST";
+
+  if (heroRacePosition < highScore) {
+    highScore = heroRacePosition;
+  }
+}
+
+function handleGameWon() {
+  gameState = "GAME-WON";
+
+  if (heroRacePosition < highScore) {
+    highScore = heroRacePosition;
+  }
+}
+
+function isHeroDrivingIntoAnotherCar() {
+  if (heroLanePosition >= 0 && heroLanePosition <= 2) {
+    if (
+      gameStepTimer.coolDownTimeLeft() < timeUpLimit &&
+      cars[rowCounter + 1][heroLanePosition] == "CAR"
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function hasHeroMissedPit() {
+  return (
+    gameStepTimer.coolDownTimeLeft() < timeUpLimit && leftSideObject[1] == "PIT"
+  );
+}

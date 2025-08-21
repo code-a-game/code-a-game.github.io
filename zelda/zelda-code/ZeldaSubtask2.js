@@ -26,7 +26,7 @@ function draw() {
 }
 
 class GameMap {
-  constructor() {}
+  constructor() { }
 
   show() {
     noFill();
