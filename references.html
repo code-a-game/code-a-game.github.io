@@ -121,7 +121,8 @@
                                     <a href="https://www.toptal.com/developers/keycode" target="_blank">KeyCode Finder</a>
                                     <div class="reference-description">Online værktøj til at se hvilken kode de enkelte taster har</div>
                                     <div class="reference-description">Eksempel:
-                                        <code>if (keyIsDown(70)) { // Koden inden i if statementet udføres hvis der trykkes på "F"</code></div>
+                                        <code>if (keyIsDown(70)) { // Koden inden i if statementet udføres hvis der trykkes på "F"</code>
+                                    </div>
                                 </li>
                                 <li>
                                     <a href="https://text-compare.com/" target="_blank">Text Compare</a>
@@ -158,6 +159,25 @@
                                     <div class="reference-description">Guide til at lave multiplayer spil med p5.js</div>
                                 </li>
                             </ul>
+                            <p>Bemærk:</p>
+                            <p>Jeg har installeret en server som alle kan bruge til at lave online spil. Når man opdatere variabler i sit spil, så bliver disse
+                                værdier automatisk synkroniseret til de andre browsere der er logget på sammen server. Se i kravsspecifikation hvordan man
+                                tilgår serveren.</p>
+                            <p>Den nuværende server hedder "p5js-spaceman-server-29f6636dfb6c.herokuapp.com" og man skal huske at opdatere applications navnet
+                                så det er pre fixet med forbogstaverne fra sit eget navn samt navnet på applicationen + version således at navnet er entydigt.
+                            </p>
+                            <p>Serveren håndterer automatisk synkronisering af spiltilstande mellem alle tilsluttede klienter, så alle spillere altid har den
+                                nyeste information.</p>
+                            <p>Se multiplayer eksemplet her for hvordan man tilslutter sig serveren her: <a href="advancedExamples.html">Avancerede
+                                    eksempler</a></p>
+                            <p>Det er nemt at opsætte sin egen server. Det koster 40 kr pr. måned. Tilgængæld kan tusinde af forskellige applicationer/spil
+                                bruge den samme service.</p>
+                            <p>Her er en vejledning i hvordan man opsætter sin egen server: <a
+                                    href="https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd"
+                                    target="_blank">https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd</a></p>
+                            <p>p5Party har også en server kaldet "demoserver.p5party.org". Jeg har lavet min egen, da der var nogle begrænsinger i forhold til
+                                hvor denne server kunne tilgåes fra (Den kunne f.eks. ikke tilgåes fra mit arbejde).</p>
+
                         </details>
                     </section>
 
@@ -289,7 +309,8 @@
                                     <a href="https://www.toptal.com/developers/keycode" target="_blank">KeyCode Finder</a>
                                     <div class="reference-description">Online tool to see the code for individual keys</div>
                                     <div class="reference-description">Example:
-                                        <code>if (keyIsDown(70)) { // The code inside the if statement is executed if "F" is pressed</code></div>
+                                        <code>if (keyIsDown(70)) { // The code inside the if statement is executed if "F" is pressed</code>
+                                    </div>
                                 </li>
                                 <li>
                                     <a href="https://text-compare.com/" target="_blank">Text Compare</a>
@@ -324,8 +345,33 @@
                                 <li>
                                     <a href="https://p5party.org" target="_blank">Multiplayer framework</a>
                                     <div class="reference-description">Guide for making multiplayer games with p5.js</div>
+
                                 </li>
                             </ul>
+                            <p>Note:</p>
+                            <p>I have installed a server that anyone can use to create online games. When you update variables in your game, these
+                                values are
+                                automatically synchronized to other browsers that are logged into the same server. See the requirements specification
+                                for how to
+                                access the server.</p>
+                            <p>The current server is called "p5js-spaceman-server-29f6636dfb6c.herokuapp.com" and you need to remember to update the
+                                application
+                                name so it is prefixed with your own initials plus the application name + version to make the name unique.</p>
+                            <p>The server automatically handles synchronization of game states between all connected clients, so all players always have
+                                the
+                                latest information.</p>
+                            <p>See the multiplayer example here for how to connect to the server here: <a href="advancedExamples.html">Advanced
+                                    Examples</a></p>
+                            <p>It's easy to set up your own server. It costs about $5 per month. In return, thousands of different applications/games
+                                can use
+                                the same service.</p>
+                            <p>Here is a guide on how to set up your own server: <a
+                                    href="https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd"
+                                    target="_blank">https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd</a></p>
+                            <p>p5Party also has a server called "demoserver.p5party.org". I created my own since there were some limitations regarding
+                                where
+                                this server could be accessed from (for example, it couldn't be accessed from my workplace).</p>
+
                         </details>
                     </section>
 
