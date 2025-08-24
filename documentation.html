@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hvordan kommer jeg i gang</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="header-nav">
+    <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='index.html'">
+    <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch" onclick="switchLanguage()">
+  </nav>
+
+  <div class="main-content">
+    <div id="danish-content">
+      <div class="container">
+        <header>
+          <h1>Hvilke funktioner findes der?</h1>
+        </header>
+        <main>
+          <section id="kom-i-gang">
+               Man kan finde en oversigt over dokumentationen for alle de indbyggede p5js funktioner her: <a href="https://p5js.org/reference/"
+                target="_blank">https://p5js.org/reference/</a></p>
+            <p>Hvorefter man kommer ind på denne side. Hvis man f.eks. vil finde ud af hvordan man tegner en cirkel, så kan man i venstre side
+              vælge Shapes -> 2D Primitives -> Circle</p>
+            <img src="images/reference/reference-image0.png" alt="Screenshot of p5.js reference page">
+            <p>Alternativt kan man søge efter circle øverst til højre.</p>
+            <img src="images/reference/reference-image1.png" alt="Screenshot of p5.js reference page">
+            <img src="images/reference/reference-image2.png" alt="Screenshot of p5.js reference page">
+            <p>Her er documentationen for en cirkel:</p>
+            <img src="images/reference/reference-image3.png" alt="Screenshot of p5.js reference page">
+            <p>På denne side er en forklaring af den funktion man har søgt på (i vores tilfælde en cirkel), et eksempel (hvor man kan vælge edit
+              og prøve funktionen af), syntaksen for hvordan man bruger funktionen (som der ses ovenfor tager circle funktionen tre
+              argumenter) samt en forklaring af hvad argumenterne er (i vores tilfælde er det x koordinat, y koordinat samt diameteren)</p>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div id="english-content" class="hidden">
+      <div class="container">
+        <header>
+          <h1>Which functions are available?</h1>
+        </header>
+        <main>
+          <section id="en-kom-i-gang">
+            You can find an overview of the documentation for all the built-in p5.js functions here: <a href="https://p5js.org/reference/"
+                target="_blank">https://p5js.org/reference/</a></p>
+            <p>After which you will land on this page. If you, for example, want to find out how to draw a circle, you can select Shapes -> 2D
+              Primitives -> Circle on the left side.</p>
+            <img src="images/reference/reference-image0.png" alt="Screenshot of p5.js reference page">
+            <p>Alternatively, you can search for circle at the top right.</p>
+            <img src="images/reference/reference-image1.png" alt="Screenshot of p5.js reference page">
+            <img src="images/reference/reference-image2.png" alt="Screenshot of p5.js reference page">
+            <p>Here is the documentation for a circle:</p>
+            <img src="images/reference/reference-image3.png" alt="Screenshot of p5.js reference page">
+            <p>On this page is an explanation of the function you have searched for (in our case a circle), an example (where you can select
+              edit and try out the function), the syntax for how to use the function (as seen above, the circle function takes three
+              arguments) and an explanation of what the arguments are (in our case, it is the x coordinate, y coordinate, and the diameter).
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
