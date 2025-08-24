@@ -82,90 +82,90 @@ header h1 {
 
 
 
-        .toc {
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 20px 0;
-        }
+.toc {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+}
 
-        .toc h2 {
-            margin-top: 0;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
+.toc h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
 
-        .toc ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
-        .toc li {
-            margin-bottom: 8px;
-        }
+.toc li {
+    margin-bottom: 8px;
+}
 
-        .toc a {
-            text-decoration: none;
-            color: #0275d8;
-            font-weight: 500;
-        }
+.toc a {
+    text-decoration: none;
+    color: #0275d8;
+    font-weight: 500;
+}
 
-        .toc a:hover {
-            text-decoration: underline;
-        }
+.toc a:hover {
+    text-decoration: underline;
+}
 
-        .header-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-        .logo {
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
+.logo {
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
 
-        .logo:hover {
-            transform: scale(1.05);
-        }
+.logo:hover {
+    transform: scale(1.05);
+}
 
-        .language-switch {
-            cursor: pointer;
-            width: 30px;
-            height: 20px;
-            border-radius: 3px;
-            transition: transform 0.2s ease;
-        }
- 
-        .language-switch:hover {
-            transform: scale(1.1);
-        }
+.language-switch {
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    border-radius: 3px;
+    transition: transform 0.2s ease;
+}
 
-        .main-content {
-            margin-top: 80px;
-            /* Provides space for the fixed header */
-        }
+.language-switch:hover {
+    transform: scale(1.1);
+}
 
-        .hidden {
-            display: none;
-        }
+.main-content {
+    margin-top: 80px;
+    /* Provides space for the fixed header */
+}
 
-
+.hidden {
+    display: none;
+}
 
 
 
-        main section {
+
+
+main section {
     background-color: #fff;
     padding: 2rem;
     border-radius: 0.75rem;
@@ -213,21 +213,32 @@ main img {
     transition: 0.3s;
 }
 
-.content-img:hover {opacity: 0.7;}
+.content-img:hover {
+    opacity: 0.7;
+}
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
 }
 
 /* Modal Content (Image) */
@@ -251,14 +262,20 @@ main img {
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
+.modal-content,
+#caption {
     animation-name: zoom;
     animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 /* The Close Button */
@@ -280,7 +297,7 @@ main img {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
     .modal-content {
         width: 100%;
     }
