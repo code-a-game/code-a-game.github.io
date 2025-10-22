@@ -153,32 +153,36 @@
                             <summary>
                                 <h2>Multiplayer Ressourcer</h2>
                             </summary>
-                            <ul class="reference-list">
-                                <li>
-                                    <a href="https://p5party.org" target="_blank">Multiplayer framework</a>
-                                    <div class="reference-description">Guide til at lave multiplayer spil med p5.js</div>
-                                </li>
-                            </ul>
-                            <p>Bemærk:</p>
                             <p>Jeg har installeret en server som alle kan bruge til at lave online spil. Når man opdatere variabler i sit spil, så bliver disse
-                                værdier automatisk synkroniseret til de andre browsere der er logget på sammen server. Se i kravsspecifikation hvordan man
-                                tilgår serveren.</p>
-                            <p>Den nuværende server hedder "p5js-spaceman-server-29f6636dfb6c.herokuapp.com" og man skal huske at opdatere applications navnet
-                                så det er pre fixet med forbogstaverne fra sit eget navn samt navnet på applicationen + version således at navnet er entydigt.
+                                værdier automatisk synkroniseret til de andre browsere der er logget på samme applikation på serveren. Det er også muligt at tilføje et game room, så man kan have flere forskellige parallelle spil igang på samme applikation, se SpaceStratego eksemplet på hvordan man gør dette.</p>
+                            <p>Den fælles server hedder "p5js-spaceman-server-29f6636dfb6c.herokuapp.com". Man skal huske at opdatere applikations navnet,
+                                så det er pre fixet med forbogstaverne fra sit eget navn samt navnet på applikationen + version således at navnet er entydigt.
                             </p>
-                            <p>Serveren håndterer automatisk synkronisering af spiltilstande mellem alle tilsluttede klienter, så alle spillere altid har den
-                                nyeste information.</p>
-                            <p>Se multiplayer eksemplet her for hvordan man tilslutter sig serveren her: <a href="advancedExamples.html">Avancerede
-                                    eksempler</a></p>
-                            <p>Det er nemt at opsætte sin egen server. Det koster 40 kr pr. måned. Tilgængæld kan tusinde af forskellige applicationer/spil
-                                bruge den samme service.</p>
-                            <p>Her er en vejledning i hvordan man opsætter sin egen server: <a
-                                    href="https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd"
-                                    target="_blank">https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd</a></p>
-                            <p>p5Party har også en server kaldet "demoserver.p5party.org". Jeg har lavet min egen, da der var nogle begrænsinger i forhold til
-                                hvor denne server kunne tilgåes fra (Den kunne f.eks. ikke tilgåes fra mit arbejde).</p>
+                            <p>
+                            Her er et eksempel på et spil som bruger denne server: <br><a href="https://code-a-game.github.io/advancedExamples.html" target="_blank">https://code-a-game.github.io/advancedExamples.html</a>
+                            </p>
 
-                        </details>
+                            Koden man skal skrive i programmet er: 
+                            <pre>
+function preload() {
+  partyConnect("wss://p5js-spaceman-server-29f6636dfb6c.herokuapp.com", "jkh-MultiPlayerOOPv1");
+  me = partyLoadMyShared({ playerName: "observer" });
+  guests = partyLoadGuestShareds();
+  shared = partyLoadShared("shared", {
+    shared: { xSun: 0 },
+  });
+}
+</pre>
+<p>Hvor "jkh-MultiPlayerOOPv1" selvfølgelig skal udskiftes med initialerne for dit navn + applikationsnavnet for dit spil + version.</p>
+                           <ul class="reference-list">
+                                <li><a href="https://p5party.org" target="_blank">Multiplayer framework</a></li>
+                                <li><a href="https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd"
+                                    target="_blank">Officiel guide til server opsætning.</a></li>
+                                    <li><a href="/serverSetup.html" target="_blank">Kopi af documentation + github repo til at opsætte en server. </a></li>
+                                
+                            </ul>
+  
+</details>
                     </section>
 
                     <section id="other-resources" class="reference-section">
@@ -341,37 +345,26 @@
                             <summary>
                                 <h2>Multiplayer Resources</h2>
                             </summary>
+                            <p>I have installed a server that anyone can use to create online games. When you update variables in your game, these values are automatically synchronized to other browsers logged into the same application on the server. It is also possible to add a game room, so you can have multiple different parallel games running on the same application. See the SpaceStratego example for how to do this.</p>
+                            <p>The shared server is called "p5js-spaceman-server-29f6636dfb6c.herokuapp.com". You need to remember to update the application name so it is prefixed with your own initials plus the application name + version so the name is unique.</p>
+                            <p>Here is an example of a game using this server: <br><a href="https://code-a-game.github.io/advancedExamples.html" target="_blank">https://code-a-game.github.io/advancedExamples.html</a></p>
+                            <p>The code you need to write in the program is:</p>
+                            <pre>
+function preload() {
+  partyConnect("wss://p5js-spaceman-server-29f6636dfb6c.herokuapp.com", "jkh-MultiPlayerOOPv1");
+  me = partyLoadMyShared({ playerName: "observer" });
+  guests = partyLoadGuestShareds();
+  shared = partyLoadShared("shared", {
+    shared: { xSun: 0 },
+  });
+}
+</pre>
+                            <p>Where "jkh-MultiPlayerOOPv1" should of course be replaced with your own initials + application name + version.</p>
                             <ul class="reference-list">
-                                <li>
-                                    <a href="https://p5party.org" target="_blank">Multiplayer framework</a>
-                                    <div class="reference-description">Guide for making multiplayer games with p5.js</div>
-
-                                </li>
+                                <li><a href="https://p5party.org" target="_blank">Multiplayer framework</a></li>
+                                <li><a href="https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd" target="_blank">Official guide to server setup.</a></li>
+                                <li><a href="/serverSetup.html" target="_blank">Copy of documentation + github repo to set up a server.</a></li>
                             </ul>
-                            <p>Note:</p>
-                            <p>I have installed a server that anyone can use to create online games. When you update variables in your game, these
-                                values are
-                                automatically synchronized to other browsers that are logged into the same server. See the requirements specification
-                                for how to
-                                access the server.</p>
-                            <p>The current server is called "p5js-spaceman-server-29f6636dfb6c.herokuapp.com" and you need to remember to update the
-                                application
-                                name so it is prefixed with your own initials plus the application name + version to make the name unique.</p>
-                            <p>The server automatically handles synchronization of game states between all connected clients, so all players always have
-                                the
-                                latest information.</p>
-                            <p>See the multiplayer example here for how to connect to the server here: <a href="advancedExamples.html">Advanced
-                                    Examples</a></p>
-                            <p>It's easy to set up your own server. It costs about $5 per month. In return, thousands of different applications/games
-                                can use
-                                the same service.</p>
-                            <p>Here is a guide on how to set up your own server: <a
-                                    href="https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd"
-                                    target="_blank">https://justinbakse.notion.site/Server-Setup-d039a4be3a044878bd5ad0931f1c93bd</a></p>
-                            <p>p5Party also has a server called "demoserver.p5party.org". I created my own since there were some limitations regarding
-                                where
-                                this server could be accessed from (for example, it couldn't be accessed from my workplace).</p>
-
                         </details>
                     </section>
 

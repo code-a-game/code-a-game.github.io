@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="header-nav">
+        <img src="images/logoCodeHd.png" alt="Code a Game Logo" class="logo" onclick="window.location.href='index.html'">
+        <img id="languageFlag" src="images/languageIconUK.png" alt="Switch to English" class="language-switch" onclick="switchLanguage()">
+    </nav>
+    <div class="main-content">
+        <div id="danish-content">
+            <div class="container">
+                <main>
+
+                      <section>
+                        <details open>
+                            <summary>
+                                <h2>Opsætning af din egen server</h2>
+                            </summary>
+                            <p>Følg vejledningen nedenfor for at sætte din egen server op. Disse retningslinjer antager, at du er noget bekendt med Git og Github allerede.</p>
+                            <ol>
+                                <li>Fork <a href="https://github.com/jbakse/p5.party" target="_blank">jbakse/p5.party</a> or <a href="https://github.com/code-a-game/p5.party" target="_blank">code-a-game/p5.party</a> repository on Github. <a href="https://docs.github.com/en/github/getting-started-with-github/fork-a-repo" target="_blank">See here</a> for more information about forking repositories.</li>
+                                <li>Opret en <a href="http://heroku.com/" target="_blank">Heroku</a> konto og log ind.</li>
+                                <li>Fra hoveddashboardet vælg <code>New » Create New App</code>
+                                    <ol>
+                                        <li>Indtast et navn til din app i <code>App name</code>. Du skal vælge dit eget, unikt navn.</li>
+                                        <li>Dit kontonavn skal allerede vises i feltet <code>App owner</code>.</li>
+                                        <li>Vælg den region, der er tættest på dig og dine brugere.</li>
+                                        <li>Klik <code>Create app</code>.</li>
+                                    </ol>
+                                </li>
+                                <li>Du skal nu blive taget til fanen <code>Deploy</code> for projektet.
+                                    <ol>
+                                        <li>Vælg <code>Github</code> som <code>Deployment method</code></li>
+                                        <li>Hvis du tilhører flere github organisationer, vælg den, du brugte til at fork repo.</li>
+                                        <li>Skriv en del af dit fork navn og tryk <code>Search</code>. Du bør se dit fork i den resulterende liste.</li>
+                                        <li>Klik <code>Connect</code> knappen ved siden af dit fork.</li>
+                                        <li>I <code>Manual deploy</code> skal du kontrollere, at <code>master</code> branch er valgt, og derefter klikke <code>Deploy Branch</code>.</li>
+                                        <li>Heroku vil trække kilden fra din branch og lancere serveren. Dette kan tage et par minutter.</li>
+                                        <li>Hvis alt gik godt, burde du nu have din egen server kørende på Heroku. Klik <code>Open app</code> for at åbne serveren i browseren.
+                                            <ul>
+                                                <li>Hvis serverstarten fungerede, vil du se "Endpoint not found".</li>
+                                                <li>Hvis det var mislykket, vil du se "There's nothing here, yet".</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Peg din p5.party sketch til den nye server.
+                                    <ul>
+                                        <li>Brug domænet for din server - noget som <code>yourserver.herokuapp.com</code> - når du kalder <code>partyConnect()</code> i din sketch.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p><strong>Tillykke!</strong> Forhåbentlig virker din sketch nu med din nye server!</p>
+                        </details>
+                    </section>
+
+                                        <section>
+                        <details open>
+                            <summary>
+                                <h2>Vigtig information om teknologi</h2>
+                            </summary>
+                            <p><strong>⚠️ Vigtigt:</strong> I øjeblikket bruger p5.party en <a href="https://deepstream.io/" target="_blank">deepstream</a> server til backend. Bemærk at deepstream er i <a href="https://deepstream.io/blog/20200519-deepstream-maintenance-mode/" target="_blank">vedligeholdelses mode</a> og kan modtage minimale opdateringer fremover. Det er usikkert, hvad dette betyder for p5.party. Det kan betyde, at migration til en anden backend vil være nødvendig i fremtiden. For nu har deepstream dog vist sig at være en pålidelig, stabil backend.</p>
+                            <p><strong>💰 Omkostninger:</strong> En Heroku server koster omkring 35 kr. om måneden at køre.</p>
+                        </details>
+                    </section>
+                </main>
+            </div>
+        </div>
+        <div id="english-content" class="hidden">
+            <div class="container">
+                <main>
+
+                      <section>
+                        <details open>
+                            <summary>
+                                <h2>Setting Up Your Own Server</h2>
+                            </summary>
+                            <p>Follow the guide below to set up your own server. These guidelines assume that you are already somewhat familiar with Git and Github.</p>
+                            <ol>
+                                <li>Fork <a href="https://github.com/jbakse/p5.party" target="_blank">jbakse/p5.party</a> or <a href="https://github.com/code-a-game/p5.party" target="_blank">code-a-game/p5.party</a> repository on Github. <a href="https://docs.github.com/en/github/getting-started-with-github/fork-a-repo" target="_blank">See here</a> for more information about forking repositories.</li>
+                                <li>Create a <a href="http://heroku.com/" target="_blank">Heroku</a> account and log in.</li>
+                                <li>From the main dashboard, select <code>New » Create New App</code>
+                                    <ol>
+                                        <li>Enter a name for your app in <code>App name</code>. You must choose your own unique name.</li>
+                                        <li>Your account name should already be shown in the <code>App owner</code> field.</li>
+                                        <li>Choose the region closest to you and your users.</li>
+                                        <li>Click <code>Create app</code>.</li>
+                                    </ol>
+                                </li>
+                                <li>You should now be taken to the <code>Deploy</code> tab for your project.
+                                    <ol>
+                                        <li>Select <code>Github</code> as the <code>Deployment method</code></li>
+                                        <li>If you belong to multiple github organizations, select the one you used to fork the repo.</li>
+                                        <li>Type part of your fork name and press <code>Search</code>. You should see your fork in the resulting list.</li>
+                                        <li>Click the <code>Connect</code> button next to your fork.</li>
+                                        <li>In <code>Manual deploy</code>, verify that the <code>master</code> branch is selected, then click <code>Deploy Branch</code>.</li>
+                                        <li>Heroku will pull the source from your branch and launch the server. This may take a few minutes.</li>
+                                        <li>If all went well, you should now have your own server running on Heroku. Click <code>Open app</code> to open the server in your browser.
+                                            <ul>
+                                                <li>If the server startup succeeded, you will see "Endpoint not found".</li>
+                                                <li>If it failed, you will see "There's nothing here, yet".</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Point your p5.party sketch to the new server.
+                                    <ul>
+                                        <li>Use the domain of your server - something like <code>yourserver.herokuapp.com</code> - when you call <code>partyConnect()</code> in your sketch.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p><strong>Congratulations!</strong> Hopefully your sketch now works with your new server!</p>
+                        </details>
+                    </section>
+
+                                        <section>
+                        <details open>
+                            <summary>
+                                <h2>Important Technology Information</h2>
+                            </summary>
+                            <p><strong>⚠️ Important:</strong> Currently, p5.party uses a <a href="https://deepstream.io/" target="_blank">deepstream</a> server as the backend. Note that deepstream is in <a href="https://deepstream.io/blog/20200519-deepstream-maintenance-mode/" target="_blank">maintenance mode</a> and may receive minimal updates going forward. It is uncertain what this means for p5.party. It could mean that migration to another backend will be necessary in the future. For now, however, deepstream has proven to be a reliable, stable backend.</p>
+                            <p><strong>💰 Costs:</strong> A Heroku server costs about $5 per month to run (approximately 35 DKK).</p>
+                        </details>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
